@@ -64,7 +64,7 @@ var ABstore = class {
       throw new Error('Incorrect number of arguments. Expecting 3');
     }
 
-    await stub.putState("Hi", JSON.stringify({a:"Hi there"}));
+    await stub.putState("Hi", JSON.stringify({ a: "Hi there" }));
     let tes = await stub.getState("Hi");
     console.log(tes.toString());
 
@@ -136,6 +136,13 @@ var ABstore = class {
     console.info('Query Response:');
     console.info(jsonResp);
     return Avalbytes;
+  }
+
+  async metodoPrueba(stub, args) {
+    console.log('esto se imprime desde el contrato');
+    console.log('args', args);
+    console.log('stub', stub);
+
   }
 };
 
