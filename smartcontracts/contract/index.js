@@ -142,7 +142,7 @@ var ABstore = class {
     console.log('esto se imprime desde el contrato');
     console.log('args', args);
     console.log('stub', stub);
-
+    return { msg: "se ejecuto mi contrato" }
   }
 };
 
