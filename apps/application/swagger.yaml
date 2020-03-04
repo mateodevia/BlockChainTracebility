@@ -2,16 +2,16 @@
 #https://swagger.io/docs/specification/basic-structure/
 openapi: 3.0.0
 info:
-  title: My Sample API
-  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  title: Traceability API
+  description: API for tracing reporting events on the traceability blockchain.
   version: 0.0.1
 servers:
-  - url: http://localhost:3000/v1
+  - url: http://localhost:3000/
     description: API server
 paths:
   /api:
     get:
-      summary: Returns msg.
+      summary: get de prueba.
       description: Optional extended description in CommonMark or HTML.
       responses:
         '200':    # status code
@@ -23,7 +23,7 @@ paths:
                 properties:
                   type: msg
     post:
-      summary: Returns msg.
+      summary: post de prueba.
       description: Optional extended description in CommonMark or HTML.
       requestBody:
         content:
@@ -41,3 +41,825 @@ paths:
       responses:
         '200':
           description: OK
+  /consumidor/consumir:
+    post:
+      summary: Consumir un conjunto de TRUs.
+      description: Crea la Actividad de consumir los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  trus:
+                    type: array
+                    items:
+                      type: string
+            example:
+              trus: [1234, 5678]
+      responses:
+        '200':    # status code
+          description: TRUs consumidos exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+              example:
+                    msg: "TRUs consumidos exitosamente"
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Un TRU solo puede ser consumido una sola vez. Si uno o mas TRUs ya fueron consumidos no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUS no se encuentran bajo su custodia."
+        '406':    # status code
+          description: Un TRU solo puede ser consumido por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs ya fueron consumidos"
+  /productor/producir:
+    post:
+      summary: Producir un conjunto de TRUs.
+      description: Crea la Actividad de producir los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+
+                properties:
+                  ubicacion:
+                    type: object
+                    properties:
+                      lat:
+                        type: double
+                      lon:
+                        type: double
+                  trus:
+                    type: array
+                    items:
+                      type: object
+            example:
+              ubicacion:
+                lat: 74.5
+                lon: -73.12
+              trus:
+                - nombre: ACETAMINOFEN
+                  cantidad: 500g
+                - nombre: IBUPROFENO
+                  cantidad: 500mg
+      responses:
+        '200':    # status code
+          description: TRUs consumidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus_producidos:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                    trus_producidos: [1234, 5678]
+  /productor/transportar:
+    post:
+      summary: Transportar un TRU de una ubicacion greografica a otra.
+      description: Crea la Actividad de transportar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  trus:
+                    type: array
+                    items:
+                      type: object
+                  destino:
+                    type: object
+                    properties:
+                      lat:
+                        type: double
+                      lon:
+                        type: double
+            example:
+              trus:
+                - id: 12345
+                  nombre: manzana
+                  estado: normal
+              destino:
+                lat: 75.5
+                lon: -73.12
+      responses:
+        '200':    # status code
+          description: TRUs transportados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus_producidos:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                    trus_transportados: [1234, 5678]
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Un TRU solo puede ser transportado por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no estan bajo su custodia"
+  /productor/invalidar:
+    post:
+      summary: Consumir un conjunto de TRUs.
+      description: Crea la Actividad de invalidar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              trus:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    razon:
+                      type: string
+                    certificacion:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+            example:
+              trus:
+                - id: 12345
+                  razon: "Se vencio la fecha de caducidad"
+                  certificacion:
+                    url: "www.foto.com"
+      responses:
+        '200':    # status code
+          description: TRUs invalidados exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+              example:
+                    msg: "TRUs invalidados exitosamente"
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Si uno o mas TRUs no cumplen las condiciones para ser invalidados no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUS no cumplen las condiciones para ser invalidados."
+        '406':    # status code
+          description: Un TRU solo puede ser consumido por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no se encuentran bajo su custodia"
+  /transportador/transportar:
+    post:
+      summary: Transportar un TRU de una ubicacion greografica a otra.
+      description: Crea la Actividad de transportar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  trus:
+                    type: array
+                    items:
+                      type: object
+                  destino:
+                    type: object
+                    properties:
+                      lat:
+                        type: double
+                      lon:
+                        type: double
+            example:
+              trus:
+                - id: 12345
+                  nombre: manzana
+                  estado: normal
+              destino:
+                lat: 75.5
+                lon: -73.12
+      responses:
+        '200':    # status code
+          description: TRUs transportados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus_producidos:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                    trus_transportados: [1234, 5678]
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Un TRU solo puede ser transportado por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no estan bajo su custodia"
+  /transportador/invalidar:
+    post:
+      summary: Consumir un conjunto de TRUs.
+      description: Crea la Actividad de invalidar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              trus:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    razon:
+                      type: string
+                    certificacion:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+            example:
+              trus:
+                - id: 12345
+                  razon: "Se vencio la fecha de caducidad"
+                  certificacion:
+                    url: "www.foto.com"
+      responses:
+        '200':    # status code
+          description: TRUs invalidados exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+              example:
+                    msg: "TRUs invalidados exitosamente"
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Si uno o mas TRUs no cumplen las condiciones para ser invalidados no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUS no cumplen las condiciones para ser invalidados."
+        '406':    # status code
+          description: Un TRU solo puede ser consumido por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no se encuentran bajo su custodia"
+  /transformador/transformar:
+    post:
+      summary: Transformar un conjunto de TRUs.
+      description: Crea la Actividad de transformar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                trus_consumidos:
+                  type: array
+                  items:
+                    type: integer
+                trus_producidos:
+                  type: array
+                  items:
+                    type: object
+
+            example:
+              trus_consumidos: [1234]
+              trus_producidos:
+                - tipo: tronco
+                  cantidad: 50kg
+                - tipo: tronco
+                  conatidad: 50kg
+      responses:
+        '200':    # status code
+          description: TRUs transformados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus_producidos:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                    trus_transformados: [1234, 5678]
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs consumidos no existen"
+        '405':    # status code
+          description: Un conjunto determinado de TRUs solo pueden producir cierto tipo y cierta cantidad de TRUs. Si la transformacion no cumple con las reglas de negocio, no se realiza la transaccion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "No es posible generar el conjunto de TRUs producidos a partir de ese conjunto de TRUs consumidos"
+        '406':    # status code
+          description: Un TRU solo puede ser transformado por el actor que tenga custodia sobre el TRU. Si el transformador no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas de TRUs los consumidos no se encuentran bajo su custodia"
+  /distribuidor/transportar:
+    post:
+      summary: Transportar un TRU de una ubicacion greografica a otra.
+      description: Crea la Actividad de transportar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  trus:
+                    type: array
+                    items:
+                      type: object
+                  destino:
+                    type: object
+                    properties:
+                      lat:
+                        type: double
+                      lon:
+                        type: double
+            example:
+              trus:
+                - id: 12345
+                  nombre: manzana
+                  estado: normal
+              destino:
+                lat: 75.5
+                lon: -73.12
+      responses:
+        '200':    # status code
+          description: TRUs transportados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus_producidos:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                    trus_transportados: [1234, 5678]
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Un TRU solo puede ser transportado por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no estan bajo su custodia"
+  /distribuidor/invalidar:
+    post:
+      summary: Consumir un conjunto de TRUs.
+      description: Crea la Actividad de invalidar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              trus:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    razon:
+                      type: string
+                    certificacion:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+            example:
+              trus:
+                - id: 12345
+                  razon: "Se vencio la fecha de caducidad"
+                  certificacion:
+                    url: "www.foto.com"
+      responses:
+        '200':    # status code
+          description: TRUs invalidados exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+              example:
+                    msg: "TRUs invalidados exitosamente"
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Si uno o mas TRUs no cumplen las condiciones para ser invalidados no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUS no cumplen las condiciones para ser invalidados."
+        '406':    # status code
+          description: Un TRU solo puede ser consumido por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no se encuentran bajo su custodia"
+  /regulador/transportar:
+    post:
+      summary: Transportar un TRU de una ubicacion greografica a otra.
+      description: Crea la Actividad de transportar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: object
+                properties:
+                  trus:
+                    type: array
+                    items:
+                      type: object
+                  destino:
+                    type: object
+                    properties:
+                      lat:
+                        type: double
+                      lon:
+                        type: double
+            example:
+              trus:
+                - id: 12345
+                  nombre: manzana
+                  estado: normal
+              destino:
+                lat: 75.5
+                lon: -73.12
+      responses:
+        '200':    # status code
+          description: TRUs transportados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus_producidos:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                    trus_transportados: [1234, 5678]
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Un TRU solo puede ser transportado por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no estan bajo su custodia"
+  /regulador/invalidar:
+    post:
+      summary: Consumir un conjunto de TRUs.
+      description: Crea la Actividad de invalidar los TRUs pasados por parametro.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              trus:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    razon:
+                      type: string
+                    certificacion:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+            example:
+              trus:
+                - id: 12345
+                  razon: "Se vencio la fecha de caducidad"
+                  certificacion:
+                    url: "www.foto.com"
+      responses:
+        '200':    # status code
+          description: TRUs invalidados exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+              example:
+                    msg: "TRUs invalidados exitosamente"
+        '404':    # status code
+          description: Si uno o mas TRUs no existen no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no existen"
+        '405':    # status code
+          description: Si uno o mas TRUs no cumplen las condiciones para ser invalidados no se realiza ninguna de las operaciones.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUS no cumplen las condiciones para ser invalidados."
+        '406':    # status code
+          description: Un TRU solo puede ser consumido por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  err:
+                    type: string
+              example:
+                    err: "Uno o mas TRUs no se encuentran bajo su custodia"
+  /provenance:
+    get:
+      summary: Consultar la procedencia de un TRU.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              tru:
+                type: integer
+            example:
+              tru: 1234
+      responses:
+        '200':    # status code
+          description: Devuelve el conjunto de actividades que fueron necesarias para generar ese TRU.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+              example:
+                - actividad: "producir"
+                  ubicacion:
+                    lat: 73.54
+                    lon: -74.55
+                  trus_producidos: [9876, 5432, 1019]
+                - actividad: "transportar"
+                  ubicacion:
+                    lat: 73.64
+                    lon: -74.65
+                  trus_consumidos: [1019, 5678]
+                  trus_producidos: [1234, 5432, 1019]
+        '404':    # status code
+          description: El TRU no existe.
+          content:
+            application/json:
+              schema:
+                type: string
+              example:
+                err: "El TRU no existe"
+  /track:
+    get:
+      summary: Consultar los movimientos y el estado actual de un activo o de lo producido con dicho activo.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              tru:
+                type: integer
+            example:
+              tru: 1234
+      responses:
+        '200':    # status code
+          description: Devuelve el conjunto de actividades se se realizaron sobre un TRU o los TRUs producidos con ese activo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+              example:
+                - actividad: "transformar"
+                  trus_consumidos: [1234, 5678]
+                  trus_producidos: [1019, 5678]
+                - actividad: "transportar"
+                  ubicacion:
+                    lat: 73.64
+                    lon: -74.65
+                  trus_consumidos: [1019, 5678]
+                  trus_producidos: [1234, 5432, 1019]
+        '404':    # status code
+          description: El TRU no existe.
+          content:
+            application/json:
+              schema:
+                type: string
+              example:
+                err: "El TRU no existe"
