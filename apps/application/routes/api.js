@@ -5,6 +5,6 @@ let router = express.Router();
 const apiController = require('../controllers/apiController');
 
 router.get('/', apiController.get);
-router.post('/', apiController.post);
+router.get('/metodoPrueba', apiController.metodoPrueba);
 
 module.exports = router;

@@ -2,21 +2,19 @@
 
 const getGateway = require('../gateway/gateway');
 
-module.exports.get = (req, res) => {
+module.exports.metodoPrueba = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     const result = await contract.submitTransaction('metodoPrueba', 'a', 'b', 'c');
-    let response = JSON.parse(result.toString());
-    res.status(200).json(response);
+    res.status(200).json(result);
   });
 };
 
-module.exports.post = (req, res) => {
+module.exports.get = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     const result = await contract.submitTransaction('invoke', '1', '2', '3');
-    console.log(result);
     // let response = JSON.parse(result.toString());
-    res.status(200).json({ invoked: 'ok' });
+    res.status(200).json(result);
   });
 };
