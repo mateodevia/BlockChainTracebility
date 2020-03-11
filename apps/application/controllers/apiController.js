@@ -7,7 +7,9 @@ module.exports.metodoPrueba = (req, res) => {
     const contract = network.getContract('fabcar');
     console.log('llego al endpoint de metodoPrueba');
     const result = await contract.submitTransaction('metodoPrueba', 'a', 'b', 'c');
-    res.status(200).json(result);
+    console.log(result);
+    console.log(result.toString());
+    res.status(200).json(result.toJSON());
   });
 };
 
