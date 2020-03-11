@@ -9,8 +9,8 @@ module.exports.registrarProveedor = (req, res) => {
   let tipo = req.body.tipo;
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
-    let args = JSON.stringify([nombre, identificacion, tipo]);
-    console.log(args);
+    let args = JSON.stringify(['Cruz Verde', '12345', 'Distribuidor']);
+    console.log(args, typeof args);
     await contract.submitTransaction('registerActor', args);
     res.status(200).json({ msg: 'Proveedor registrado correctamente' });
   });
