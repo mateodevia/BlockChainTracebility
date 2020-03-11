@@ -3,6 +3,7 @@
 const getGateway = require('../gateway/gateway');
 
 module.exports.registrarProveedor = (req, res) => {
+  console.log("##### Regirstrar Proveedor ###");
   let nombre = req.body.nombre;
   let identificacion = req.body.identificacion;
   let tipo = req.body.tipo;
