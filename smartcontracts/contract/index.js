@@ -143,6 +143,59 @@ var ABstore = class {
     await stub.putState("Actividad", JSON.stringify({ fecha: "Hoy" }));
     return { msg: "se ejecuto mi contrato" }
   }
+
+  //args: [nombre, identificacion, tipo]
+  async registerActor(stub, args) {
+    let actor = {
+      nombre: args[0],
+      identificacion: [1],
+      tipo: [2]
+    }
+    await stub.putState(actor.identificacion, JSON.stringify(actor));
+    return "OK"
+  }
+
+  //args: [id, actor, ubicacion, trus_producidos]
+  async producir(stub, args) {
+    let id_actividad = args[0]
+    let actor = args[1]
+    let ubicacion = args[2]
+    let p_trus_producidos = args[3]
+    let trus_producidos = []
+    for (let i in p_trus_producidos) {
+      let tru = { ...p_trus_producidos[1] }
+      tru.id = id_actividad + "-" + i
+      tru.consumido = false
+      tru.dueños = [actor]
+      tru.producidoPor = id_actividad
+      trus_producidos.put(tru);
+      await stub.putState(tru.id, JSON.stringify(tru));
+    }
+
+    let actividad = {
+      type: "Actividad",
+      fecha: new Date(),
+      actor: args[1],
+      ubicacion: ubicacion,
+      consume: [],
+      produce: trus_producidos
+    }
+    await stub.putState(actividad.id, JSON.stringify(actividad));
+    return "OK"
+  }
+
+  //[trus, fuente, destino]
+  async crearTransaccion(stub, args) {
+    trus = args[0];
+    trusIds = trus.map(tru => tru.id);
+    let transaccion = {
+      trus: trusIds,
+      fuente: [1],
+      destino: [2]
+    }
+    await stub.putState(transaccion.identificacion, JSON.stringify(transaccion));
+    return "OK"
+  }
 };
 
 console.log('>>>>>>>>start');
