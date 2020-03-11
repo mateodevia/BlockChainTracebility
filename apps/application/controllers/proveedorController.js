@@ -11,7 +11,7 @@ module.exports.registrarProveedor = (req, res) => {
     const contract = network.getContract('fabcar');
     let args = JSON.stringify(['Cruz Verde', '12345', 'Distribuidor']);
     console.log(args, typeof args);
-    await contract.submitTransaction('registerActor', args);
+    await contract.submitTransaction('registerActor', '["Cruz Verde","12345","Distribuidor]');
     res.status(200).json({ msg: 'Proveedor registrado correctamente' });
   });
 };
