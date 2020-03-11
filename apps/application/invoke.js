@@ -3,7 +3,7 @@
 const getGateway = require('./gateway/gateway');
 
 let gate;
-getGateway.then(async({gateway, network}) => {
+getGateway.then(async ({ gateway, network }) => {
   gate = gateway;
   const contract = network.getContract('fabcar');
   await contract.submitTransaction('invoke', '1', '3', '1');
@@ -15,6 +15,6 @@ getGateway.then(async({gateway, network}) => {
     console.log(`Error processing transaction. ${error}`);
     console.log(error.stack);
   })
-  .finally(()=>{
+  .finally(() => {
     gate.disconnect();
   });
