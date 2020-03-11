@@ -140,8 +140,7 @@ var ABstore = class {
 
   async metodoPrueba(stub, args) {
     console.log('esto se imprime desde el contrato');
-    console.log('args', args);
-    console.log('stub', stub);
+    await stub.putState("Actividad", JSON.stringify({ fecha: "Hoy" }));
     return { msg: "se ejecuto mi contrato" }
   }
 };
