@@ -44,7 +44,10 @@ paths:
                   trus:
                     type: array
                     items:
-                      type: string
+                      type: object
+                      properties:
+                        id_type: string
+                        id: string
                   ubicacion:
                     type: object
                     properties:
@@ -53,7 +56,14 @@ paths:
                       lon:
                         type: double
             example:
-              trus: [1234, 5678]
+              trus:
+                - id_type: UPC
+                  id: 12345
+                - id_type: SKU
+                  id: 56789
+              ubicacion:
+                lat: 74.5
+                lon: -73.12
       responses:
         '200':    # status code
           description: TRUs consumidos exitosamente
@@ -109,7 +119,6 @@ paths:
           application/json:
             schema:
                 type: object
-
                 properties:
                   ubicacion:
                     type: object
