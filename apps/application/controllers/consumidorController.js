@@ -9,7 +9,7 @@ module.exports.consumir = (req, res) => {
   let actor = 123456;
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
-    let args = [id, actor, ubicacion, trus_consumidos];
+    let args = JSON.stringify([id, actor, ubicacion, trus_consumidos]);
     await contract.submitTransaction('consumir', args);
     res.status(200).json({ msg: 'Trus consumidos correctamente' });
   });
