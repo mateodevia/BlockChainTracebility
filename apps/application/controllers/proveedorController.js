@@ -3,7 +3,6 @@
 const getGateway = require('../gateway/gateway');
 
 module.exports.registrarProveedor = (req, res) => {
-  console.log('##### Registrar Proveedor ###');
   let nombre = req.body.nombre;
   let identificacion = req.body.identificacion;
   let tipo = req.body.tipo;
@@ -11,7 +10,6 @@ module.exports.registrarProveedor = (req, res) => {
     const contract = network.getContract('fabcar');
     let args = JSON.stringify([nombre, identificacion, tipo]);
     await contract.submitTransaction('registerActor', args);
-    console.log('hizo la transaccion');
     res.status(200).json({ msg: 'Proveedor registrado correctamente' });
   });
 };

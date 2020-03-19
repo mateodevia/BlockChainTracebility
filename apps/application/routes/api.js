@@ -5,7 +5,6 @@ let router = express.Router();
 const apiController = require('../controllers/apiController');
 const proveedor = require('../controllers/proveedorController');
 
-router.get('/', apiController.get);
 router.get('/metodoPrueba', apiController.metodoPrueba);
 router.post('/proveedor', proveedor.registrarProveedor);
 

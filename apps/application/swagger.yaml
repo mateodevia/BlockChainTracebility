@@ -9,38 +9,6 @@ servers:
   - url: http://localhost:3000/
     description: API server
 paths:
-  /api:
-    get:
-      summary: get de prueba.
-      description: Optional extended description in CommonMark or HTML.
-      responses:
-        '200':    # status code
-          description: Some description
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  type: msg
-    post:
-      summary: post de prueba.
-      description: Optional extended description in CommonMark or HTML.
-      requestBody:
-        content:
-          application/json:
-            schema:      # Request body contents
-              type: object
-              properties:
-                value:
-                  type: integer
-                issuer:
-                  type: string
-              example:   # Sample object
-                value: 10
-                issuer: MagnetoCorp
-      responses:
-        '200':
-          description: OK
   /consumidor/consumir:
     post:
       summary: Consumir un conjunto de TRUs.
