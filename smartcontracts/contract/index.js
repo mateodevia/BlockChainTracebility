@@ -162,13 +162,12 @@ var ABstore = class {
     //revisar que los trus existan
     //revisar que el autor tenga custodia de los trus
     let actividad = {
-      id: argsJson[0],
       actor: argsJson[1],
       tipo: "CONSUMIR",
       consume: argsJson[3],
       produce: []
     }
-    await stub.putState(actividad.id, JSON.stringify(actividad));
+    await stub.putState(argsJson[0], JSON.stringify(actividad));
     return "OK"
   }
 
