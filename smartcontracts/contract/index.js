@@ -146,7 +146,7 @@ var ABstore = class {
 
   //args: [nombre, identificacion, tipo]
   async registerActor(stub, args) {
-    argsJson = JSON.parse(args[0]);
+    let argsJson = JSON.parse(args[0]);
     let actor = {
       nombre: argsJson[0],
       identificacion: argsJson[1],
