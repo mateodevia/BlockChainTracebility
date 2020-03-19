@@ -138,10 +138,11 @@ var ABstore = class {
     return Avalbytes;
   }
 
-  async metodoPrueba(stub, args) {
-    console.log('esto se imprime desde el contrato');
-    await stub.putState("Actividad", JSON.stringify({ fecha: "Hoy" }));
-    return { msg: "se ejecuto mi contrato" }
+  //args: [tru_id]
+  async getTruById(stub, args) {
+    let tru = await stub.getState(args[0]);
+    console.log("TRU en el contrato", tru);
+    return tru
   }
 
   //args: [nombre, identificacion, tipo]
