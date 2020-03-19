@@ -30,8 +30,6 @@ paths:
                 nombre: "Propilco"
                 identificacion: "12345"
                 tipo: "PRODUCTOR"
-
-
   /consumidor/consumir:
     post:
       summary: Consumir un conjunto de TRUs.
@@ -47,6 +45,13 @@ paths:
                     type: array
                     items:
                       type: string
+                  ubicacion:
+                    type: object
+                    properties:
+                      lat:
+                        type: double
+                      lon:
+                        type: double
             example:
               trus: [1234, 5678]
       responses:
