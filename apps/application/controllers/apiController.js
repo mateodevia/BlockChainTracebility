@@ -18,7 +18,7 @@ module.exports.getTruById = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     let response = await contract.evaluateTransaction('getTruById', req.body.id.toString());
-    console.log(response);
+    console.log(response.toString());
     res.status(200).json({ msg: 'Actor registrado correctamente' });
   });
 };
