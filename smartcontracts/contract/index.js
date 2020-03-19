@@ -156,6 +156,16 @@ var ABstore = class {
     return "OK"
   }
 
+  //args: [id, actor, ubicacion, consumidos]
+  async consumir(stub, args) {
+    let argsJson = JSON.parse(args[0]);
+    //revisar que los trus existan
+    //revisar que el autor tenga custodia de los trus
+    let actividad = { id: argsJson[0], tipo: "CONSUMIR", consume: argsJson[3], produce: [] }
+    await stub.putState(actividad.id, JSON.stringify(actividad));
+    return "OK"
+  }
+
   //args: [id, actor, ubicacion, trus_producidos]
   async producir(stub, args) {
     let id_actividad = args[0]
