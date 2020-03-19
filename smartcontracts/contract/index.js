@@ -163,6 +163,7 @@ var ABstore = class {
     //revisar que el autor tenga custodia de los trus
     let actividad = {
       id: argsJson[0],
+      actor: argsJson[1],
       tipo: "CONSUMIR",
       consume: argsJson[3],
       produce: []
