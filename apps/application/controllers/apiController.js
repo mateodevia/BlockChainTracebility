@@ -18,6 +18,6 @@ module.exports.getTruById = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     let response = await contract.evaluateTransaction('getTruById', req.body.id.toString());
-    res.status(200).json(response.toString());
+    res.status(200).json(JSON.parse(response.toString()));
   });
 };
