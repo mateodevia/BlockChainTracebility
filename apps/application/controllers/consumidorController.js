@@ -1,6 +1,7 @@
 'use strict';
 
 const getGateway = require('../gateway/gateway');
+const network = require('fabric-network');
 
 module.exports.consumir = (req, res) => {
   let id = '12345';
@@ -11,6 +12,7 @@ module.exports.consumir = (req, res) => {
     const contract = network.getContract('fabcar');
     let args = JSON.stringify([id, actor, ubicacion, trus_consumidos]);
     await contract.submitTransaction('consumir', args);
+    console.log('ACAAAA', network.Wallet);
     res.status(200).json({ msg: 'Trus consumidos correctamente' });
   });
 };
