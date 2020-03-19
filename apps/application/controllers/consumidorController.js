@@ -2,11 +2,15 @@
 
 const getGateway = require('../gateway/gateway');
 
-module.exports.get = (req, res) => {
+module.exports.consumir = (req, res) => {
+  let id = 12345;
+  let trus_consumidos = req.body.trus;
+  let ubicacion = req.body.ubicacion;
+  let actor = 123456;
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
-    const result = await contract.submitTransaction('metodoPrueba', 'a', 'b', 'c');
-    let response = JSON.parse(result.toString());
-    res.status(200).json(response);
+    let args = [id, actor, ubicacion, trus_consumidos];
+    await contract.submitTransaction('consumir', args);
+    res.status(200).json({ msg: 'Trus consumidos correctamente' });
   });
 };
