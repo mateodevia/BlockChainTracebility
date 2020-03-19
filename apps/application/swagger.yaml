@@ -9,6 +9,29 @@ servers:
   - url: http://localhost:3000/
     description: API server
 paths:
+  /actor:
+    post:
+      summary: Crear un actor.
+      description: Crea un actor del tipo que se pase por parámetro.
+      requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nombre:
+                    type: string
+                  identificacion:
+                    type: string
+                  tipo:
+                    type: string
+              example:
+                nombre: "Propilco"
+                identificacion: "12345"
+                tipo: "PRODUCTOR"
+
+
   /consumidor/consumir:
     post:
       summary: Consumir un conjunto de TRUs.
