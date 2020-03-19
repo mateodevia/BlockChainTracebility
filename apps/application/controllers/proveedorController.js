@@ -12,6 +12,7 @@ module.exports.registrarProveedor = (req, res) => {
     let args = JSON.stringify(['Cruz Verde', '12345', 'Distribuidor']);
     console.log(args, typeof args);
     await contract.submitTransaction('registerActor', '["Cruz Verde","12345","Distribuidor"]');
+    console.log("hizo la transaccion");
     res.status(200).json({ msg: 'Proveedor registrado correctamente' });
   });
 };
