@@ -164,15 +164,20 @@ var ABstore = class {
     let trus_consumidos = [];
     for (let i in p_trus_consumidos) {
       let tru = await stub.getState(p_trus_consumidos[i].id);
-      console.log(tru.toString().length);
-      tru = JSON.parse(tru.toString());
       //revisar que el tru exista
-      //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
-      if (tru && tru.dueños[tru.dueños.length - 1] === actor) {
-        tru.consumido = true;
-        tru.consumidoPor = id_actividad;
-        trus_consumidos.push(tru);
-        stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
+      if (tru.toString().length !== 0) {
+        tru = JSON.parse(tru.toString());
+        //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
+        if (tru.dueños[tru.dueños.length - 1] === actor) {
+          tru = JSON.parse(tru.toString());
+          tru.consumido = true;
+          tru.consumidoPor = id_actividad;
+          trus_consumidos.push(tru);
+          stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
+        }
+        else {
+          throw `El TRU ${p_trus_consumidos[i].id} no esta bajo su custodia`;
+        }
       }
       else {
         throw `El TRU ${p_trus_consumidos[i].id} no existe`;
