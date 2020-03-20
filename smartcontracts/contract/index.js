@@ -164,6 +164,7 @@ var ABstore = class {
     let trus_consumidos = [];
     for (let i in p_trus_consumidos) {
       let tru = await stub.getState(p_trus_consumidos[i].id);
+      console.log(tru);
       tru = JSON.parse(tru.toString());
       //revisar que el tru exista
       //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
@@ -181,6 +182,8 @@ var ABstore = class {
     let actividad = {
       actor: actor,
       tipo: "CONSUMIR",
+      ubicacion: ubicacion,
+      fecha: fecha,
       consume: trus_consumidos,
       produce: []
     };
@@ -218,7 +221,7 @@ var ABstore = class {
       produce: trus_producidos
     }
     await stub.putState(id_actividad, JSON.stringify(actividad));
-    let rpta = {trus_producidos: ids};
+    let rpta = { trus_producidos: ids };
     return rpta;
   }
 
