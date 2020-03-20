@@ -138,7 +138,7 @@ var ABstore = class {
   async getTruById(stub, args) {
     let tru = await stub.getState(args[0]);
     console.log("TRU en el contrato", tru);
-    return tru
+    return tru;
   }
 
   //args: [nombre, identificacion, tipo]
@@ -148,9 +148,9 @@ var ABstore = class {
       nombre: argsJson[0],
       identificacion: argsJson[1],
       tipo: argsJson[2]
-    }
+    };
     await stub.putState(actor.identificacion, JSON.stringify(actor));
-    return "OK"
+    return "OK";
   }
 
   //args: [id, actor, ubicacion, consumidos]
@@ -163,39 +163,40 @@ var ABstore = class {
       tipo: "CONSUMIR",
       consume: argsJson[3],
       produce: []
-    }
+    };
     await stub.putState(argsJson[0], JSON.stringify(actividad));
-    return "OK"
+    return "OK";
   }
 
-  //args: [id, actor, ubicacion, trus_producidos]
+  //args: [id, actor, ubicacion, trus_producidos, fecha]
   async producir(stub, args) {
     let argsJson = JSON.parse(args[0]);
-    let id_actividad = argsJson[0]
-    let actor = argsJson[1]
-    let ubicacion = argsJson[2]
-    let p_trus_producidos = argsJson[3]
-    let trus_producidos = []
+    let id_actividad = argsJson[0];
+    let actor = argsJson[1];
+    let ubicacion = argsJson[2];
+    let p_trus_producidos = argsJson[3];
+    let fecha = argsJson[4];
+    let trus_producidos = [];
     for (let i in p_trus_producidos) {
-      let tru = { ...p_trus_producidos[1] }
-      tru.id = id_actividad + "-" + i
-      tru.consumido = false
-      tru.dueños = [actor]
-      tru.producidoPor = id_actividad
+      let tru = { ...p_trus_producidos[1] };
+      tru.tipo = "TRU";
+      tru.consumido = false;
+      tru.dueños = [actor];
+      tru.producidoPor = id_actividad;
       trus_producidos.push(tru);
-      await stub.putState(tru.id, JSON.stringify(tru));
+      await stub.putState(id_actividad + "-" + i, JSON.stringify(tru));
     }
 
     let actividad = {
       tipo: "CONSUMIR",
-      fecha: new Date(),
+      fecha: fecha,
       actor: actor,
       ubicacion: ubicacion,
       consume: [],
       produce: trus_producidos
     }
     await stub.putState(id_actividad, JSON.stringify(actividad));
-    return "OK"
+    return "OK";
   }
 
   //[trus, fuente, destino]
