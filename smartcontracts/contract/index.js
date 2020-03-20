@@ -164,15 +164,15 @@ var ABstore = class {
     let trus_consumidos = [];
     for (let i in p_trus_consumidos) {
       let tru = await stub.getState(p_trus_consumidos[i].id);
-      tru = tru.toString();
+      tru = JSON.parse(tru.toString());
       //revisar que el tru exista
       //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
-      console.log("El TRU!!!", tru);
+      console.log("El TRU!!!", typeof tru, tru.dueños);
       if (tru && tru.dueños[tru.dueños.length - 1] === actor) {
         tru.consumido = true;
         tru.consumidoPor = id_actividad;
         trus_consumidos.push(tru);
-        stub.putState(tru.id, JSON.stringify(tru));
+        stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
       }
       else {
         throw `El TRU ${p_trus_consumidos[i].id} no existe`;
