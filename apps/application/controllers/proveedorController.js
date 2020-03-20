@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 'use strict';
 
 const getGateway = require('../gateway/gateway');
@@ -13,6 +14,10 @@ module.exports.producir = (req, res) => {
     const contract = network.getContract('fabcar');
     let args = JSON.stringify([id, actor, ubicacion, trus_producidos, fecha]);
     await contract.submitTransaction('producir', args);
-    res.status(200).json("OK");
+    let rpta = [];
+    for (let i in trus_producidos) {
+      rpta.push(id + '-' + i);
+    }
+    res.status(200).json(rpta);
   });
 };

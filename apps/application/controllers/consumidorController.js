@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 'use strict';
 
 const getGateway = require('../gateway/gateway');
@@ -11,7 +12,12 @@ module.exports.consumir = (req, res) => {
     let actor = gateway.client._userContext._identity._certificate;
     const contract = network.getContract('fabcar');
     let args = JSON.stringify([id, actor, ubicacion, trus_consumidos]);
-    await contract.submitTransaction('consumir', args);
-    res.status(200).json({ msg: 'Trus consumidos correctamente' });
+    try {
+      await contract.submitTransaction('consumir', args);
+      res.status(200).json({ msg: 'Trus consumidos correctamente' });
+    }
+    catch (err) {
+      res.status(500).json(err);
+    }
   });
 };
