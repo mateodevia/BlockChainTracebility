@@ -9,5 +9,6 @@ const proveedor = require('../controllers/proveedorController');
 router.get('/tru/', apiController.getTruById);
 router.post('/actor', apiController.registrarActor);
 router.post('/consumidor/consumir', consumidor.consumir);
+router.post('/productor/producir', proveedor.producir);
 
 module.exports = router;

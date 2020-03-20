@@ -21,3 +21,15 @@ module.exports.getTruById = (req, res) => {
     res.status(200).json(JSON.parse(response.toString()));
   });
 };
+
+module.exports.crearTransaccion = (req, res) => {
+  let trus = req.body.trus;
+  let fuente = req.body.fuente;
+  let destino = req.body.destino;
+  return getGateway.then(async ({ gateway, network }) => {
+    const contract = network.getContract('fabcar');
+    let args = [trus, fuente, destino];
+    await contract.submitTransaction('registerActor', args);
+    res.status(200).json({ msg: 'Crear transaccion' });
+  });
+};

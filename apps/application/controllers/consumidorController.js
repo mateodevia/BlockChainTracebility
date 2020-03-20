@@ -1,7 +1,6 @@
 'use strict';
 
 const getGateway = require('../gateway/gateway');
-const fabric_network = require('fabric-network');
 const { v1 } = require('uuid');
 
 module.exports.consumir = (req, res) => {

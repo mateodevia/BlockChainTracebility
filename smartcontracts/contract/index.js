@@ -41,7 +41,6 @@ var ABstore = class {
       return shim.error(err);
     }
   }
-
   async Invoke(stub) {
     let ret = stub.getFunctionAndParameters();
     console.info(ret);
@@ -58,7 +57,6 @@ var ABstore = class {
       return shim.error(err);
     }
   }
-
   async invoke(stub, args) {
     if (args.length != 3) {
       throw new Error('Incorrect number of arguments. Expecting 3');
@@ -102,7 +100,6 @@ var ABstore = class {
     await stub.putState(B, Buffer.from(Bval.toString()));
 
   }
-
   // Deletes an entity from state
   async delete(stub, args) {
     if (args.length != 1) {
@@ -114,7 +111,6 @@ var ABstore = class {
     // Delete the key from the state in ledger
     await stub.deleteState(A);
   }
-
   // query callback representing the query of a chaincode
   async query(stub, args) {
     if (args.length != 1) {
@@ -174,10 +170,11 @@ var ABstore = class {
 
   //args: [id, actor, ubicacion, trus_producidos]
   async producir(stub, args) {
-    let id_actividad = args[0]
-    let actor = args[1]
-    let ubicacion = args[2]
-    let p_trus_producidos = args[3]
+    let argsJson = JSON.parse(args[0]);
+    let id_actividad = argsJson[0]
+    let actor = argsJson[1]
+    let ubicacion = argsJson[2]
+    let p_trus_producidos = argsJson[3]
     let trus_producidos = []
     for (let i in p_trus_producidos) {
       let tru = { ...p_trus_producidos[1] }
@@ -190,14 +187,14 @@ var ABstore = class {
     }
 
     let actividad = {
-      type: "Actividad",
+      tipo: "CONSUMIR",
       fecha: new Date(),
-      actor: args[1],
+      actor: actor,
       ubicacion: ubicacion,
       consume: [],
       produce: trus_producidos
     }
-    await stub.putState(actividad.id, JSON.stringify(actividad));
+    await stub.putState(id_actividad, JSON.stringify(actividad));
     return "OK"
   }
 
