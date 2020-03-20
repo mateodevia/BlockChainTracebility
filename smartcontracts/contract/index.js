@@ -182,7 +182,7 @@ var ABstore = class {
       tru.consumido = false
       tru.dueños = [actor]
       tru.producidoPor = id_actividad
-      trus_producidos.put(tru);
+      trus_producidos.push(tru);
       await stub.putState(tru.id, JSON.stringify(tru));
     }
 
