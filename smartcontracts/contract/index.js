@@ -163,7 +163,7 @@ var ABstore = class {
     let fecha = argsJson[4];
     let trus_consumidos = [];
     for (let i in p_trus_consumidos) {
-      let tru = this.getTruById(p_trus_producidos[1].id);
+      let tru = getTruById(p_trus_producidos[1].id);
       //revisar que el tru exista
       //revisar que el ultimo due;o del tru sea el mismo actor que va a realizar la actividad
       if (tru && tru.dueños[trus.dueños.length - 1] === actor) {
