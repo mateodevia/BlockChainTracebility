@@ -167,7 +167,7 @@ var ABstore = class {
       tru = tru.toString();
       //revisar que el tru exista
       //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
-      console.log(tru);
+      console.log("El TRU!!!", tru);
       if (tru && tru.dueños[tru.dueños.length - 1] === actor) {
         tru.consumido = true;
         tru.consumidoPor = id_actividad;
