@@ -141,6 +141,18 @@ var ABstore = class {
     return tru;
   }
 
+  //args: [sku]
+  async getTruBySku(stub, args) {
+    let query = {
+      selector: {
+        sku: { $eq: args[0] }
+      }
+    }
+    let tru = await stub.getQueryResult(query);
+    tru.id = args[0];
+    return tru;
+  }
+
   //args: [nombre, identificacion, tipo]
   async registerActor(stub, args) {
     let argsJson = JSON.parse(args[0]);
