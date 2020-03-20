@@ -168,8 +168,7 @@ var ABstore = class {
       if (tru.toString().length !== 0) {
         tru = JSON.parse(tru.toString());
         //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
-        if (tru.dueños[tru.dueños.length - 1] === actor) {
-          tru = JSON.parse(tru.toString());
+	if (tru.dueños[tru.dueños.length - 1] === actor) {
           tru.consumido = true;
           tru.consumidoPor = id_actividad;
           trus_consumidos.push(tru);

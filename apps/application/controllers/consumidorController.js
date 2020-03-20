@@ -17,7 +17,7 @@ module.exports.consumir = (req, res) => {
       res.status(200).json({ msg: 'Trus consumidos correctamente' });
     }
     catch (err) {
-      res.status(500).json(err);
+      res.status(500).json(err.endorsements[0].message);
     }
   });
 };
