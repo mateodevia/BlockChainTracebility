@@ -168,11 +168,16 @@ var ABstore = class {
       if (tru.toString().length !== 0) {
         tru = JSON.parse(tru.toString());
         //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
-	if (tru.dueños[tru.dueños.length - 1] === actor) {
-          tru.consumido = true;
-          tru.consumidoPor = id_actividad;
-          trus_consumidos.push(tru);
-          stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
+        if (tru.dueños[tru.dueños.length - 1] === actor) {
+          if (!tru.consumido) {
+            tru.consumido = true;
+            tru.consumidoPor = id_actividad;
+            trus_consumidos.push(tru);
+            stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
+          }
+          else {
+            throw `El TRU ${p_trus_consumidos[i].id} ya fue consumido`;
+          }
         }
         else {
           throw `El TRU ${p_trus_consumidos[i].id} no esta bajo su custodia`;
