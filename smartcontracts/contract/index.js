@@ -167,7 +167,6 @@ var ABstore = class {
       tru = JSON.parse(tru.toString());
       //revisar que el tru exista
       //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
-      console.log("El TRU!!!", typeof tru, tru.dueños);
       if (tru && tru.dueños[tru.dueños.length - 1] === actor) {
         tru.consumido = true;
         tru.consumidoPor = id_actividad;
@@ -220,8 +219,7 @@ var ABstore = class {
     }
     await stub.putState(id_actividad, JSON.stringify(actividad));
     let rpta = {trus_producidos: ids};
-    console.log("ACA", rpta);
-    return "OK";
+    return rpta;
   }
 
   //[trus, fuente, destino]
