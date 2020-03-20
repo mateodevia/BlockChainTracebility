@@ -219,7 +219,9 @@ var ABstore = class {
       produce: trus_producidos
     }
     await stub.putState(id_actividad, JSON.stringify(actividad));
-    return JSON.stringify({ trus_producidos: ids });
+    let rpta = {trus_producidos: ids};
+    console.log("ACA", rpta);
+    return "OK";
   }
 
   //[trus, fuente, destino]
