@@ -86,7 +86,7 @@ paths:
                   err:
                     type: string
               example:
-                    err: "Uno o mas TRUs no existen"
+                    err: "El TRU 12345 no existe"
         '405':    # status code
           description: Un TRU solo puede ser consumido una sola vez. Si uno o mas TRUs ya fueron consumidos no se realiza ninguna de las operaciones.
           content:
@@ -97,7 +97,7 @@ paths:
                   err:
                     type: string
               example:
-                    err: "Uno o mas TRUS no se encuentran bajo su custodia."
+                    err: "El TRU 12345 no esta bajo su custodia"
         '406':    # status code
           description: Un TRU solo puede ser consumido por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
           content:
@@ -108,7 +108,7 @@ paths:
                   err:
                     type: string
               example:
-                    err: "Uno o mas TRUs ya fueron consumidos"
+                    err: "El TRU 12345 ya fue consumido"
   /productor/producir:
     post:
       summary: Producir un conjunto de TRUs.
