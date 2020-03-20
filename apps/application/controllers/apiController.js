@@ -29,7 +29,7 @@ module.exports.crearTransaccion = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     let args = [trus, fuente, destino];
-    await contract.submitTransaction('registerActor', args);
+    await contract.evaluateTransaction('registerActor', args);
     res.status(200).json({ msg: 'Crear transaccion' });
   });
 };

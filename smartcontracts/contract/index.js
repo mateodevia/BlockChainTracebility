@@ -198,6 +198,7 @@ var ABstore = class {
     let p_trus_producidos = argsJson[3];
     let fecha = argsJson[4];
     let trus_producidos = [];
+    let ids = [];
     for (let i in p_trus_producidos) {
       let tru = { ...p_trus_producidos[i] };
       tru.tipo = "TRU";
@@ -205,6 +206,7 @@ var ABstore = class {
       tru.dueños = [actor];
       tru.producidoPor = id_actividad;
       trus_producidos.push(tru);
+      ids.push(id_actividad + "-" + i)
       stub.putState(id_actividad + "-" + i, JSON.stringify(tru));
     }
 
@@ -217,7 +219,7 @@ var ABstore = class {
       produce: trus_producidos
     }
     await stub.putState(id_actividad, JSON.stringify(actividad));
-    return "OK";
+    return { trus_producidos: ids };
   }
 
   //[trus, fuente, destino]
