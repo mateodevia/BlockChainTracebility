@@ -137,7 +137,7 @@ var ABstore = class {
   //args: [tru_id]
   async getTruById(stub, args) {
     let tru = await stub.getState(args[0]);
-    console.log("TRU en el contrato", tru);
+    tru.id = args[0];
     return tru;
   }
 
@@ -153,15 +153,34 @@ var ABstore = class {
     return "OK";
   }
 
-  //args: [id, actor, ubicacion, consumidos]
+  //args: [id, actor, ubicacion, consumidos, fecha]
   async consumir(stub, args) {
     let argsJson = JSON.parse(args[0]);
-    //revisar que los trus existan
-    //revisar que el autor tenga custodia de los trus
+    let id_actividad = argsJson[0];
+    let actor = argsJson[1];
+    let ubicacion = argsJson[2];
+    let p_trus_consumidos = argsJson[3];
+    let fecha = argsJson[4];
+    let trus_consumidos = [];
+    for (let i in p_trus_consumidos) {
+      let tru = this.getTruById(p_trus_producidos[1].id);
+      //revisar que el tru exista
+      //revisar que el ultimo due;o del tru sea el mismo actor que va a realizar la actividad
+      if (tru && tru.dueños[trus.dueños.length - 1] === actor) {
+        tru.consumido = true;
+        tru.consumidoPor = id_actividad;
+        trus_consumidos.push(tru);
+        stub.putState(tru.id, JSON.stringify(tru));
+      }
+      else {
+        throw `El TRU ${p_trus_producidos[1].id} no existe`;
+      }
+    }
+
     let actividad = {
-      actor: argsJson[1],
+      actor: actor,
       tipo: "CONSUMIR",
-      consume: argsJson[3],
+      consume: trus_consumidos,
       produce: []
     };
     await stub.putState(argsJson[0], JSON.stringify(actividad));
@@ -184,7 +203,7 @@ var ABstore = class {
       tru.dueños = [actor];
       tru.producidoPor = id_actividad;
       trus_producidos.push(tru);
-      await stub.putState(id_actividad + "-" + i, JSON.stringify(tru));
+      stub.putState(id_actividad + "-" + i, JSON.stringify(tru));
     }
 
     let actividad = {
