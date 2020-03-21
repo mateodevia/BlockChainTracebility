@@ -175,24 +175,25 @@ var ABstore = class {
   //[id, trus, fuente, destino, fecha]
   async crearTransaccion(stub, args) {
     let argsJson = JSON.parse(args[0]);
-    trusIds = argsJson[1].map(tru => tru.id);
+    let trus = argsJson[1];
     for (let i in trus) {
       let tru = await stub.getState(trus[i]);
       //revisar que el TRU exista
       if (tru.toString().length === 0) {
         throw `El TRU ${trus[i]} no existe`;
       }
+      tru = JSON.parse(tru.toString());
       //revisar que el TRU le pertenezca al dueño
       if (!tru.dueños[tru.dueños.length - 1] === argsJson[2]) {
         throw `El TRU ${trus[i]} no pertenece al actor origen. No se pueden realizar transacciones sobre TRUs que no esten bajo su custodia.`;
       }
       //revisar que el TRU no haya sido consumido
-      if (!tru.consumido) {
+      if (tru.consumido) {
         throw `El TRU ${trus[i]} ya esta consumido. No se pueden realiza transacciones sobre TRUs ya consumidos.`;
       }
     }
     let transaccion = {
-      trus: trusIds,
+      trus: trus,
       fuente: argsJson[2],
       destino: argsJson[3],
       fecha: argsJson[4],

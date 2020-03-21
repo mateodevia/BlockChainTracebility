@@ -65,14 +65,14 @@ module.exports.crearTransaccion = (req, res) => {
   let fecha = new Date();
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
-    let args = [id, trus, fuente, destino, fecha];
+    let args = JSON.stringify([id, trus, fuente, destino, fecha]);
     try {
-      await contract.evaluateTransaction('registerActor', args);
+      await contract.submitTransaction('crearTransaccion', args);
       res.status(200).json({ msg: `La transacción se guardó con codigo de identificacion: ${id}` });
     }
     catch (err) {
       console.log(err.message.substring(90, 98));
-      if (err.message.substring(90, 98)) {
+      if (err.message.substring(90, 98)==="no existe") {
         res.status(404).json({ error: err.message });
       }
       else {
