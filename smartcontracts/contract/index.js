@@ -149,8 +149,8 @@ var ABstore = class {
       }
     }
     let tru = await stub.getQueryResult(JSON.stringify(query));
-    console.log(tru);
     tru.id = args[0];
+    console.log(tru);
     return tru;
   }
 
