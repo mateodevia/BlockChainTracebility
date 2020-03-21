@@ -24,7 +24,7 @@ module.exports.getTruById = (req, res) => {
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {
-      res.status(404).json(err.endorsements[0].message);
+      res.status(404).json(err.message);
     }
   });
 };
