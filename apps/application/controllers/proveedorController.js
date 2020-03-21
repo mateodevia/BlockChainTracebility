@@ -18,6 +18,6 @@ module.exports.producir = (req, res) => {
     for (let i in trus_producidos) {
       rpta.push(id + '-' + i);
     }
-    res.status(200).json(rpta);
+    res.status(200).json({ trus_producidos: rpta });
   });
 };

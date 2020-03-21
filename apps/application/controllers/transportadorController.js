@@ -1,12 +1,33 @@
+/* eslint-disable linebreak-style */
 'use strict';
 
 const getGateway = require('../gateway/gateway');
+const { v1 } = require('uuid');
 
-module.exports.get = (req, res) => {
+module.exports.transportar = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
+    let id = v1();
+    let trus = req.body.trus;
+    let destino = req.body.destino;
+    let actor = gateway.client._userContext._identity._certificate;
+    let fecha = new Date();
     const contract = network.getContract('fabcar');
-    const result = await contract.submitTransaction('metodoPrueba', 'a', 'b', 'c');
-    let response = JSON.parse(result.toString());
-    res.status(200).json(response);
+    let args = JSON.stringify([id, trus, destino, actor, fecha]);
+    try {
+      await contract.submitTransaction('transportar', args);
+      let rpta = [];
+      for (let i in trus) {
+        rpta.push(id + '-' + i);
+      }
+      res.status(200).json({ trus_transportados: rpta });
+    }
+    catch (err) {
+      if (err.message.substring(90, 98) === 'no existe') {
+        res.status(404).json({ error: err.message });
+      }
+      else {
+        res.status(500).json({ error: err.message });
+      }
+    }
   });
 };

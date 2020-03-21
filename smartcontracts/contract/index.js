@@ -171,7 +171,6 @@ var ABstore = class {
     return tru;
   }
 
-
   //[id, trus, fuente, destino, fecha]
   async crearTransaccion(stub, args) {
     let argsJson = JSON.parse(args[0]);
@@ -294,6 +293,62 @@ var ABstore = class {
     await stub.putState(id_actividad, JSON.stringify(actividad));
     let rpta = { trus_producidos: ids };
     return rpta;
+  }
+
+  //args: [id, trus, destino, actor, fecha]
+  async transportar(stub, args) {
+    let argsJson = JSON.parse(args[0]);
+    let id_actividad = argsJson[0];
+    let trus = argsJson[1];
+    let destino = argsJson[2];
+    let actor = argsJson[3];
+    let fecha = argsJson[4];
+    let trus_consumidos = [];
+    let trus_producidos = [];
+
+    for (let i in trus) {
+      let tru = await stub.getState(trus[i]);
+      //revisar que el tru exista
+      if (tru.toString().length !== 0) {
+        tru = JSON.parse(tru.toString());
+        //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
+        if (tru.dueños[tru.dueños.length - 1] === actor) {
+          //revisar que el TRU no haya sido consumido
+          if (!tru.consumido) {
+            let nuevo_tru = { ...tru }
+            tru.consumido = true;
+            tru.consumidoPor = id_actividad;
+            trus_consumidos.push(tru);
+            stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
+            let nuevo_tru = { ...tru };
+            nuevo_tru.id = id_actividad + '-' + i;
+            nuevo_tru.ubicacion = destino;
+            trus_consumidos.push(tru)
+            trus_producidos.push(nuevo_tru);
+          }
+          else {
+            throw `El TRU ${p_trus_consumidos[i].id} ya fue consumido`;
+          }
+        }
+        else {
+          throw `El TRU ${p_trus_consumidos[i].id} no esta bajo su custodia`;
+        }
+      }
+      else {
+        throw `El TRU ${p_trus_consumidos[i].id} no existe`;
+      }
+    }
+
+    let actividad = {
+      actor: actor,
+      tipo: "TRANSPORTAR",
+      destino: destino,
+      fecha: fecha,
+      consume: trus_consumidos,
+      produce: trus_producidos
+    };
+    await stub.putState(argsJson[0], JSON.stringify(actividad));
+    return "OK";
   }
 };
 

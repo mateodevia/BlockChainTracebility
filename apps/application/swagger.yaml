@@ -216,9 +216,9 @@ paths:
               example:
                 trus: ["4a1676e0-6baa-11ea-9c54-fb4d043f96e3-0", "4a1676e0-6baa-11ea-9c54-fb4d043f96e3-1"]
                 origen: "Cartoflex"
-                tipo: "Canvan"
+                destino: "Canvan"
                 fecha: "2020-03-21T19:29:31.982Z"
-  /consumidor/consumir:
+  /actividad/consumir:
     post:
       summary: Consumir un conjunto de TRUs.
       description: Crea la Actividad de consumir los TRUs pasados por parametro.
@@ -297,7 +297,7 @@ paths:
                     type: string
               example:
                     err: "El TRU 12345 ya fue consumido"
-  /productor/producir:
+  /actividad/producir:
     post:
       summary: Producir un conjunto de TRUs.
       description: Crea la Actividad de producir los TRUs pasados por parametro.
@@ -342,7 +342,7 @@ paths:
                       type: integer
               example:
                     trus_producidos: [1234, 5678]
-  /productor/transportar:
+  /actividad/transportar:
     post:
       summary: Transportar un TRU de una ubicacion greografica a otra.
       description: Crea la Actividad de transportar los TRUs pasados por parametro.
@@ -397,7 +397,7 @@ paths:
                     type: string
               example:
                     err: "Uno o mas TRUs no existen"
-        '405':    # status code
+        '500':    # status code
           description: Un TRU solo puede ser transportado por el actor que tenga custodia sobre el TRU. Si el consumidor no tiene custodia sobre alguno de los TRUs no se realiza la operacion.
           content:
             application/json:
