@@ -148,7 +148,8 @@ var ABstore = class {
         sku: { $eq: args[0] }
       }
     }
-    let tru = await stub.getQueryResult(query);
+    let tru = await stub.getQueryResult(JSON.stringify(query));
+    console.log(tru);
     tru.id = args[0];
     return tru;
   }

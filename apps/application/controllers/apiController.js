@@ -1,3 +1,4 @@
+
 /* eslint-disable linebreak-style */
 'use strict';
 
@@ -27,6 +28,7 @@ module.exports.getTruBySku = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     let response = await contract.evaluateTransaction('getTruBySku', req.params.sku.toString());
+    console.log(response.toString());
     res.status(200).json(JSON.parse(response.toString()));
   });
 };
