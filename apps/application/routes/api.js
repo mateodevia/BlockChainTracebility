@@ -10,7 +10,7 @@ const proveedor = require('../controllers/proveedorController');
 router.get('/tru/id/:id', apiController.getTruById);
 router.get('/tru/sku/:sku', apiController.getTruBySku);
 router.post('/actor', apiController.registrarActor);
-router.post('/transaccion', apiController.transaccion);
+router.post('/transaccion', apiController.crearTransaccion);
 router.post('/consumidor/consumir', consumidor.consumir);
 router.post('/productor/producir', proveedor.producir);
 
