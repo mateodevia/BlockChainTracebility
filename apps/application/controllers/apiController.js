@@ -1,8 +1,8 @@
-
 /* eslint-disable linebreak-style */
 'use strict';
 
 const getGateway = require('../gateway/gateway');
+const { v1 } = require('uuid');
 
 module.exports.registrarActor = (req, res) => {
   let nombre = req.body.nombre;
@@ -24,7 +24,7 @@ module.exports.getTruById = (req, res) => {
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {
-      res.status(404).json(err.message);
+      res.status(404).json({ error: err.message });
     }
   });
 };
@@ -38,7 +38,7 @@ module.exports.getTruBySku = (req, res) => {
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {
-      res.status(404).json(err.endorsements[0].message);
+      res.status(404).json({ error: err.message });
     }
   });
 };
@@ -52,19 +52,32 @@ module.exports.getTruByUpc = (req, res) => {
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {
-      res.status(404).json(err.endorsements[0].message);
+      res.status(404).json({ error: err.message });
     }
   });
 };
 
 module.exports.crearTransaccion = (req, res) => {
+  let id = v1();
   let trus = req.body.trus;
   let fuente = req.body.fuente;
   let destino = req.body.destino;
+  let fecha = new Date();
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
-    let args = [trus, fuente, destino];
-    await contract.evaluateTransaction('registerActor', args);
-    res.status(200).json({ msg: 'Crear transaccion' });
+    let args = [id, trus, fuente, destino, fecha];
+    try {
+      await contract.evaluateTransaction('registerActor', args);
+      res.status(200).json({ msg: `La transacción se guardó con codigo de identificacion: ${id}` });
+    }
+    catch (err) {
+      console.log(err.message.substring(90, 98));
+      if (err.message.substring(90, 98)) {
+        res.status(404).json({ error: err.message });
+      }
+      else {
+        res.status(500).json({ error: err.message });
+      }
+    }
   });
 };
