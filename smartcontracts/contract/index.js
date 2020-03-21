@@ -195,7 +195,8 @@ var ABstore = class {
       trus: trusIds,
       fuente: argsJson[2],
       destino: argsJson[3],
-      fecha: argsJson[4]
+      fecha: argsJson[4],
+      tipo: "TRANSACCION"
     }
     await stub.putState(argsJson[0], JSON.stringify(transaccion));
     return "OK"
