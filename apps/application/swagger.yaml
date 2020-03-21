@@ -30,6 +30,194 @@ paths:
                 nombre: "Propilco"
                 identificacion: "12345"
                 tipo: "PRODUCTOR"
+  /tru/id/{tru_id}:
+    get:
+      summary: Consultar TRU.
+      description: Busca el TRU identificado con el id_tru pasado por parametro.
+      parameters:
+        - in: path
+          name: tru_id
+          required: true
+          schema:
+            type: string
+          description: El id del TRU que quiere ser consultado.
+      responses:
+          '200':    # status code
+            description: El TRU consultado
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    sku_actor:
+                      type: string
+                    upc:
+                      type: string
+                    consumido:
+                      type: boolean
+                    dueños:
+                      type: array
+                      items:
+                        type: string
+                    producido_por:
+                      type: string
+                example:
+                  tipo: "TRU"
+                  sku_actor: "1A2B3C"
+                  upc: "1234567890"
+                  consumido: false
+                  dueños: ["-----BEGIN CERTIFICATE-----\nMIICdzCCAh6gAwIBAgIUNFQQIos64XiHDwDsvjCHFzWuPyswCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIwMDMxMjIyMTEwMFoXDTIxMDMxMjIyMTYwMFowQjEwMA0G\nA1UECxMGY2xpZW50MAsGA1UECxMEb3JnMTASBgNVBAsTC2RlcGFydG1lbnQxMQ4w\nDAYDVQQDEwV1c2VyMzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABB/OS3pCjm7Y\ni6oJaJl/o82va1yW81jM+7izIF5WAYV0Y+8JYJuxpx5aO4rj/fKQX3X+go74jp1h\nfUZjeGnzHuWjgcswgcgwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwHQYD\nVR0OBBYEFPkKZ3nnLHH0VUBNDF7kzTVa1QJEMB8GA1UdIwQYMBaAFObjqw62v0e/\n4UFhreJ6w9HiqojcMGgGCCoDBAUGBwgBBFx7ImF0dHJzIjp7ImhmLkFmZmlsaWF0\naW9uIjoib3JnMS5kZXBhcnRtZW50MSIsImhmLkVucm9sbG1lbnRJRCI6InVzZXIz\nIiwiaGYuVHlwZSI6ImNsaWVudCJ9fTAKBggqhkjOPQQDAgNHADBEAiBRndgyLdUf\nLnyv91eBb+62oStRlTJXerfsBm7MBmJjnwIgQSvhY08inlKDcQ+06V1eSy5FXxyY\nVtqQfXOD2LWB2KI=\n-----END CERTIFICATE-----\n"]
+                  producido_por: "4a1676e0-6baa-11ea-9c54-fb4d043f96e3"
+                  cantidad: "10kg"
+                  indice_fluides: "90%"
+                  nombre: "Homopolimero"
+          '404':    # status code
+            description: Si el TRU no existe.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    err:
+                      type: string
+                example:
+                      err: "El TRU 4a1676e0-6baa-11ea-9c54-fb4d043f96e3-0 no existe"
+  /tru/sku/{sku}/{actor}:
+    get:
+      summary: Consultar TRU.
+      description: Busca el TRU mas reciente asociado al SKU pasado por parametro asignado por el actor pasado por parametro.
+      parameters:
+        - in: path
+          name: sku
+          required: true
+          schema:
+            type: string
+          description: El sku del TRU que quiere ser consultado.
+        - in: path
+          name: actor
+          required: true
+          schema:
+            type: string
+          description: El actor que asignó el SKU.
+      responses:
+          '200':    # status code
+            description: El TRU consultado
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    sku_actor:
+                      type: string
+                    upc:
+                      type: string
+                    consumido:
+                      type: boolean
+                    dueños:
+                      type: array
+                      items:
+                        type: string
+                    producido_por:
+                      type: string
+                example:
+                  tipo: "TRU"
+                  sku_actor: "1A2B3C"
+                  upc: "1234567890"
+                  consumido: false
+                  dueños: ["-----BEGIN CERTIFICATE-----\nMIICdzCCAh6gAwIBAgIUNFQQIos64XiHDwDsvjCHFzWuPyswCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIwMDMxMjIyMTEwMFoXDTIxMDMxMjIyMTYwMFowQjEwMA0G\nA1UECxMGY2xpZW50MAsGA1UECxMEb3JnMTASBgNVBAsTC2RlcGFydG1lbnQxMQ4w\nDAYDVQQDEwV1c2VyMzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABB/OS3pCjm7Y\ni6oJaJl/o82va1yW81jM+7izIF5WAYV0Y+8JYJuxpx5aO4rj/fKQX3X+go74jp1h\nfUZjeGnzHuWjgcswgcgwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwHQYD\nVR0OBBYEFPkKZ3nnLHH0VUBNDF7kzTVa1QJEMB8GA1UdIwQYMBaAFObjqw62v0e/\n4UFhreJ6w9HiqojcMGgGCCoDBAUGBwgBBFx7ImF0dHJzIjp7ImhmLkFmZmlsaWF0\naW9uIjoib3JnMS5kZXBhcnRtZW50MSIsImhmLkVucm9sbG1lbnRJRCI6InVzZXIz\nIiwiaGYuVHlwZSI6ImNsaWVudCJ9fTAKBggqhkjOPQQDAgNHADBEAiBRndgyLdUf\nLnyv91eBb+62oStRlTJXerfsBm7MBmJjnwIgQSvhY08inlKDcQ+06V1eSy5FXxyY\nVtqQfXOD2LWB2KI=\n-----END CERTIFICATE-----\n"]
+                  producido_por: "4a1676e0-6baa-11ea-9c54-fb4d043f96e3"
+                  cantidad: "10kg"
+                  indice_fluides: "90%"
+                  nombre: "Homopolimero"
+          '404':    # status code
+            description: Si el TRU no existe.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    err:
+                      type: string
+                example:
+                      err: "No existen TRUs asociados al SKU: 1234567890 asignado por ese actor no existe"
+  /tru/upc/{upc}:
+    get:
+      summary: Consultar TRU.
+      description: Busca el TRU mas reciente asociado con el UPC pasado por parametro.
+      parameters:
+        - in: path
+          name: tru_id
+          required: true
+          schema:
+            type: string
+          description: El id del TRU que quiere ser consultado.
+      responses:
+          '200':    # status code
+            description: El TRU consultado
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    sku_actor:
+                      type: string
+                    upc:
+                      type: string
+                    consumido:
+                      type: boolean
+                    dueños:
+                      type: array
+                      items:
+                        type: string
+                    producido_por:
+                      type: string
+                example:
+                  tipo: "TRU"
+                  sku_actor: "1A2B3C"
+                  upc: "1234567890"
+                  consumido: false
+                  dueños: ["-----BEGIN CERTIFICATE-----\nMIICdzCCAh6gAwIBAgIUNFQQIos64XiHDwDsvjCHFzWuPyswCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIwMDMxMjIyMTEwMFoXDTIxMDMxMjIyMTYwMFowQjEwMA0G\nA1UECxMGY2xpZW50MAsGA1UECxMEb3JnMTASBgNVBAsTC2RlcGFydG1lbnQxMQ4w\nDAYDVQQDEwV1c2VyMzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABB/OS3pCjm7Y\ni6oJaJl/o82va1yW81jM+7izIF5WAYV0Y+8JYJuxpx5aO4rj/fKQX3X+go74jp1h\nfUZjeGnzHuWjgcswgcgwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwHQYD\nVR0OBBYEFPkKZ3nnLHH0VUBNDF7kzTVa1QJEMB8GA1UdIwQYMBaAFObjqw62v0e/\n4UFhreJ6w9HiqojcMGgGCCoDBAUGBwgBBFx7ImF0dHJzIjp7ImhmLkFmZmlsaWF0\naW9uIjoib3JnMS5kZXBhcnRtZW50MSIsImhmLkVucm9sbG1lbnRJRCI6InVzZXIz\nIiwiaGYuVHlwZSI6ImNsaWVudCJ9fTAKBggqhkjOPQQDAgNHADBEAiBRndgyLdUf\nLnyv91eBb+62oStRlTJXerfsBm7MBmJjnwIgQSvhY08inlKDcQ+06V1eSy5FXxyY\nVtqQfXOD2LWB2KI=\n-----END CERTIFICATE-----\n"]
+                  producido_por: "4a1676e0-6baa-11ea-9c54-fb4d043f96e3"
+                  cantidad: "10kg"
+                  indice_fluides: "90%"
+                  nombre: "Homopolimero"
+          '404':    # status code
+            description: Si el TRU no existe.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    err:
+                      type: string
+                example:
+                      err: "No existen TRUs asociados al UPC 1234567890"
+  /transaccion:
+    post:
+      summary: Registrar una transaccion entre 2 actores.
+      description: Se registrar el cambio de custodia de un conjunto de TRUs entre 2 actores pertenecientes a las red.
+      requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trus:
+                    type: array
+                    items:
+                      type: string
+                  origen:
+                    type: string
+                  destino:
+                    type: string
+                  fecha:
+                    type: string
+              example:
+                trus: ["4a1676e0-6baa-11ea-9c54-fb4d043f96e3-0", "4a1676e0-6baa-11ea-9c54-fb4d043f96e3-1"]
+                origen: "Cartoflex"
+                tipo: "Canvan"
+                fecha: "2020-03-21T19:29:31.982Z"
   /consumidor/consumir:
     post:
       summary: Consumir un conjunto de TRUs.

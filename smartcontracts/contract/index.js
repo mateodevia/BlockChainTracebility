@@ -137,19 +137,36 @@ var ABstore = class {
   //args: [tru_id]
   async getTruById(stub, args) {
     let tru = await stub.getState(args[0]);
-    tru.id = args[0];
-    return tru;
+    if (tru.toString().length !== 0) {
+      tru.id = args[0];
+      return tru;
+    }
+    else {
+      throw `El TRU ${args[0]} no existe`;
+    }
   }
 
   //args: [sku]
   async getTruBySku(stub, args) {
     let query = {
       selector: {
-        sku: { $eq: args[0] }
+        sku: { $eq: args[0] },
+        actor: { $eq: args[1] }
       }
     }
     let tru = await stub.getQueryResult(JSON.stringify(query));
-    tru.id = args[0];
+    console.log(tru);
+    return tru;
+  }
+
+  //args: [upc]
+  async getTruByUpc(stub, args) {
+    let query = {
+      selector: {
+        upc: { $eq: args[0] }
+      }
+    }
+    let tru = await stub.getQueryResult(JSON.stringify(query));
     console.log(tru);
     return tru;
   }
