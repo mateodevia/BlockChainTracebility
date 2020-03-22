@@ -16,10 +16,7 @@ module.exports.transformar = (trus_consumidos, trus_producidos) => {
 
   let suma_producidos = 0;
   for (let i in trus_producidos) {
-    let cantidad = parseInt(trus_consumidos[i].cantidad.replace('kg', ''));
+    let cantidad = parseInt(trus_producidos[i].cantidad.replace('kg', ''));
     suma_producidos += cantidad;
   }
-  console.log('consumidos', suma_consumidos);
-  console.log('producidos', suma_producidos);
-
 };
