@@ -326,15 +326,15 @@ var ABstore = class {
             stub.putState(nuevo_tru.id, JSON.stringify(nuevo_tru));
           }
           else {
-            throw `El TRU ${p_trus_consumidos[i].id} ya fue consumido`;
+            throw `El TRU ${trus[i]} ya fue consumido`;
           }
         }
         else {
-          throw `El TRU ${p_trus_consumidos[i].id} no esta bajo su custodia`;
+          throw `El TRU ${trus[i]} no esta bajo su custodia`;
         }
       }
       else {
-        throw `El TRU ${p_trus_consumidos[i].id} no existe`;
+        throw `El TRU ${trus[i]} no existe`;
       }
     }
 
