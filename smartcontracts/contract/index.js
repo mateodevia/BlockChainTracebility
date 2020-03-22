@@ -319,12 +319,12 @@ var ABstore = class {
             tru.consumido = true;
             tru.consumidoPor = id_actividad;
             trus_consumidos.push(tru);
-            stub.putState(p_trus_consumidos[i].id, JSON.stringify(tru));
-            let nuevo_tru = { ...tru };
+            stub.putState(trus[i].id, JSON.stringify(tru));
             nuevo_tru.id = id_actividad + '-' + i;
             nuevo_tru.ubicacion = destino;
             trus_consumidos.push(tru)
             trus_producidos.push(nuevo_tru);
+            stub.putState(nuevo_tru.id, JSON.stringify(nuevo_tru));
           }
           else {
             throw `El TRU ${p_trus_consumidos[i].id} ya fue consumido`;
