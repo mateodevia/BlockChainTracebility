@@ -175,6 +175,9 @@ var ABstore = class {
   async crearTransaccion(stub, args) {
     let argsJson = JSON.parse(args[0]);
     let trus = argsJson[1];
+    let destino = argsJson[3]
+    let trus_revisados = []
+    //revisa que los TRUs sean validos
     for (let i in trus) {
       let tru = await stub.getState(trus[i]);
       //revisar que el TRU exista
@@ -190,11 +193,21 @@ var ABstore = class {
       if (tru.consumido) {
         throw `El TRU ${trus[i]} ya esta consumido. No se pueden realiza transacciones sobre TRUs ya consumidos.`;
       }
+      tru.id = trus[i];
+      trus_revisados.push(tru);
     }
+    //actualiza el dueño de los TRUs
+    for (let i in trus_revisados) {
+      let key = trus_revisados[i].id;
+      delete trus_revisados[i].id;
+      trus_revisados[i].dueños.push(destino);
+      await stub.putState(key, JSON.stringify(trus_revisados[i]));
+    }
+
     let transaccion = {
       trus: trus,
       fuente: argsJson[2],
-      destino: argsJson[3],
+      destino: destino,
       fecha: argsJson[4],
       tipo: "TRANSACCION"
     }
@@ -277,6 +290,7 @@ var ABstore = class {
       tru.consumido = false;
       tru.dueños = [actor];
       tru.producidoPor = id_actividad;
+      tru.ubicacion = ubicacion;
       trus_producidos.push(tru);
       ids.push(id_actividad + "-" + i)
       stub.putState(id_actividad + "-" + i, JSON.stringify(tru));
