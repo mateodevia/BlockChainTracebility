@@ -459,15 +459,15 @@ var ABstore = class {
             trus_listos_para_consumir.push([trus_a_consumir[i], tru]);
           }
           else {
-            throw `El TRU ${trus_a_invalidar[i].id} ya fue consumido`;
+            throw `El TRU ${trus_a_consumir[i].id} ya fue consumido`;
           }
         }
         else {
-          throw `El TRU ${trus_a_invalidar[i].id} no esta bajo su custodia`;
+          throw `El TRU ${trus_a_consumir[i].id} no esta bajo su custodia`;
         }
       }
       else {
-        throw `El TRU ${trus_a_invalidar[i].id} no existe`;
+        throw `El TRU ${trus_a_consumir[i].id} no existe`;
       }
     }
     //la ubicacion de los producidos sera la misma de los consumidos
