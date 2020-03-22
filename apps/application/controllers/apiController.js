@@ -71,7 +71,7 @@ module.exports.crearTransaccion = (req, res) => {
       res.status(200).json({ msg: `La transacción se guardó con codigo de identificacion: ${id}` });
     }
     catch (err) {
-      if (err.message.substring(90, 98) === 'no existe') {
+      if (err.message.substring(89, 98) === 'no existe') {
         res.status(404).json({ error: err.message });
       }
       else {
