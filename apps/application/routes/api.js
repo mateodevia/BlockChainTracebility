@@ -18,7 +18,7 @@ router.post('/actividad/consumir', consumidor.consumir);
 router.post('/actividad/producir', proveedor.producir);
 router.post('/actividad/transportar', transportador.transportar);
 router.post('/actividad/invalidar', regulador.invalidar);
-router.post('/actividad/transformador', transformador.transportar);
+router.post('/actividad/transformar', transformador.transformar);
 
 
 module.exports = router;

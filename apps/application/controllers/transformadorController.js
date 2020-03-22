@@ -4,7 +4,7 @@
 const getGateway = require('../gateway/gateway');
 const { v1 } = require('uuid');
 
-module.exports.transportar = (req, res) => {
+module.exports.transformar = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     let id = v1();
     let trus_consumidos = req.body.trus_consumidos;

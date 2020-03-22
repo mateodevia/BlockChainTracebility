@@ -303,7 +303,7 @@ var ABstore = class {
     }
 
     let actividad = {
-      tipo: "CONSUMIR",
+      tipo: "PRODUCIR",
       fecha: fecha,
       actor: actor,
       ubicacion: ubicacion,
