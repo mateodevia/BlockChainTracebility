@@ -189,7 +189,7 @@ var ABstore = class {
       //revisar que el TRU le pertenezca al dueño
       console.log("DUEÑO: ", tru.dueños[tru.dueños.length - 1], "ORIGEN: ", origen);
 
-      if (!tru.dueños[tru.dueños.length - 1] === origen) {
+      if (tru.dueños[tru.dueños.length - 1] !== origen) {
         throw `El TRU ${trus[i]} no pertenece al actor origen. No se pueden realizar transacciones sobre TRUs que no esten bajo su custodia.`;
       }
       //revisar que el TRU no haya sido consumido
