@@ -3,9 +3,12 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 */
+/* eslint-disable linebreak-style */
+'use strict';
 
 const shim = require('fabric-shim');
 const util = require('util');
+const domain = require('./domainLogic')
 
 var ABstore = class {
 
@@ -362,6 +365,68 @@ var ABstore = class {
       fecha: fecha,
       consume: trus_consumidos,
       produce: trus_producidos
+    };
+    await stub.putState(argsJson[0], JSON.stringify(actividad));
+    return "OK";
+  }
+
+  //args: [id, trus, actor, fecha]
+  async invalidar(stub, args) {
+    let argsJson = JSON.parse(args[0]);
+    let id_actividad = argsJson[0];
+    let trus_a_invalidar = argsJson[1];
+    let actor = argsJson[2];
+    let fecha = argsJson[3];
+    let trus_listos_para_invalidar = [];
+    //Revisa si todos los TRUs se pueden invalidar
+    for (let i in trus_a_invalidar) {
+      let tru = await stub.getState(trus_a_invalidar[i].id);
+      //revisar que el tru exista
+      if (tru.toString().length !== 0) {
+        tru = JSON.parse(tru.toString());
+        //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
+        if (tru.dueños[tru.dueños.length - 1] === actor) {
+          if (!tru.consumido) {
+            tru.consumido = true;
+            tru.consumidoPor = id_actividad;
+            tru.invalidado = true;
+            tru.razon_invalizacion = trus_a_invalidar[i].id;
+            tru.certificacion_invalizacion = trus_a_invalidar[i].certificacion;
+            //Valida que se cumplan las reglas especificas del dominio
+            try {
+              domain.invalidar(tru);
+              trus_listos_para_invalidar.push([trus_a_invalidar[i].id, tru]);
+            }
+            catch (err) {
+              throw err;
+            }
+          }
+          else {
+            throw `El TRU ${p_trus_consumidos[i].id} ya fue consumido`;
+          }
+        }
+        else {
+          throw `El TRU ${p_trus_consumidos[i].id} no esta bajo su custodia`;
+        }
+      }
+      else {
+        throw `El TRU ${p_trus_consumidos[i].id} no existe`;
+      }
+    }
+
+    //invalida los TRUs en la BD
+    for (let i in trus_listos_para_invalidar) {
+      stub.putState(trus_listos_para_invalidar[i][0], JSON.stringify(trus_listos_para_invalidar[i][1]));
+    }
+
+    // Crea la actividad en la BD
+    let actividad = {
+      actor: actor,
+      tipo: "CONSUMIR",
+      ubicacion: ubicacion,
+      fecha: fecha,
+      consume: trus_consumidos,
+      produce: []
     };
     await stub.putState(argsJson[0], JSON.stringify(actividad));
     return "OK";

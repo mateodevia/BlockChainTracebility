@@ -408,7 +408,7 @@ paths:
                     type: string
               example:
                     err: "Uno o mas TRUs no estan bajo su custodia"
-  /productor/invalidar:
+  /actividad/invalidar:
     post:
       summary: Consumir un conjunto de TRUs.
       description: Crea la Actividad de invalidar los TRUs pasados por parametro.
@@ -417,20 +417,19 @@ paths:
         content:
           application/json:
             schema:
-              trus:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    razon:
-                      type: string
-                    certificacion:
-                      type: object
-                      properties:
-                        url:
-                          type: string
+              type: object
+              properties:
+                trus:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      razon:
+                        type: string
+                      certificacion:
+                        type: object
             example:
               trus:
                 - id: 12345
