@@ -402,15 +402,15 @@ var ABstore = class {
             }
           }
           else {
-            throw `El TRU ${p_trus_consumidos[i].id} ya fue consumido`;
+            throw `El TRU ${trus_a_invalidar[i].id} ya fue consumido`;
           }
         }
         else {
-          throw `El TRU ${p_trus_consumidos[i].id} no esta bajo su custodia`;
+          throw `El TRU ${trus_a_invalidar[i].id} no esta bajo su custodia`;
         }
       }
       else {
-        throw `El TRU ${p_trus_consumidos[i].id} no existe`;
+        throw `El TRU ${trus_a_invalidar[i].id} no existe`;
       }
     }
 
@@ -422,10 +422,9 @@ var ABstore = class {
     // Crea la actividad en la BD
     let actividad = {
       actor: actor,
-      tipo: "CONSUMIR",
-      ubicacion: ubicacion,
+      tipo: "INVALIDAR",
       fecha: fecha,
-      consume: trus_consumidos,
+      consume: trus_listos_para_invalidar,
       produce: []
     };
     await stub.putState(argsJson[0], JSON.stringify(actividad));
