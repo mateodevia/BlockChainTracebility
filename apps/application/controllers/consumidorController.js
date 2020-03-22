@@ -10,8 +10,9 @@ module.exports.consumir = (req, res) => {
     let trus_consumidos = req.body.trus;
     let ubicacion = req.body.ubicacion;
     let actor = gateway.client._userContext._identity._certificate;
+    let fecha = new Date();
     const contract = network.getContract('fabcar');
-    let args = JSON.stringify([id, actor, ubicacion, trus_consumidos]);
+    let args = JSON.stringify([id, actor, ubicacion, trus_consumidos, fecha]);
     try {
       await contract.submitTransaction('consumir', args);
       res.status(200).json({ msg: 'Trus consumidos correctamente' });
