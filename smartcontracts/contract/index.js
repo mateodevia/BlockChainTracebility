@@ -430,6 +430,77 @@ var ABstore = class {
     await stub.putState(argsJson[0], JSON.stringify(actividad));
     return "OK";
   }
+
+  //args: [id, trus_consumidos, trus_producidos, actor, fecha]
+  async transformar(stub, args) {
+    let argsJson = JSON.parse(args[0]);
+    let id_actividad = argsJson[0];
+    //ids que llegan
+    let trus_a_consumir = argsJson[1];
+    // caracteristicas que llegan
+    let trus_a_producir = argsJson[2];
+    // lista de trus para poner en la actividad
+    let trus_consumidos = [];
+    // lista de tuplas [id, tru] para persistir en la bd
+    let trus_listos_para_consumir = [];
+    let actor = argsJson[3];
+    let fecha = argsJson[4];
+    for (let i in trus_a_consumir) {
+      let tru = await stub.getState(trus_a_consumir[i]);
+      //revisar que el tru exista
+      if (tru.toString().length !== 0) {
+        tru = JSON.parse(tru.toString());
+        //revisar que el ultimo dueño del tru sea el mismo actor que va a realizar la actividad
+        if (tru.dueños[tru.dueños.length - 1] === actor) {
+          if (!tru.consumido) {
+            tru.consumido = true;
+            tru.consumidoPor = id_actividad;
+            trus_consumidos.push(tru)
+            trus_listos_para_consumir.push([trus_a_consumir[i], tru]);
+          }
+          else {
+            throw `El TRU ${trus_a_invalidar[i].id} ya fue consumido`;
+          }
+        }
+        else {
+          throw `El TRU ${trus_a_invalidar[i].id} no esta bajo su custodia`;
+        }
+      }
+      else {
+        throw `El TRU ${trus_a_invalidar[i].id} no existe`;
+      }
+    }
+    //la ubicacion de los producidos sera la misma de los consumidos
+    let ubicacion = trus_listos_para_consumir[0].ubicacion
+    try {
+      //Verifica que se cumplan las reglas del dominio para que la transformacion tenga sentido
+      domain.transformar(trus_listos_para_consumir, trus_a_producir);
+      //Consume los TRUs en a BD
+      for (let i in trus_listos_para_consumir) {
+        stub.putState(trus_listos_para_consumir[i][0], JSON.stringify(trus_listos_para_consumir[i][1]));
+      }
+      //Produce los TRUs en la BD
+      for (let i in trus_a_producir) {
+        trus_a_producir[i].consumido = false;
+        trus_a_producir[i].ubicacion = ubicacion;
+        trus_a_producir[i].producidoPor = id_actividad;
+        stub.putState(id_actividad + '-' + i, JSON.stringify(trus_a_producir[i][1]));
+      }
+    }
+    catch (err) {
+      throw err;
+    }
+    // Crea la actividad en la BD
+    let actividad = {
+      actor: actor,
+      tipo: "TRANSFORMAR",
+      fecha: fecha,
+      consume: trus_consumidos,
+      produce: trus_a_producir
+    };
+    await stub.putState(argsJson[0], JSON.stringify(actividad));
+    return "OK";
+  }
 };
 
 console.log('>>>>>>>>start');
