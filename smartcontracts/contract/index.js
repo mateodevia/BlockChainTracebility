@@ -484,7 +484,7 @@ var ABstore = class {
         trus_a_producir[i].consumido = false;
         trus_a_producir[i].ubicacion = ubicacion;
         trus_a_producir[i].producidoPor = id_actividad;
-        stub.putState(id_actividad + '-' + i, JSON.stringify(trus_a_producir[i][1]));
+        stub.putState(id_actividad + '-' + i, JSON.stringify(trus_a_producir[i]));
       }
     }
     catch (err) {
