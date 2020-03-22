@@ -319,10 +319,9 @@ var ABstore = class {
             tru.consumido = true;
             tru.consumidoPor = id_actividad;
             trus_consumidos.push(tru);
-            stub.putState(trus[i].id, JSON.stringify(tru));
+            stub.putState(trus[i], JSON.stringify(tru));
             nuevo_tru.id = id_actividad + '-' + i;
             nuevo_tru.ubicacion = destino;
-            trus_consumidos.push(tru)
             trus_producidos.push(nuevo_tru);
             stub.putState(nuevo_tru.id, JSON.stringify(nuevo_tru));
           }
