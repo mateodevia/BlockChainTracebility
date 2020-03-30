@@ -9,7 +9,8 @@ module.exports.producir = (req, res) => {
     let id = v1();
     let trus_producidos = req.body.trus;
     let ubicacion = req.body.ubicacion;
-    let actor = gateway.client._userContext._identity._certificate;
+    let actor = req.body.actor;
+    //let actor = gateway.client._userContext._identity._certificate;
     let fecha = new Date();
     const contract = network.getContract('fabcar');
     let args = JSON.stringify([id, actor, ubicacion, trus_producidos, fecha]);
