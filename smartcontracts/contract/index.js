@@ -153,13 +153,14 @@ var ABstore = class {
   async getTruBySku(stub, args) {
     let query = {
       selector: {
-        sku: { $eq: args[0] },
-        actor: { $eq: args[1] }
+        SKU: { $eq: args[0] }
       }
     }
-    let tru = await stub.getQueryResult(JSON.stringify(query));
-    console.log(tru);
-    return tru;
+    let iterator = await stub.getQueryResult(JSON.stringify(query));
+    let tru = await iterator.next();
+    console.log("-----------------------------------------");
+    console.log(tru.value.value.toString());
+    return tru.value.value;
   }
 
   //args: [upc]
