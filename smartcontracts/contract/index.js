@@ -153,26 +153,35 @@ var ABstore = class {
   async getTruBySku(stub, args) {
     let query = {
       selector: {
-        SKU: { $eq: args[0] }
+        SKU: { $eq: args[0] },
+        actorActual: { $eq: args[1] }
       }
     }
     let iterator = await stub.getQueryResult(JSON.stringify(query));
     let tru = await iterator.next();
-    console.log("-----------------------------------------");
-    console.log(tru.value.value.toString());
-    return tru.value.value;
+    if (tru) {
+      return tru.value.value;
+    }
+    else {
+      throw `El TRU con identificado con el UPC: ${args[0]} no existe`;
+    }
   }
 
   //args: [upc]
   async getTruByUpc(stub, args) {
     let query = {
       selector: {
-        upc: { $eq: args[0] }
+        UPC: { $eq: args[0] }
       }
     }
-    let tru = await stub.getQueryResult(JSON.stringify(query));
-    console.log(tru);
-    return tru;
+    let iterator = await stub.getQueryResult(JSON.stringify(query));
+    let tru = await iterator.next();
+    if (tru) {
+      return tru.value.value;
+    }
+    else {
+      throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
+    }
   }
 
   //[id, trus, fuente, destino, fecha]

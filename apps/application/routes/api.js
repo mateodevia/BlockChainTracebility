@@ -10,8 +10,9 @@ const transportador = require('../controllers/transportadorController');
 const regulador = require('../controllers/reguladorController');
 const transformador = require('../controllers/transformadorController');
 
-router.get('/tru/id/:id', apiController.getTruById);
-router.get('/tru/sku/:sku', apiController.getTruBySku);
+router.get('/trus/id/:id', apiController.getTruById);
+router.get('/actores/:actor/trus/:actor', apiController.getTruBySku);
+router.get('/trus/upc/:id', apiController.getTruByUpc);
 router.post('/actor', apiController.registrarActor);
 router.post('/transaccion', apiController.crearTransaccion);
 router.post('/actividad/consumir', consumidor.consumir);
