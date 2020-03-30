@@ -149,12 +149,12 @@ var ABstore = class {
     }
   }
 
-  //args: [sku]
+  //args: [sku, actor]
   async getTruBySku(stub, args) {
     let query = {
       selector: {
         SKU: { $eq: args[0] },
-        actorActual: { $eq: args[1] }
+        dueñoActual: { $eq: args[1] }
       }
     }
     let iterator = await stub.getQueryResult(JSON.stringify(query));
@@ -200,7 +200,6 @@ var ABstore = class {
       }
       tru = JSON.parse(tru.toString());
       //revisar que el TRU le pertenezca al dueño
-      console.log("DUEÑO: ", tru.dueños[tru.dueños.length - 1], "ORIGEN: ", origen);
 
       if (tru.dueños[tru.dueños.length - 1] !== origen) {
         throw `El TRU ${trus[i]} no pertenece al actor origen. No se pueden realizar transacciones sobre TRUs que no esten bajo su custodia.`;
@@ -216,6 +215,7 @@ var ABstore = class {
     for (let i in trus_revisados) {
       let key = trus_revisados[i].id;
       delete trus_revisados[i].id;
+      trus_revisados[i].dueñoActual = destino;
       trus_revisados[i].dueños.push(destino);
       await stub.putState(key, JSON.stringify(trus_revisados[i]));
     }
@@ -304,6 +304,7 @@ var ABstore = class {
       let tru = { ...p_trus_producidos[i] };
       tru.tipo = "TRU";
       tru.consumido = false;
+      tru.dueñoActual = actor;
       tru.dueños = [actor];
       tru.producidoPor = id_actividad;
       tru.ubicacion = ubicacion;
