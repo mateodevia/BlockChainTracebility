@@ -47,7 +47,7 @@ module.exports.getTruByUpc = (req, res) => {
   return getGateway.then(async ({ gateway, network }) => {
     const contract = network.getContract('fabcar');
     try {
-      let response = await contract.evaluateTransaction('getTruById', req.params.upc.toString());
+      let response = await contract.evaluateTransaction('getTruByUpc', req.params.upc.toString());
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {
