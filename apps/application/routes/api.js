@@ -11,8 +11,8 @@ const regulador = require('../controllers/reguladorController');
 const transformador = require('../controllers/transformadorController');
 
 router.get('/trus/id/:id', apiController.getTruById);
-router.get('/actores/:actor/trus/:actor', apiController.getTruBySku);
-router.get('/trus/upc/:id', apiController.getTruByUpc);
+router.get('/actores/:actor/trus/:sku', apiController.getTruBySku);
+router.get('/trus/upc/:upc', apiController.getTruByUpc);
 router.post('/actor', apiController.registrarActor);
 router.post('/transaccion', apiController.crearTransaccion);
 router.post('/actividad/consumir', consumidor.consumir);
