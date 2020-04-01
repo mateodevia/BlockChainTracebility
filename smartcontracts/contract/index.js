@@ -9,37 +9,66 @@
 const shim = require('fabric-shim');
 const util = require('util');
 const domain = require('./domainLogic')
+const data = require('./data')
 
 var ABstore = class {
 
   // Initialize the chaincode
   async Init(stub) {
-    console.info('========= ABstore Init =========');
-    let ret = stub.getFunctionAndParameters();
-    console.info(ret);
-    let args = ret.params;
-    // initialise only if 4 parameters passed.
-    if (args.length != 4) {
-      return shim.error('Incorrect number of arguments. Expecting 4');
-    }
-
-    let A = args[0];
-    let B = args[2];
-    let Aval = args[1];
-    let Bval = args[3];
-
-    if (typeof parseInt(Aval) !== 'number' || typeof parseInt(Bval) !== 'number') {
-      return shim.error('Expecting integer value for asset holding');
-    }
-
+    console.info('========= Cargando Datos Iniciales =========');
     try {
-      await stub.putState(A, Buffer.from(Aval));
-      try {
-        await stub.putState(B, Buffer.from(Bval));
-        return shim.success();
-      } catch (err) {
-        return shim.error(err);
-      }
+      //Producir
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66', data.actividades[0]);
+      //TRUs producidos
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-0', data.trus[0]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-1', data.trus[1]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-2', data.trus[2]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-3', data.trus[3]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-4', data.trus[4]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-5', data.trus[5]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-6', data.trus[6]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-7', data.trus[7]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-8', data.trus[8]);
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-9', data.trus[9]);
+
+      //Transaccion de Propilco al transportador
+      await stub.putState('902d2f70-741f-11ea-9fdf-2174e1b0eb66', data.transacciones[0]);
+
+      //Transportar
+      await stub.putState('47b2c630-7422-11ea-9dba-a31d6f3c8f24', data.actividades[1]);
+      //TRUs producidos
+      await stub.putState('47b2c630-7422-11ea-9dba-a31d6f3c8f24-0', data.trus[10]);
+      await stub.putState('47b2c630-7422-11ea-9dba-a31d6f3c8f24-1', data.trus[11]);
+      await stub.putState('47b2c630-7422-11ea-9dba-a31d6f3c8f24-2', data.trus[12]);
+      await stub.putState('47b2c630-7422-11ea-9dba-a31d6f3c8f24-3', data.trus[13]);
+
+      //Transaccion de el transportador y Cartoflex
+      await stub.putState('e8373bf0-7449-11ea-9dba-a31d6f3c8f24', data.transacciones[1]);
+
+      //Transformar un bulto en un lote y un bulto con menos material
+      await stub.putState('d3da62f0-744d-11ea-abce-1b474a67a6e2', data.actividades[2]);
+      //TRUs producidos
+      await stub.putState('d3da62f0-744d-11ea-abce-1b474a67a6e2-0', data.trus[14]);
+      await stub.putState('d3da62f0-744d-11ea-abce-1b474a67a6e2-1', data.trus[15]);
+
+      //Transformar el lote en 2 paquetes
+      await stub.putState('76033ce0-7454-11ea-abce-1b474a67a6e2', data.actividades[3]);
+      //TRUs producidos
+      await stub.putState('76033ce0-7454-11ea-abce-1b474a67a6e2-0', data.trus[16]);
+      await stub.putState('76033ce0-7454-11ea-abce-1b474a67a6e2-1', data.trus[17]);
+
+      //Transaccion de Cartoflex al transportador
+      await stub.putState('eade0610-7456-11ea-abce-1b474a67a6e2', data.transacciones[2]);
+
+      //Transportar
+      await stub.putState('3668dc40-7457-11ea-abce-1b474a67a6e2', data.actividades[4]);
+      //TRUs producidos
+      await stub.putState('3668dc40-7457-11ea-abce-1b474a67a6e2-0', data.trus[18]);
+      await stub.putState('3668dc40-7457-11ea-abce-1b474a67a6e2-1', data.trus[19]);
+
+      //Transaccion de Cartoflex al Canvan
+      await stub.putState('cc3e4b00-7458-11ea-abce-1b474a67a6e2', data.transacciones[3]);
+
     } catch (err) {
       return shim.error(err);
     }
