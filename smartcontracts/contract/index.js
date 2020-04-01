@@ -188,11 +188,12 @@ var ABstore = class {
     }
     let iterator = await stub.getQueryResult(JSON.stringify(query));
     let tru = await iterator.next();
-    if (tru) {
+    if (!tru.done) {
+      console.log(tru);
       return tru.value.value;
     }
     else {
-      throw `El TRU con identificado con el UPC: ${args[0]} no existe`;
+      throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
     }
   }
 
@@ -209,7 +210,7 @@ var ABstore = class {
       return tru.value.value;
     }
     else {
-      throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
+      throw `El TRU con identificado con el UPC: ${args[0]} no existe`;
     }
   }
 
