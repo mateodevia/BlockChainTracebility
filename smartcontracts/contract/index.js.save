@@ -18,7 +18,9 @@ var ABstore = class {
     console.info('========= Cargando Datos Iniciales =========');
     try {
       //Producir
-      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66', JSON.stringify(data.actividades[0]));
+      await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66', data.actividades[0]);
+      CORE_CHAINCODE_ID_NAME=fabcar_1:31a9c336117cdc0701a85199bad939e7783aaf75464c3f87c458e48bbb3565c7 CORE_PEER_TLS_ENABLED=false node ./contract/index.js --peer.address 127.0.0.1:7052
+
       //TRUs producidos
       await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-0', data.trus[0]);
       await stub.putState('efa91e20-7413-11ea-9fdf-2174e1b0eb66-1', data.trus[1]);
@@ -68,7 +70,7 @@ var ABstore = class {
 
       //Transaccion de Cartoflex al Canvan
       await stub.putState('cc3e4b00-7458-11ea-abce-1b474a67a6e2', data.transacciones[3]);
-      return shim.success();
+      */
 
     } catch (err) {
       console.log("ERROR AL CARGAR LOS DATOS: ", err);
