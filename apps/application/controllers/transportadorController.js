@@ -9,7 +9,7 @@ module.exports.transportar = (req, res) => {
     let id = v1();
     let trus = req.body.trus;
     let destino = req.body.destino;
-    let actor = gateway.client._userContext._identity._certificate;
+    let actor = req.body.actor;
     let fecha = new Date();
     const contract = network.getContract('fabcar');
     let args = JSON.stringify([id, trus, destino, actor, fecha]);
