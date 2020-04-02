@@ -550,6 +550,7 @@ var ABstore = class {
     let actividades = []
     if (tru.toString().length !== 0) {
       tru.id = args[0];
+      console.log("TRU-------", tru);
       actividades = this.getActividades(stub, tru);
     }
     else {
@@ -557,7 +558,7 @@ var ABstore = class {
     }
   }
 
-  getActividades(stub, tru) {
+  async getActividades(stub, tru) {
     let actividades = [];
     let actividadAnterior = await stub.getState(tru.producidoPor);
     actividadAnterior.id = tru.producidoPor
