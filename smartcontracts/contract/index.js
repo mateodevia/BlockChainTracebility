@@ -10,6 +10,7 @@ const shim = require('fabric-shim');
 const util = require('util');
 const domain = require('./domainLogic')
 const data = require('./data')
+const utils = require('./utils')
 
 var ABstore = class {
 
@@ -551,36 +552,11 @@ var ABstore = class {
     if (tru.toString().length !== 0) {
       tru.id = args[0];
       console.log("TRU-------", tru);
-      actividades = this.getActividades(stub, tru);
+      actividades = await utils.getActividades(stub, tru);
     }
     else {
       throw `El TRU ${args[0]} no existe`;
     }
-  }
-
-  async getActividades(stub, tru) {
-    let actividades = [];
-    let actividadAnterior = await stub.getState(tru.producidoPor);
-    actividadAnterior.id = tru.producidoPor
-    if (actividadAnterior.consume.length > 0) {
-      let integracion = {};
-      for (let i in actividadAnterior.consume) {
-        let truActual = actividadAnterior.consume[i];
-        let actividadesTruActual = this.getActividades(truActual)
-        let huboRepetido = false;
-        for (let j = 0; j < actividadesTruActual.length && !huboRepetido; i++) {
-          let actividadActual = actividadesTruActual[j];
-          console.log(actividadActual);
-          if (integracion[actividadActual.id]) {
-            huboRepetido = true;
-          }
-          integracion[actividadActual.id] = actividadActual;
-        }
-      }
-      actividades = Object.values(integracion);
-    }
-    actividades.push(actividadAnterior);
-    return actividades;
   }
 };
 
