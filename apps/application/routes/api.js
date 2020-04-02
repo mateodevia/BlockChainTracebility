@@ -20,6 +20,7 @@ router.post('/actividad/producir', proveedor.producir);
 router.post('/actividad/transportar', transportador.transportar);
 router.post('/actividad/invalidar', regulador.invalidar);
 router.post('/actividad/transformar', transformador.transformar);
+router.get('/trus/id/:id/origen', apiController.origen);
 
 
 module.exports = router;
