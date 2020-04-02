@@ -550,9 +550,11 @@ var ABstore = class {
     let tru = await stub.getState(args[0]);
     let actividades = []
     if (tru.toString().length !== 0) {
+      tru = JSON.parse(tru.toString());
       tru.id = args[0];
-      console.log("TRU-------", tru);
       actividades = await utils.getActividades(stub, tru);
+      console.log('RESPUESTA', actividades);
+      return JSON.stringify(actividades);
     }
     else {
       throw `El TRU ${args[0]} no existe`;

@@ -4,16 +4,16 @@
 module.exports.getActividades = async (stub, tru) => {
   let actividades = [];
   let actividadAnterior = await stub.getState(tru.producidoPor);
+  actividadAnterior = JSON.parse(actividadAnterior.toString());
   actividadAnterior.id = tru.producidoPor;
   if (actividadAnterior.consume.length > 0) {
     let integracion = {};
     for (let i in actividadAnterior.consume) {
       let truActual = actividadAnterior.consume[i];
-      let actividadesTruActual = this.getActividades(truActual);
+      let actividadesTruActual = await this.getActividades(stub, truActual);
       let huboRepetido = false;
       for (let j = 0; j < actividadesTruActual.length && !huboRepetido; i++) {
         let actividadActual = actividadesTruActual[j];
-        console.log(actividadActual);
         if (integracion[actividadActual.id]) {
           huboRepetido = true;
         }
