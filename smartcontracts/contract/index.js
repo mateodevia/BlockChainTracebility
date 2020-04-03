@@ -554,7 +554,7 @@ var ABstore = class {
       tru.id = args[0];
       actividades = await utils.getActividades(stub, tru);
       console.log('RESPUESTA', actividades);
-      return JSON.stringify(actividades);
+      return actividades;
     }
     else {
       throw `El TRU ${args[0]} no existe`;
