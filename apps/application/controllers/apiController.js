@@ -85,7 +85,8 @@ module.exports.origen = (req, res) => {
     const contract = network.getContract('fabcar');
     try {
       let response = await contract.evaluateTransaction('origenById', req.params.id.toString());
-      console.log("RESPUESTA: ", response);
+      console.log('#### LO QUE LLEGA AL CONTROLLER ################################');
+      console.log(response);
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {
