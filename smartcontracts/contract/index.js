@@ -1,3 +1,4 @@
+
 /*
 # Copyright IBM Corp. All Rights Reserved.
 #
@@ -555,7 +556,7 @@ var ABstore = class {
       actividades = await utils.getActividades(stub, tru);
       console.log('#### RESULTADO EN EL CONTRACT ######################################');
       console.log(actividades);
-      return Buffer.from(JSON.stringify(actividades));
+      return Buffer.from(JSON.stringify({actividades: actividades}));
     }
     else {
       throw `El TRU ${args[0]} no existe`;
