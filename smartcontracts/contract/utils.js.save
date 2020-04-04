@@ -2,6 +2,7 @@
 'use strict';
 
 module.exports.getActividades = async (stub, tru) => {
+  console.log("SE LLAMO SOBRE: "+tru.id+" PRODUCIDO POR: "+");
   let actividades = [];
   let actividadAnterior = await stub.getState(tru.producidoPor);
   actividadAnterior = JSON.parse(actividadAnterior.toString());
@@ -10,14 +11,11 @@ module.exports.getActividades = async (stub, tru) => {
     let integracion = {};
     for (let i in actividadAnterior.consume) {
       let truActual = actividadAnterior.consume[i];
-      truActual.id = truActual.producidoPor+"-"+i;
+      truActual.id = actividadAnterior.id+"-"+i;
       let actividadesTruActual = await this.getActividades(stub, truActual);
       let huboRepetido = false;
-      console.log("ACTIVIDADES DEL TRU: "+truActual.id);
-      console.log(actividadesTruActual);
       for (let j = 0; j < actividadesTruActual.length && !huboRepetido; i++) {
- 	let actividadActual = actividadesTruActual[j];
-        console.log(actividadActual.id);
+        let actividadActual = actividadesTruActual[j];
         if (integracion[actividadActual.id]) {
           huboRepetido = true;
         }
@@ -26,7 +24,6 @@ module.exports.getActividades = async (stub, tru) => {
     }
     actividades = Object.values(integracion);
   }
-  console.log("INTEGRACION", actividades);
   actividades.push(actividadAnterior);
   return actividades;
 };

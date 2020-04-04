@@ -1,4 +1,3 @@
-
 /*
 # Copyright IBM Corp. All Rights Reserved.
 #
@@ -554,8 +553,6 @@ var ABstore = class {
       tru = JSON.parse(tru.toString());
       tru.id = args[0];
       actividades = await utils.getActividades(stub, tru);
-      console.log('#### RESULTADO EN EL CONTRACT ######################################');
-      console.log(actividades);
       return Buffer.from(JSON.stringify({actividades: actividades}));
     }
     else {
