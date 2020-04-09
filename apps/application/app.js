@@ -22,13 +22,9 @@ app.use(cors());
 
 app.set('view engine', 'jade');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 app.use('/', indexRouter);
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html');
-});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
