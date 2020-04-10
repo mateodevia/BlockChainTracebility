@@ -6,12 +6,12 @@ module.exports.getActividadesOrigen = async (stub, tru) => {
   let actividadAnterior = await stub.getState(tru.producidoPor);
   actividadAnterior = JSON.parse(actividadAnterior.toString());
   actividadAnterior.id = tru.producidoPor;
-  if (actividadAnterior.consume.length > 0) {
+  if (actividadAnterior.consume.) {
     let integracion = {};
     for (let i in actividadAnterior.consume) {
       let truActual = actividadAnterior.consume[i];
       truActual.id = truActual.producidoPor+"-"+i;
-      let actividadesTruActual = await this.getActividades(stub, truActual);
+      let actividadesTruActual = await this.getActividadesOrigen(stub, truActual);
       let huboRepetido = false;
       console.log("ACTIVIDADES DEL TRU: "+truActual.id);
       console.log(actividadesTruActual);
@@ -33,15 +33,16 @@ module.exports.getActividadesOrigen = async (stub, tru) => {
 
 module.exports.getActividadesDestino = async (stub, tru) => {
   let actividades = [];
-  let actividadAnterior = await stub.getState(tru.producidoPor);
-  actividadAnterior = JSON.parse(actividadAnterior.toString());
-  actividadAnterior.id = tru.producidoPor;
-  if (actividadAnterior.consume.length > 0) {
+  console.log('VA A BUSCAR EY', tru.consumidoPor, tru);
+  let actividadSiguiente = await stub.getState(tru.consumidoPor);
+  actividadSiguiente = JSON.parse(actividadSiguiente.toString());
+  actividadSiguiente.id = tru.consumidoPor;
+  if (actividadSiguiente.produce.length > 0) {
     let integracion = {};
-    for (let i in actividadAnterior.consume) {
-      let truActual = actividadAnterior.consume[i];
+    for (let i in actividadSiguiente.produce) {
+      let truActual = actividadSiguiente.produce[i];
       truActual.id = truActual.producidoPor+"-"+i;
-      let actividadesTruActual = await this.getActividades(stub, truActual);
+      let actividadesTruActual = await this.getActividadesDestino(stub, truActual);
       let huboRepetido = false;
       console.log("ACTIVIDADES DEL TRU: "+truActual.id);
       console.log(actividadesTruActual);
@@ -57,6 +58,6 @@ module.exports.getActividadesDestino = async (stub, tru) => {
     actividades = Object.values(integracion);
   }
   console.log("INTEGRACION", actividades);
-  actividades.push(actividadAnterior);
+  actividades.push(actividadSiguiente);
   return actividades;
 };
