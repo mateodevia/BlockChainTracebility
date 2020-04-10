@@ -23,7 +23,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-987-622',
@@ -41,7 +53,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-098-328',
@@ -59,7 +83,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-321-789',
@@ -77,7 +113,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-987-256',
@@ -95,7 +143,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-946-829',
@@ -113,7 +173,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: []
       },
       {
         SKU: 'PRO-HOM-576-809',
@@ -131,7 +192,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: []
       },
       {
         SKU: 'PRO-HOM-673-283',
@@ -149,7 +211,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: []
       },
       {
         SKU: 'PRO-HOM-876-256',
@@ -167,7 +230,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: []
       },
       {
         SKU: 'PRO-HOM-178-309',
@@ -185,7 +249,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: []
       }
     ],
     tipo: 'PRODUCIR',
@@ -214,7 +279,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-987-622',
@@ -233,7 +310,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-098-328',
@@ -252,7 +341,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-321-789',
@@ -271,7 +372,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -75.5024821,
           lon: 20.27
-        }
+        },
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T13:49:09.991Z',
+          fuente: 'Propilco',
+          tipo: 'TRANSACCION',
+          trus: [
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+            'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+          ]
+        }]
       }
     ],
     destino: {
@@ -297,7 +410,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: [{
+          destino: 'Cartoflex',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-987-622',
@@ -315,7 +440,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: [{
+          destino: 'Cartoflex',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-098-328',
@@ -333,7 +470,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: [{
+          destino: 'Cartoflex',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+          ]
+        }]
       },
       {
         SKU: 'PRO-HOM-321-789',
@@ -351,7 +500,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: [{
+          destino: 'Cartoflex',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+          ]
+        }]
       }
     ],
     tipo: 'TRANSPORTAR'
@@ -376,7 +537,19 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: [{
+          destino: 'Cartoflex',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+            '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+          ]
+        }]
       }],
     destino: {
       lat: -74.1041472,
@@ -403,7 +576,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: []
       },
       {
         SKU: '20200007',
@@ -421,7 +595,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: []
       }
     ],
     tipo: 'TRANSFORMAR'
@@ -445,7 +620,8 @@ module.exports.actividades = [
         ubicacion: {
           lat: -74.1041472,
           lon: 4.6193288
-        }
+        },
+        transacciones: []
       }],
     destino: {
       lat: -74.1041472,
@@ -474,7 +650,17 @@ module.exports.actividades = [
         cliente: 'MABE',
         producto: 'PANEL ANDROMEDA 300 L VENTANA',
         REFERENCIA: '294D1747P003',
-        dimension: '558*1454'
+        dimension: '558*1454',
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Cartoflex',
+          tipo: 'TRANSACCION',
+          trus: [
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-0',
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-1'
+          ]
+        }]
       },
       {
         SKU: 'PTL2GR032-29',
@@ -497,7 +683,17 @@ module.exports.actividades = [
         cliente: 'MABE',
         producto: 'PANEL ANDROMEDA 300 L VENTANA',
         REFERENCIA: '294D1747P003',
-        dimension: '558*1454'
+        dimension: '558*1454',
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Cartoflex',
+          tipo: 'TRANSACCION',
+          trus: [
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-0',
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-1'
+          ]
+        }]
       }
     ],
     tipo: 'TRANSFORMAR'
@@ -526,7 +722,17 @@ module.exports.actividades = [
         cliente: 'MABE',
         producto: 'PANEL ANDROMEDA 300 L VENTANA',
         REFERENCIA: '294D1747P003',
-        dimension: '558*1454'
+        dimension: '558*1454',
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Cartoflex',
+          tipo: 'TRANSACCION',
+          trus: [
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-0',
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-1'
+          ]
+        }]
       },
       {
         SKU: 'PTL2GR032-29',
@@ -549,7 +755,17 @@ module.exports.actividades = [
         cliente: 'MABE',
         producto: 'PANEL ANDROMEDA 300 L VENTANA',
         REFERENCIA: '294D1747P003',
-        dimension: '558*1454'
+        dimension: '558*1454',
+        transacciones: [{
+          destino: 'Transportador',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Cartoflex',
+          tipo: 'TRANSACCION',
+          trus: [
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-0',
+            '76033ce0-7454-11ea-abce-1b474a67a6e2-1'
+          ]
+        }]
       }
     ],
     destino: {
@@ -578,7 +794,17 @@ module.exports.actividades = [
         cliente: 'MABE',
         producto: 'PANEL ANDROMEDA 300 L VENTANA',
         REFERENCIA: '294D1747P003',
-        dimension: '558*1454'
+        dimension: '558*1454',
+        transacciones: [{
+          destino: 'Canvan',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '3668dc40-7457-11ea-abce-1b474a67a6e2-0',
+            '3668dc40-7457-11ea-abce-1b474a67a6e2-1'
+          ]
+        }]
       },
       {
         SKU: 'PTL2GR032-29',
@@ -600,7 +826,17 @@ module.exports.actividades = [
         cliente: 'MABE',
         producto: 'PANEL ANDROMEDA 300 L VENTANA',
         REFERENCIA: '294D1747P003',
-        dimension: '558*1454'
+        dimension: '558*1454',
+        transacciones: [{
+          destino: 'Canvan',
+          fecha: '2020-04-01T18:52:16.560Z',
+          fuente: 'Transportador',
+          tipo: 'TRANSACCION',
+          trus: [
+            '3668dc40-7457-11ea-abce-1b474a67a6e2-0',
+            '3668dc40-7457-11ea-abce-1b474a67a6e2-1'
+          ]
+        }]
       }
     ],
     tipo: 'TRANSPORTAR'
@@ -625,7 +861,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T13:49:09.991Z',
+      fuente: 'Propilco',
+      tipo: 'TRANSACCION',
+      trus: [
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-987-622',
@@ -644,7 +892,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T13:49:09.991Z',
+      fuente: 'Propilco',
+      tipo: 'TRANSACCION',
+      trus: [
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-098-328',
@@ -663,7 +923,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T13:49:09.991Z',
+      fuente: 'Propilco',
+      tipo: 'TRANSACCION',
+      trus: [
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-321-789',
@@ -682,7 +954,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T13:49:09.991Z',
+      fuente: 'Propilco',
+      tipo: 'TRANSACCION',
+      trus: [
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-987-256',
@@ -700,7 +984,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T13:49:09.991Z',
+      fuente: 'Propilco',
+      tipo: 'TRANSACCION',
+      trus: [
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-0',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-1',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-2',
+        'efa91e20-7413-11ea-9fdf-2174e1b0eb66-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-946-829',
@@ -718,7 +1014,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: []
   },
   {
     SKU: 'PRO-HOM-576-809',
@@ -736,7 +1033,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: []
   },
   {
     SKU: 'PRO-HOM-673-283',
@@ -754,7 +1052,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: []
   },
   {
     SKU: 'PRO-HOM-876-256',
@@ -772,7 +1071,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: []
   },
   {
     SKU: 'PRO-HOM-178-309',
@@ -790,7 +1090,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -75.5024821,
       lon: 20.27
-    }
+    },
+    transacciones: []
   },
   {
     SKU: 'PRO-HOM-876-293',
@@ -809,7 +1110,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -74.1041472,
       lon: 4.6193288
-    }
+    },
+    transacciones: [{
+      destino: 'Cartoflex',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Transportador',
+      tipo: 'TRANSACCION',
+      trus: [
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-987-622',
@@ -827,7 +1140,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -74.1041472,
       lon: 4.6193288
-    }
+    },
+    transacciones: [{
+      destino: 'Cartoflex',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Transportador',
+      tipo: 'TRANSACCION',
+      trus: [
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-098-328',
@@ -845,7 +1170,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -74.1041472,
       lon: 4.6193288
-    }
+    },
+    transacciones: [{
+      destino: 'Cartoflex',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Transportador',
+      tipo: 'TRANSACCION',
+      trus: [
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-321-789',
@@ -863,7 +1200,19 @@ module.exports.trus = [
     ubicacion: {
       lat: -74.1041472,
       lon: 4.6193288
-    }
+    },
+    transacciones: [{
+      destino: 'Cartoflex',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Transportador',
+      tipo: 'TRANSACCION',
+      trus: [
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-0',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-1',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-2',
+        '47b2c630-7422-11ea-9dba-a31d6f3c8f24-3'
+      ]
+    }]
   },
   {
     SKU: 'PRO-HOM-876-293',
@@ -883,7 +1232,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -74.1041472,
       lon: 4.6193288
-    }
+    },
+    transacciones:[]
   },
   {
     SKU: '20200007',
@@ -901,7 +1251,8 @@ module.exports.trus = [
     ubicacion: {
       lat: -74.1041472,
       lon: 4.6193288
-    }
+    },
+    transacciones: []
   },
   {
     SKU: 'PTL1GR032-29',
@@ -923,7 +1274,17 @@ module.exports.trus = [
     cliente: 'MABE',
     producto: 'PANEL ANDROMEDA 300 L VENTANA',
     REFERENCIA: '294D1747P003',
-    dimension: '558*1454'
+    dimension: '558*1454',
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Cartoflex',
+      tipo: 'TRANSACCION',
+      trus: [
+        '76033ce0-7454-11ea-abce-1b474a67a6e2-0',
+        '76033ce0-7454-11ea-abce-1b474a67a6e2-1'
+      ]
+    }]
   },
   {
     SKU: 'PTL2GR032-29',
@@ -945,7 +1306,17 @@ module.exports.trus = [
     cliente: 'MABE',
     producto: 'PANEL ANDROMEDA 300 L VENTANA',
     REFERENCIA: '294D1747P003',
-    dimension: '558*1454'
+    dimension: '558*1454',
+    transacciones: [{
+      destino: 'Transportador',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Cartoflex',
+      tipo: 'TRANSACCION',
+      trus: [
+        '76033ce0-7454-11ea-abce-1b474a67a6e2-0',
+        '76033ce0-7454-11ea-abce-1b474a67a6e2-1'
+      ]
+    }]
   },
   {
     SKU: 'PTL1GR032-29',
@@ -967,7 +1338,17 @@ module.exports.trus = [
     cliente: 'MABE',
     producto: 'PANEL ANDROMEDA 300 L VENTANA',
     REFERENCIA: '294D1747P003',
-    dimension: '558*1454'
+    dimension: '558*1454',
+    transacciones: [{
+      destino: 'Canvan',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Transportador',
+      tipo: 'TRANSACCION',
+      trus: [
+        '3668dc40-7457-11ea-abce-1b474a67a6e2-0',
+        '3668dc40-7457-11ea-abce-1b474a67a6e2-1'
+      ]
+    }]
   },
   {
     SKU: 'PTL2GR032-29',
@@ -989,7 +1370,17 @@ module.exports.trus = [
     cliente: 'MABE',
     producto: 'PANEL ANDROMEDA 300 L VENTANA',
     REFERENCIA: '294D1747P003',
-    dimension: '558*1454'
+    dimension: '558*1454',
+    transacciones: [{
+      destino: 'Canvan',
+      fecha: '2020-04-01T18:52:16.560Z',
+      fuente: 'Transportador',
+      tipo: 'TRANSACCION',
+      trus: [
+        '3668dc40-7457-11ea-abce-1b474a67a6e2-0',
+        '3668dc40-7457-11ea-abce-1b474a67a6e2-1'
+      ]
+    }]
   }
 ];
 
