@@ -85,8 +85,19 @@ module.exports.origen = (req, res) => {
     const contract = network.getContract('fabcar');
     try {
       let response = await contract.evaluateTransaction('origenById', req.params.id.toString());
-      console.log('#### LO QUE LLEGA AL CONTROLLER ################################');
-      console.log(response);
+      res.status(200).json(JSON.parse(response.toString()));
+    }
+    catch (err) {
+      res.status(404).json({ error: err.message });
+    }
+  });
+};
+
+module.exports.destino = (req, res) => {
+  return getGateway.then(async ({ gateway, network }) => {
+    const contract = network.getContract('fabcar');
+    try {
+      let response = await contract.evaluateTransaction('destinoById', req.params.id.toString());
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {

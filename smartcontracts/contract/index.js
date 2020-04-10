@@ -552,7 +552,21 @@ var ABstore = class {
     if (tru.toString().length !== 0) {
       tru = JSON.parse(tru.toString());
       tru.id = args[0];
-      actividades = await utils.getActividades(stub, tru);
+      actividades = await utils.getActividadesOrigen(stub, tru);
+      return Buffer.from(JSON.stringify({actividades: actividades}));
+    }
+    else {
+      throw `El TRU ${args[0]} no existe`;
+    }
+  }
+
+  async destinoById(stub, args) {
+    let tru = await stub.getState(args[0]);
+    let actividades = []
+    if (tru.toString().length !== 0) {
+      tru = JSON.parse(tru.toString());
+      tru.id = args[0];
+      actividades = await utils.getActividadesDestino(stub, tru);
       return Buffer.from(JSON.stringify({actividades: actividades}));
     }
     else {
