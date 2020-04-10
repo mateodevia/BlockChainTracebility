@@ -792,7 +792,7 @@ module.exports.trus = [
     SKU: 'PRO-HOM-876-293',
     UPC: '7-2527273070-6',
     cantidad: '50kg',
-    consumido: false,
+    consumido: true,
     dueñoActual: 'Propilco',
     dueños: [
       'Propilco'
@@ -800,6 +800,7 @@ module.exports.trus = [
     'indice de fluides': '98%',
     nombre: 'Homopolimero',
     producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
+    consumidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
     tipo: 'TRU',
     ubicacion: {
       lat: -74.1041472,
