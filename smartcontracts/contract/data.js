@@ -388,7 +388,7 @@ module.exports.actividades = [
         SKU: 'PRO-HOM-876-293',
         UPC: '7-2527273070-6',
         cantidad: '45kg',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Cartoflex',
         dueños: [
           'Cartoflex',
@@ -398,6 +398,7 @@ module.exports.actividades = [
         'indice de fluides': '98%',
         nombre: 'Homopolimero',
         producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
+        consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
           lat: -74.1041472,
@@ -455,7 +456,7 @@ module.exports.actividades = [
       {
         SKU: 'PTL1GR032-29',
         UPC: '7-2527783070-6',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Cartoflex',
         dueños: [
           'Cartoflex',
@@ -463,6 +464,7 @@ module.exports.actividades = [
           'Propilco'
         ],
         producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
+        consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
           lat: -74.1041472,
@@ -477,7 +479,7 @@ module.exports.actividades = [
       {
         SKU: 'PTL2GR032-29',
         UPC: '7-2527781950-6',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Cartoflex',
         dueños: [
           'Cartoflex',
@@ -485,6 +487,7 @@ module.exports.actividades = [
           'Propilco'
         ],
         producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
+        consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
           lat: -74.1041472,
