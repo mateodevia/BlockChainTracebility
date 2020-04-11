@@ -1,0 +1,38 @@
+.linea {
+  stroke-width: 3px;
+}
+
+.actividad {
+  background-color: black;
+  text-align: center;
+  width: 120px;
+  height: 20px;
+  padding: 5px;
+  border: solid 5px;
+  margin: 10px auto;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.actividad:hover {
+  width: 125px;
+  height: 25px;
+  font-size: 17px;
+}
+
+.firstActivity {
+  background-color: black;
+  text-align: center;
+  width: 120px;
+  height: 20px;
+  padding: 5px;
+  border: solid 5px;
+  transition: all 0.5s;
+  margin: 0 auto;
+}
+
+.firstActivity:hover {
+  width: 125px;
+  height: 25px;
+  font-size: 17px;
+}
