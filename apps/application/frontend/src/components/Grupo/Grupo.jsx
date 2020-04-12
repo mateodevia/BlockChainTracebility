@@ -1,5 +1,9 @@
 import React from "react";
 import "./Grupo.css";
+import "./Trus.css";
+import "./Actividades.css";
+import "./Lineas.css";
+import "./Transacciones.css";
 import { useState } from "react";
 import { useEffect } from "react";
 

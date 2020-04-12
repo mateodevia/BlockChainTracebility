@@ -1,0 +1,17 @@
+.transaccion {
+  text-align: center;
+  width: fit-content;
+  min-width: 100px;
+  height: 20px;
+  padding: 5px;
+  border: solid 2px;
+  border-color: black;
+  border-radius: 20px;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.transaccion:hover {
+  padding: 8px;
+}

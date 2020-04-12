@@ -2,7 +2,6 @@ import React from "react";
 import "./GraphViz.css";
 import { useEffect } from "react";
 import { useState } from "react";
-import Actividad from "../Actividad/Actividad";
 import Grupo from "../Grupo/Grupo";
 
 function GraphViz() {
@@ -108,9 +107,27 @@ function GraphViz() {
           }}
         />
       </svg>
+      {buscado?.transacciones.map((trans, i) => (
+        <React.Fragment>
+          <div className="transaccion">Transacción</div>
+          <svg className="lineas">
+            <line
+              key={i}
+              className="linea"
+              x1="50%"
+              y1="0"
+              x2="50%"
+              y2="50"
+              style={{
+                stroke: colores[trans.destino],
+              }}
+            />
+          </svg>
+        </React.Fragment>
+      ))}
       <div
-        id={actividades[0]?.id}
         className="firstActivity"
+        id={actividades[0]?.id}
         style={{
           backgroundColor: coloresClaros[actividades[0]?.actor],
           borderColor: colores[actividades[0]?.actor],
