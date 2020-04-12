@@ -111,6 +111,7 @@ function Grupo(props) {
         <React.Fragment>
           <svg className="lineas">{lines2}</svg>
           <div
+            id={actividad.id}
             className="actividad"
             style={{
               backgroundColor: props.coloresClaros[actividad?.actor],

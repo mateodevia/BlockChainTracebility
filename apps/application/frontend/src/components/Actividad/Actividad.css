@@ -4,6 +4,7 @@
   width: 120px;
   height: 20px;
   padding: 5px;
+  border: solid 2.5px;
   margin: 0 auto;
   position: relative;
   transition: all 0.5s;
@@ -21,7 +22,7 @@
   width: 120px;
   height: 20px;
   padding: 5px;
-  border: solid 5px;
+  border: solid 2.55px;
   transition: all 0.5s;
   margin: 0 auto;
 }

@@ -41,7 +41,7 @@ function GraphViz() {
           x2={calculateXCoordinate(tru)}
           y2="50"
           style={{
-            stroke: colores[buscado?.dueñoActual],
+            stroke: colores[actividades[0]?.actor],
           }}
         />
       );
@@ -112,8 +112,8 @@ function GraphViz() {
         id={actividades[0]?.id}
         className="firstActivity"
         style={{
-          backgroundColor: coloresClaros[buscado?.dueñoActual],
-          borderColor: colores[buscado?.dueñoActual],
+          backgroundColor: coloresClaros[actividades[0]?.actor],
+          borderColor: colores[actividades[0]?.actor],
         }}
       >
         {actividades[0]?.tipo}
