@@ -96,7 +96,7 @@ function GraphViz() {
           }}
         ></div>
       </div>
-      <svg height="50" width="100%">
+      <svg className="lineas">
         <line
           className="linea"
           x1="50%"
@@ -120,16 +120,18 @@ function GraphViz() {
       </div>
       <svg className="lineas">{lines}</svg>
       <div className="contenedorGrupos">
-        {grupos.map((grupo) => (
-          <Grupo
-            grupo={grupo}
-            actualizar={actualizar}
-            handleactualizar={handleactualizar}
-            actividades={actividades}
-            colores={colores}
-            coloresClaros={coloresClaros}
-          />
-        ))}
+        <div className="contenedorPrimerGrupo">
+          {grupos.map((grupo) => (
+            <Grupo
+              grupo={grupo}
+              actualizar={actualizar}
+              handleactualizar={handleactualizar}
+              actividades={actividades}
+              colores={colores}
+              coloresClaros={coloresClaros}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

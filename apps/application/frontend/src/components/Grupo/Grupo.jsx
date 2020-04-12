@@ -11,8 +11,9 @@ function Grupo(props) {
 
   let calculateXCoordinate = (tru) => {
     let element = document.getElementById(tru.id);
-    let parentOffset = element?.parentElement.parentElement.getBoundingClientRect()
-      .left;
+    let parent = element?.parentElement.parentElement;
+    console.log(parent);
+    let parentOffset = parent.getBoundingClientRect().left;
     let x = element?.getBoundingClientRect().left + 12 - parentOffset;
     return x;
   };
@@ -36,14 +37,14 @@ function Grupo(props) {
     setLines(newLines);
   };
   let renderLines2 = () => {
-    let newLines = actividad?.produce.map((tru, i) => {
+    let newLines = props.grupo.map((tru, i) => {
       return (
         <line
           key={i}
           className="linea"
-          x1="50%"
+          x1={calculateXCoordinate(tru)}
           y1="0"
-          x2={calculateXCoordinate(tru)}
+          x2="50%"
           y2="50"
           style={{
             stroke: props.colores[tru?.dueñoActual],
@@ -57,6 +58,7 @@ function Grupo(props) {
   let handleActualizar = () => {
     props.handleactualizar({});
     renderLines();
+    renderLines2();
   };
 
   useEffect(() => {
@@ -88,6 +90,7 @@ function Grupo(props) {
   useEffect(() => {
     props.handleactualizar({});
     renderLines();
+    renderLines2();
   }, [grupos]);
 
   return (
@@ -106,6 +109,7 @@ function Grupo(props) {
       })}
       {actividad && (
         <React.Fragment>
+          <svg className="lineas">{lines2}</svg>
           <div
             className="actividad"
             style={{

@@ -13,8 +13,8 @@
 }
 
 .lineas {
-  height: 50px;
   width: 100%;
+  height: 50px;
   display: block;
 }
 .linea {
@@ -22,7 +22,7 @@
   width: 100%;
 }
 
-.contenedorGrupos {
-  text-align: center;
-  min-width: max-content;
+.contenedorPrimerGrupo {
+  width: fit-content;
+  margin: 0 auto;
 }
