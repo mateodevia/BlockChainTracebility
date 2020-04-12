@@ -118,9 +118,7 @@ function GraphViz() {
       >
         {actividades[0]?.tipo}
       </div>
-      <svg height="50" width="100%">
-        {lines}
-      </svg>
+      <svg className="lineas">{lines}</svg>
       <div className="contenedorGrupos">
         {grupos.map((grupo) => (
           <Grupo

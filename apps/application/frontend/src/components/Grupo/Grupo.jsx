@@ -6,6 +6,59 @@ import { useEffect } from "react";
 function Grupo(props) {
   let [actividad, setActividad] = useState(undefined);
   let [grupos, setGrupos] = useState([]);
+  let [lines, setLines] = useState(<div></div>);
+  let [lines2, setLines2] = useState(<div></div>);
+
+  let calculateXCoordinate = (tru) => {
+    let element = document.getElementById(tru.id);
+    let parentOffset = element?.parentElement.parentElement.getBoundingClientRect()
+      .left;
+    let x = element?.getBoundingClientRect().left + 12 - parentOffset;
+    return x;
+  };
+
+  let renderLines = () => {
+    let newLines = actividad?.produce.map((tru, i) => {
+      return (
+        <line
+          key={i}
+          className="linea"
+          x1="50%"
+          y1="0"
+          x2={calculateXCoordinate(tru)}
+          y2="50"
+          style={{
+            stroke: props.colores[tru?.dueñoActual],
+          }}
+        />
+      );
+    });
+    setLines(newLines);
+  };
+  let renderLines2 = () => {
+    let newLines = actividad?.produce.map((tru, i) => {
+      return (
+        <line
+          key={i}
+          className="linea"
+          x1="50%"
+          y1="0"
+          x2={calculateXCoordinate(tru)}
+          y2="50"
+          style={{
+            stroke: props.colores[tru?.dueñoActual],
+          }}
+        />
+      );
+    });
+    setLines2(newLines);
+  };
+
+  let handleActualizar = () => {
+    props.handleactualizar({});
+    renderLines();
+  };
+
   useEffect(() => {
     let newActividad = props.actividades.find(
       (act) => act.id === props.grupo[0].consumidoPor
@@ -34,6 +87,7 @@ function Grupo(props) {
 
   useEffect(() => {
     props.handleactualizar({});
+    renderLines();
   }, [grupos]);
 
   return (
@@ -51,21 +105,24 @@ function Grupo(props) {
         );
       })}
       {actividad && (
-        <div
-          className="actividad"
-          style={{
-            backgroundColor: props.coloresClaros[actividad?.actor],
-            borderColor: props.colores[actividad?.actor],
-          }}
-        >
-          {actividad.tipo}
-        </div>
+        <React.Fragment>
+          <div
+            className="actividad"
+            style={{
+              backgroundColor: props.coloresClaros[actividad?.actor],
+              borderColor: props.colores[actividad?.actor],
+            }}
+          >
+            {actividad.tipo}
+          </div>
+          <svg className="lineas">{lines}</svg>
+        </React.Fragment>
       )}
       <div className="contenedorGrupos">
         {grupos.map((grupo) => (
           <Grupo
             grupo={grupo}
-            handleactualizar={props.handleactualizar}
+            handleactualizar={handleActualizar}
             actividades={props.actividades}
             colores={props.colores}
             coloresClaros={props.coloresClaros}

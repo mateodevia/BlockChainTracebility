@@ -1,7 +1,3 @@
-.linea {
-  stroke-width: 3px;
-}
-
 .actividad {
   background-color: black;
   text-align: center;
@@ -9,7 +5,7 @@
   height: 20px;
   padding: 5px;
   border: solid 5px;
-  margin: 10px auto;
+  margin: 0 auto;
   position: relative;
   transition: all 0.5s;
 }

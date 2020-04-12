@@ -12,6 +12,16 @@
   width: 45px;
 }
 
+.lineas {
+  height: 50px;
+  width: 100%;
+  display: block;
+}
+.linea {
+  stroke-width: 3px;
+  width: 100%;
+}
+
 .contenedorGrupos {
   text-align: center;
   min-width: max-content;
