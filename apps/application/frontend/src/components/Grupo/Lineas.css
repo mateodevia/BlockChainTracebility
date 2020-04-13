@@ -4,6 +4,13 @@
   display: block;
 }
 
+.lineasCortas {
+  width: 100%;
+  margin-top: 5px;
+  height: 20px;
+  display: block;
+}
+
 .linea {
   stroke-width: 2.5px;
   width: 100%;

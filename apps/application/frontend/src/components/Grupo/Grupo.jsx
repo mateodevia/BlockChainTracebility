@@ -15,7 +15,7 @@ function Grupo(props) {
 
   let calculateXCoordinate = (tru) => {
     let element = document.getElementById(tru.id);
-    let parent = element?.parentElement.parentElement;
+    let parent = element?.parentElement.parentElement.parentElement;
     console.log(parent);
     let parentOffset = parent.getBoundingClientRect().left;
     let x = element?.getBoundingClientRect().left + 12 - parentOffset;
@@ -51,7 +51,7 @@ function Grupo(props) {
           x2="50%"
           y2="50"
           style={{
-            stroke: props.colores[tru?.dueñoActual],
+            stroke: props.colores[actividad?.actor],
           }}
         />
       );
@@ -101,14 +101,34 @@ function Grupo(props) {
     <div className="contenedorGrupo">
       {props.grupo.map((tru) => {
         return (
-          <div
-            className="tru"
-            id={tru.id}
-            style={{
-              backgroundColor: props.coloresClaros[tru?.dueñoActual],
-              borderColor: props.colores[tru?.dueñoActual],
-            }}
-          ></div>
+          <div className="contenedorTru">
+            <div
+              className="tru"
+              id={tru.id}
+              style={{
+                backgroundColor: props.coloresClaros[tru?.dueñoActual],
+                borderColor: props.colores[tru?.dueñoActual],
+              }}
+            ></div>
+            {tru?.transacciones.map((trans, i) => (
+              <React.Fragment>
+                <svg className="lineasCortas">
+                  <line
+                    key={i}
+                    className="linea"
+                    x1="50%"
+                    y1="0"
+                    x2="50%"
+                    y2="50"
+                    style={{
+                      stroke: props.colores[trans.fuente],
+                    }}
+                  />
+                </svg>
+                <div className="transaccion"></div>
+              </React.Fragment>
+            ))}
+          </div>
         );
       })}
       {actividad && (

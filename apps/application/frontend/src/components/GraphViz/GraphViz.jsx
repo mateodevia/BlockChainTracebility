@@ -11,17 +11,17 @@ function GraphViz() {
   let [lines, setLines] = useState(<div></div>);
   let [actualizar, setActualizar] = useState(false);
   let colores = {
-    Propilco: "rgb(197, 31, 51)",
-    Cartoflex: "rgb(25, 164, 78)",
+    Propilco: "rgb(12, 124, 186)",
+    Cartoflex: "rgb(122, 182, 72)",
     Transportador: "rgb(128, 0, 255)",
     Canvan: "rgb(255, 128, 0)",
   };
 
   let coloresClaros = {
-    Propilco: "rgb(197, 31, 51, 0.5)",
-    Cartoflex: "rgb(25, 164, 78, 0.5)",
-    Transportador: "rgb(128, 0, 255, 0.5)",
-    Canvan: "rgb(255, 128, 0, 0.5)",
+    Propilco: "rgb(12, 124, 186, 0.2)",
+    Cartoflex: "rgb(122, 182, 72, 0.2)",
+    Transportador: "rgb(128, 0, 255, 0.2)",
+    Canvan: "rgb(255, 128, 0, 0.2)",
   };
 
   let calculateXCoordinate = (tru) => {
@@ -109,8 +109,8 @@ function GraphViz() {
       </svg>
       {buscado?.transacciones.map((trans, i) => (
         <React.Fragment>
-          <div className="transaccion">Transacción</div>
-          <svg className="lineas">
+          <div className="transaccionBase"></div>
+          <svg className="lineasCortas">
             <line
               key={i}
               className="linea"
