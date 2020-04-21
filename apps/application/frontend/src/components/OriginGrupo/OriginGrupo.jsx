@@ -1,5 +1,5 @@
 import React from "react";
-import "./Grupo.css";
+import "./OriginGrupo.css";
 import "./Trus.css";
 import "./Actividades.css";
 import "./Lineas.css";
@@ -7,8 +7,9 @@ import "./Transacciones.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function Grupo(props) {
+function OriginGrupo(props) {
   let [actividad, setActividad] = useState(undefined);
+  let [siguienteActividad, setSiguienteActividad] = useState(undefined);
   let [grupos, setGrupos] = useState([]);
   let [lines, setLines] = useState(<div></div>);
   let [lines2, setLines2] = useState(<div></div>);
@@ -16,14 +17,13 @@ function Grupo(props) {
   let calculateXCoordinate = (tru) => {
     let element = document.getElementById(tru.id);
     let parent = element?.parentElement.parentElement.parentElement;
-    console.log(parent);
     let parentOffset = parent?.getBoundingClientRect().left;
     let x = element?.getBoundingClientRect().left + 12 - parentOffset;
     return x;
   };
 
   let renderLines = () => {
-    let newLines = actividad?.produce.map((tru, i) => {
+    let newLines = siguienteActividad?.consume.map((tru, i) => {
       return (
         <line
           key={i}
@@ -33,7 +33,8 @@ function Grupo(props) {
           x2={calculateXCoordinate(tru)}
           y2="50"
           style={{
-            stroke: props.colores[tru?.dueñoActual],
+            stroke:
+              props.colores[tru?.transacciones[0]?.fuente || tru?.dueñoActual],
           }}
         />
       );
@@ -41,6 +42,9 @@ function Grupo(props) {
     setLines(newLines);
   };
   let renderLines2 = () => {
+    let newActividad = props.actividades.find((act, i) => {
+      return act.id === props.grupo[0].consumidoPor;
+    });
     let newLines = props.grupo.map((tru, i) => {
       return (
         <line
@@ -51,7 +55,7 @@ function Grupo(props) {
           x2="50%"
           y2="50"
           style={{
-            stroke: props.colores[actividad?.actor],
+            stroke: props.colores[newActividad?.actor],
           }}
         />
       );
@@ -66,21 +70,27 @@ function Grupo(props) {
   };
 
   useEffect(() => {
-    let newActividad = props.actividades.find(
-      (act) => act.id === props.grupo[0].consumidoPor
-    );
+    let indice = 0;
+    let newActividad = props.actividades.find((act, i) => {
+      indice = i;
+      return act.id === props.grupo[0].consumidoPor;
+    });
+    let siguienteActividad = props.actividades[indice + 1];
 
-    let newGrupos = {};
-    for (let i in newActividad?.produce) {
-      let truAct = newActividad?.produce[i];
-      let siguiente = truAct.consumidoPor || truAct.id;
-      if (newGrupos[siguiente]) {
-        newGrupos[siguiente].push(truAct);
-      } else {
-        newGrupos[siguiente] = [truAct];
+    if (siguienteActividad) {
+      let newGrupos = {};
+      for (let i in siguienteActividad?.consume) {
+        let truAct = siguienteActividad?.consume[i];
+        let siguiente = truAct.consumidoPor || truAct.id;
+        if (newGrupos[siguiente]) {
+          newGrupos[siguiente].push(truAct);
+        } else {
+          newGrupos[siguiente] = [truAct];
+        }
       }
+      setGrupos(Object.values(newGrupos));
     }
-    setGrupos(Object.values(newGrupos));
+    setSiguienteActividad(siguienteActividad);
     setActividad(newActividad);
     /**
     let newGrupo = [...props.grupo];
@@ -106,8 +116,14 @@ function Grupo(props) {
               className="tru"
               id={tru.id}
               style={{
-                backgroundColor: props.coloresClaros[tru?.dueñoActual],
-                borderColor: props.colores[tru?.dueñoActual],
+                backgroundColor:
+                  props.coloresClaros[
+                    tru?.transacciones[0]?.fuente || tru?.dueñoActual
+                  ],
+                borderColor:
+                  props.colores[
+                    tru?.transacciones[0]?.fuente || tru?.dueñoActual
+                  ],
               }}
             ></div>
             {tru?.transacciones.map((trans, i) => (
@@ -144,12 +160,12 @@ function Grupo(props) {
           >
             {actividad.tipo}
           </div>
-          <svg className="lineas">{lines}</svg>
+          {siguienteActividad && <svg className="lineas">{lines}</svg>}
         </React.Fragment>
       )}
       <div className="contenedorGrupos">
         {grupos.map((grupo) => (
-          <Grupo
+          <OriginGrupo
             grupo={grupo}
             handleactualizar={handleActualizar}
             actividades={props.actividades}
@@ -162,4 +178,4 @@ function Grupo(props) {
   );
 }
 
-export default Grupo;
+export default OriginGrupo;
