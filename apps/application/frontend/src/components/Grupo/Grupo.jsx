@@ -106,8 +106,14 @@ function Grupo(props) {
               className="tru"
               id={tru.id}
               style={{
-                backgroundColor: props.coloresClaros[tru?.dueñoActual],
-                borderColor: props.colores[tru?.dueñoActual],
+                backgroundColor:
+                  props.coloresClaros[
+                    tru?.transacciones[0]?.fuente || tru?.dueñoActual
+                  ],
+                borderColor:
+                  props.colores[
+                    tru?.transacciones[0]?.fuente || tru?.dueñoActual
+                  ],
               }}
             ></div>
             {tru?.transacciones.map((trans, i) => (
