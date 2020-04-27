@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Grupo from '../Grupo/Grupo';
 
-function GraphViz() {
+function GraphViz(props) {
+    let [existe, setExiste] = useState(true);
     let [buscado, setBuscado] = useState(undefined);
     let [actividades, setActividades] = useState([]);
     let [grupos, setGrupos] = useState([]);
@@ -63,95 +64,105 @@ function GraphViz() {
     });
 
     useEffect(() => {
-        fetch(
-            '/v1/api/trus/id/efa91e20-7413-11ea-9fdf-2174e1b0eb66-0/destino'
-        ).then((response) => {
+        fetch(`/v1/api/trus/id/${props.buscado}/destino`).then((response) => {
             response.json().then((data) => {
-                data.actividades.reverse();
-                let newGrupos = {};
-                for (let i in data.actividades[0]?.produce) {
-                    let truAct = data.actividades[0]?.produce[i];
-                    let siguiente = truAct.consumidoPor || truAct.id;
-                    if (newGrupos[siguiente]) {
-                        newGrupos[siguiente].push(truAct);
-                    } else {
-                        newGrupos[siguiente] = [truAct];
+                if (!data.error) {
+                    setExiste(true);
+                    data.actividades.reverse();
+                    let newGrupos = {};
+                    for (let i in data.actividades[0]?.produce) {
+                        let truAct = data.actividades[0]?.produce[i];
+                        let siguiente = truAct.consumidoPor || truAct.id;
+                        if (newGrupos[siguiente]) {
+                            newGrupos[siguiente].push(truAct);
+                        } else {
+                            newGrupos[siguiente] = [truAct];
+                        }
                     }
+                    setActividades(data.actividades);
+                    setBuscado(data.tru);
+                    setGrupos(Object.values(newGrupos));
+                } else {
+                    setExiste(false);
                 }
-                setActividades(data.actividades);
-                setBuscado(data.tru);
-                setGrupos(Object.values(newGrupos));
             });
         });
-    }, []);
+    }, [props.buscado]);
 
     return (
-        <div>
-            <div className='contenedorBuscado'>
-                <div
-                    className='buscado'
-                    style={{
-                        backgroundColor: coloresClaros[buscado?.dueñoActual],
-                        borderColor: colores[buscado?.dueñoActual],
-                    }}
-                ></div>
-            </div>
-            <svg className='lineas'>
-                <line
-                    className='linea'
-                    x1='50%'
-                    y1='0'
-                    x2='50%'
-                    y2='50'
-                    style={{
-                        stroke: colores[buscado?.dueñoActual],
-                    }}
-                />
-            </svg>
-            {buscado?.transacciones.map((trans, i) => (
-                <React.Fragment>
-                    <div className='transaccionBase'></div>
-                    <svg className='lineasCortas'>
+        <React.Fragment>
+            {existe && (
+                <div>
+                    <div className='contenedorBuscado'>
+                        <div
+                            className='buscado'
+                            style={{
+                                backgroundColor:
+                                    coloresClaros[buscado?.dueñoActual],
+                                borderColor: colores[buscado?.dueñoActual],
+                            }}
+                        ></div>
+                    </div>
+                    <svg className='lineas'>
                         <line
-                            key={i}
                             className='linea'
                             x1='50%'
                             y1='0'
                             x2='50%'
                             y2='50'
                             style={{
-                                stroke: colores[trans.destino],
+                                stroke: colores[buscado?.dueñoActual],
                             }}
                         />
                     </svg>
-                </React.Fragment>
-            ))}
-            <div
-                className='firstActivity'
-                id={actividades[0]?.id}
-                style={{
-                    backgroundColor: coloresClaros[actividades[0]?.actor],
-                    borderColor: colores[actividades[0]?.actor],
-                }}
-            >
-                {actividades[0]?.tipo}
-            </div>
-            <svg className='lineas'>{lines}</svg>
-            <div className='contenedorGrupos'>
-                <div className='contenedorPrimerGrupo'>
-                    {grupos.map((grupo) => (
-                        <Grupo
-                            grupo={grupo}
-                            actualizar={actualizar}
-                            handleactualizar={handleactualizar}
-                            actividades={actividades}
-                            colores={colores}
-                            coloresClaros={coloresClaros}
-                        />
+                    {buscado?.transacciones.map((trans, i) => (
+                        <React.Fragment>
+                            <div className='transaccionBase'></div>
+                            <svg className='lineasCortas'>
+                                <line
+                                    key={i}
+                                    className='linea'
+                                    x1='50%'
+                                    y1='0'
+                                    x2='50%'
+                                    y2='50'
+                                    style={{
+                                        stroke: colores[trans.destino],
+                                    }}
+                                />
+                            </svg>
+                        </React.Fragment>
                     ))}
+                    <div
+                        className='firstActivity'
+                        id={actividades[0]?.id}
+                        style={{
+                            backgroundColor:
+                                coloresClaros[actividades[0]?.actor],
+                            borderColor: colores[actividades[0]?.actor],
+                        }}
+                    >
+                        {actividades[0]?.tipo}
+                    </div>
+                    <svg className='lineas'>{lines}</svg>
+                    <div className='contenedorGrupos'>
+                        <div className='contenedorPrimerGrupo'>
+                            {grupos.map((grupo) => (
+                                <Grupo
+                                    grupo={grupo}
+                                    actualizar={actualizar}
+                                    handleactualizar={handleactualizar}
+                                    actividades={actividades}
+                                    colores={colores}
+                                    coloresClaros={coloresClaros}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            )}
+            {!existe && <div>No existe</div>}
+        </React.Fragment>
     );
 }
 

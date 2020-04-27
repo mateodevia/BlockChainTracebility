@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import OriginGrupo from '../OriginGrupo/OriginGrupo';
 import '../OriginGraphViz/OriginGraphViz.css';
 
-function OrginGraphViz() {
+function OrginGraphViz(props) {
+    let [existe, setExiste] = useState(true);
     let [buscado, setBuscado] = useState(undefined);
     let [actividades, setActividades] = useState([]);
     let [grupos, setGrupos] = useState([]);
@@ -58,27 +59,29 @@ function OrginGraphViz() {
     };
 
     useEffect(() => {
-        fetch(
-            '/v1/api/trus/id/3668dc40-7457-11ea-abce-1b474a67a6e2-0/origen'
-        ).then((response) => {
+        fetch(`/v1/api/trus/id/${props.buscado}/origen`).then((response) => {
             response.json().then((data) => {
-                console.log(data);
-                let newGrupos = {};
-                for (let i in data.actividades[1]?.consume) {
-                    let truAct = data.actividades[1]?.consume[i];
-                    let siguiente = truAct.consumidoPor || truAct.id;
-                    if (newGrupos[siguiente]) {
-                        newGrupos[siguiente].push(truAct);
-                    } else {
-                        newGrupos[siguiente] = [truAct];
+                if (!data.error) {
+                    setExiste(true);
+                    let newGrupos = {};
+                    for (let i in data.actividades[1]?.consume) {
+                        let truAct = data.actividades[1]?.consume[i];
+                        let siguiente = truAct.consumidoPor || truAct.id;
+                        if (newGrupos[siguiente]) {
+                            newGrupos[siguiente].push(truAct);
+                        } else {
+                            newGrupos[siguiente] = [truAct];
+                        }
                     }
+                    setActividades(data.actividades);
+                    setBuscado(data.tru);
+                    setGrupos(Object.values(newGrupos));
+                } else {
+                    setExiste(false);
                 }
-                setActividades(data.actividades);
-                setBuscado(data.tru);
-                setGrupos(Object.values(newGrupos));
             });
         });
-    }, []);
+    }, [props.buscado]);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -91,62 +94,36 @@ function OrginGraphViz() {
     });
 
     return (
-        <div>
-            <div
-                className='firstActivity'
-                id={actividades[0]?.id}
-                style={{
-                    backgroundColor: coloresClaros[actividades[0]?.actor],
-                    borderColor: colores[actividades[0]?.actor],
-                }}
-            >
-                {actividades[0]?.tipo}
-            </div>
-            <svg className='lineas'>{lines}</svg>
-            <div className='contenedorGrupos'>
-                <div className='contenedorPrimerGrupo'>
-                    {grupos.map((grupo) => (
-                        <OriginGrupo
-                            grupo={grupo}
-                            actualizar={actualizar}
-                            handleactualizar={handleactualizar}
-                            actividades={actividades}
-                            colores={colores}
-                            coloresClaros={coloresClaros}
-                        />
-                    ))}
-                </div>
-            </div>
-            <svg className='lineas lineaFinal'>
-                <line
-                    className='linea'
-                    x1='50%'
-                    y1='0'
-                    x2='50%'
-                    y2='50'
-                    style={{
-                        stroke:
-                            colores[
-                                buscado?.dueños[buscado?.dueños.length - 1]
-                            ],
-                    }}
-                />
-            </svg>
-            <div
-                className='buscado'
-                id={buscado?.id}
-                style={{
-                    backgroundColor:
-                        coloresClaros[
-                            buscado?.dueños[buscado?.dueños.length - 1]
-                        ],
-                    borderColor:
-                        colores[buscado?.dueños[buscado?.dueños.length - 1]],
-                }}
-            ></div>
-            {buscado?.transacciones.length > 0 && (
-                <React.Fragment>
-                    <svg className='lineasCortas'>
+        <React.Fragment>
+            {existe && (
+                <div>
+                    <div
+                        className='firstActivity'
+                        id={actividades[0]?.id}
+                        style={{
+                            backgroundColor:
+                                coloresClaros[actividades[0]?.actor],
+                            borderColor: colores[actividades[0]?.actor],
+                        }}
+                    >
+                        {actividades[0]?.tipo}
+                    </div>
+                    <svg className='lineas'>{lines}</svg>
+                    <div className='contenedorGrupos'>
+                        <div className='contenedorPrimerGrupo'>
+                            {grupos.map((grupo) => (
+                                <OriginGrupo
+                                    grupo={grupo}
+                                    actualizar={actualizar}
+                                    handleactualizar={handleactualizar}
+                                    actividades={actividades}
+                                    colores={colores}
+                                    coloresClaros={coloresClaros}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                    <svg className='lineas lineaFinal'>
                         <line
                             className='linea'
                             x1='50%'
@@ -163,10 +140,46 @@ function OrginGraphViz() {
                             }}
                         />
                     </svg>
-                    <div className='transaccion'></div>
-                </React.Fragment>
+                    <div
+                        className='buscado'
+                        id={buscado?.id}
+                        style={{
+                            backgroundColor:
+                                coloresClaros[
+                                    buscado?.dueños[buscado?.dueños.length - 1]
+                                ],
+                            borderColor:
+                                colores[
+                                    buscado?.dueños[buscado?.dueños.length - 1]
+                                ],
+                        }}
+                    ></div>
+                    {buscado?.transacciones.length > 0 && (
+                        <React.Fragment>
+                            <svg className='lineasCortas'>
+                                <line
+                                    className='linea'
+                                    x1='50%'
+                                    y1='0'
+                                    x2='50%'
+                                    y2='50'
+                                    style={{
+                                        stroke:
+                                            colores[
+                                                buscado?.dueños[
+                                                    buscado?.dueños.length - 1
+                                                ]
+                                            ],
+                                    }}
+                                />
+                            </svg>
+                            <div className='transaccion'></div>
+                        </React.Fragment>
+                    )}
+                </div>
             )}
-        </div>
+            {!existe && <div>No existe</div>}
+        </React.Fragment>
     );
 }
 

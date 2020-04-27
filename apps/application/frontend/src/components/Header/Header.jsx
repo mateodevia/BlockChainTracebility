@@ -3,7 +3,7 @@ import './Header.css';
 import { useRef } from 'react';
 import { useState } from 'react';
 
-function Header() {
+function Header(props) {
     let [actorActivo, setActorActivo] = useState(true);
     let idRef = useRef();
     let actorRef = useRef();
@@ -14,6 +14,26 @@ function Header() {
             setActorActivo(false);
         } else {
             setActorActivo(true);
+        }
+    };
+
+    let handleRastrear = () => {
+        if (inputRef.current.value !== '') {
+            props.setBuscado(inputRef.current.value);
+            props.setConsulta('destino');
+        } else {
+            props.setBuscado(undefined);
+            props.setConsulta('');
+        }
+    };
+
+    let handleProcedencia = () => {
+        if (inputRef.current.value !== '') {
+            props.setBuscado(inputRef.current.value);
+            props.setConsulta('origen');
+        } else {
+            props.setBuscado(undefined);
+            props.setConsulta('');
         }
     };
 
@@ -46,8 +66,12 @@ function Header() {
                 ref={inputRef}
             />
             <div className='contenedorBotones'>
-                <button className='botonHeader'>Consultar Procedencia</button>
-                <button className='botonHeader'>Rastrear Activo</button>
+                <button className='botonHeader' onClick={handleProcedencia}>
+                    Consultar Procedencia
+                </button>
+                <button className='botonHeader' onClick={handleRastrear}>
+                    Rastrear Activo
+                </button>
             </div>
         </div>
     );
