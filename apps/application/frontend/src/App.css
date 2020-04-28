@@ -1,3 +1,12 @@
+h1,
+h2 {
+    color: #ff5924;
+}
+
+h1 {
+    font-weight: normal;
+}
+
 .contenedor {
     width: 100%;
 }
@@ -18,7 +27,7 @@
 .contenedorMenu {
     display: inline-block;
     width: 30%;
-    background-color: #636363;
+    background-color: #323433;
     height: calc(100vh - 56px);
     overflow-y: scroll;
 }

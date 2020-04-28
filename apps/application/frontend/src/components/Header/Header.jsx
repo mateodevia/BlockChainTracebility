@@ -61,6 +61,7 @@ function Header(props) {
             </select>
             <input
                 type='text'
+                value='efa91e20-7413-11ea-9fdf-2174e1b0eb66-0'
                 placeholder='Identificador del activo'
                 className='inputBuscar'
                 ref={inputRef}

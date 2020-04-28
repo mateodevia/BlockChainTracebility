@@ -107,6 +107,7 @@ function GraphViz(props) {
                                             buscado?.dueñoActual
                                     ],
                             }}
+                            onClick={() => props.selectTru(buscado)}
                         ></div>
                     </div>
                     <svg className='lineas'>
@@ -127,7 +128,10 @@ function GraphViz(props) {
                     </svg>
                     {buscado?.transacciones.map((trans, i) => (
                         <React.Fragment>
-                            <div className='transaccionBase'></div>
+                            <div
+                                className='transaccionBase'
+                                onClick={() => props.selectTransaccion(trans)}
+                            ></div>
                             {actividades.length > 0 && (
                                 <svg className='lineasCortas'>
                                     <line
@@ -154,6 +158,9 @@ function GraphViz(props) {
                                     coloresClaros[actividades[0]?.actor],
                                 borderColor: colores[actividades[0]?.actor],
                             }}
+                            onClick={() =>
+                                props.selectActividad(actividades[0])
+                            }
                         >
                             {actividades[0]?.tipo}
                         </div>
@@ -169,6 +176,9 @@ function GraphViz(props) {
                                     actividades={actividades}
                                     colores={colores}
                                     coloresClaros={coloresClaros}
+                                    selectTru={props.selectTru}
+                                    selectActividad={props.selectActividad}
+                                    selectTransaccion={props.selectTransaccion}
                                 />
                             ))}
                         </div>

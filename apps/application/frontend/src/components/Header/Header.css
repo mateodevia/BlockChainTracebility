@@ -1,5 +1,5 @@
 .header {
-    background-color: black;
+    background-color: rgb(22, 22, 22);
     color: white;
 }
 
@@ -36,7 +36,7 @@
     margin: 10px;
     padding: 0 10px;
     height: 25px;
-    width: calc(100% - 660px);
+    width: calc(100% - 650px);
     min-width: 160px;
     border-radius: 5px;
     border: none;
@@ -51,9 +51,8 @@
 .botonHeader {
     padding: 8px;
     margin: 10px 5px;
-    background-color: rgb(100, 100, 200);
-    color: white;
-    font-weight: bold;
+    background-color: #44dbb8;
+    color: rgb(22, 22, 22);
     border: none;
     border-radius: 5px;
     font-size: 14px;

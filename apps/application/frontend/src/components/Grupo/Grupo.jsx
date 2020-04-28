@@ -116,6 +116,7 @@ function Grupo(props) {
                                             tru?.dueñoActual
                                     ],
                             }}
+                            onClick={() => props.selectTru(tru)}
                         ></div>
                         {tru?.transacciones.map((trans, i) => (
                             <React.Fragment>
@@ -132,7 +133,12 @@ function Grupo(props) {
                                         }}
                                     />
                                 </svg>
-                                <div className='transaccion'></div>
+                                <div
+                                    className='transaccion'
+                                    onClick={() =>
+                                        props.selectTransaccion(trans)
+                                    }
+                                ></div>
                             </React.Fragment>
                         ))}
                     </div>
@@ -149,6 +155,7 @@ function Grupo(props) {
                                 props.coloresClaros[actividad?.actor],
                             borderColor: props.colores[actividad?.actor],
                         }}
+                        onClick={() => props.selectActividad(actividad)}
                     >
                         {actividad.tipo}
                     </div>
@@ -163,6 +170,9 @@ function Grupo(props) {
                         actividades={props.actividades}
                         colores={props.colores}
                         coloresClaros={props.coloresClaros}
+                        selectTru={props.selectTru}
+                        selectActividad={props.selectActividad}
+                        selectTransaccion={props.selectTransaccion}
                     />
                 ))}
             </div>
