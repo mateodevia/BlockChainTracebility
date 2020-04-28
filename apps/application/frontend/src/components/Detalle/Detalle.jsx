@@ -12,9 +12,13 @@ function Detalle(props) {
                     Seleccione un nodo para ver más información
                 </div>
             )}
-            {props.tru && <DetalleTru />}
-            {props.actividad && <DetalleActividad />}
-            {props.transaccion && <DetalleTransaccion />}
+            {props.tru && <DetalleTru tru={props.tru} />}
+            {props.actividad && (
+                <DetalleActividad actividad={props.actividad} />
+            )}
+            {props.transaccion && (
+                <DetalleTransaccion transaccion={props.transaccion} />
+            )}
         </div>
     );
 }

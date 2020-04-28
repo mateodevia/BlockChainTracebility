@@ -3,3 +3,29 @@
     color: white;
     margin: 20px 10px;
 }
+
+.contenedorDetalle {
+    margin: 10px;
+}
+
+.tituloDetalle {
+    color: white;
+    margin: 0;
+}
+
+.idDetalle {
+    color: white;
+    margin: 0 0 24px 0;
+    font-weight: normal;
+    font-size: 1.3vw;
+}
+
+.atributoDetalle {
+    color: white;
+    margin: 0;
+}
+
+.valorDetalle {
+    color: white;
+    margin: 0;
+}

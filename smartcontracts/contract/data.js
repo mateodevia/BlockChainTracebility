@@ -10,17 +10,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -40,17 +44,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-987-622',
                 UPC: '7-2527833070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '92%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '92%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -70,17 +78,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-098-328',
                 UPC: '7-2527833070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -100,17 +112,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-321-789',
                 UPC: '7-2527249070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '96%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -130,17 +146,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-987-256',
                 UPC: '7-25278333467-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '90%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '90%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -160,17 +180,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-946-829',
                 UPC: '7-3907833070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '96%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '96%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [],
             },
@@ -189,22 +213,33 @@ module.exports.actividades = [
                     lat: -75.5024821,
                     lon: 20.27,
                 },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
+                },
                 transacciones: [],
             },
             {
                 SKU: 'PRO-HOM-673-283',
                 UPC: '7-214833070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '95%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '95%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [],
             },
@@ -223,22 +258,33 @@ module.exports.actividades = [
                     lat: -75.5024821,
                     lon: 20.27,
                 },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
+                },
                 transacciones: [],
             },
             {
                 SKU: 'PRO-HOM-178-309',
                 UPC: '7-2518923070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '95%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [],
             },
@@ -255,18 +301,22 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
-                cantidad: '50kg',
                 consumido: true,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -286,18 +336,22 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-987-622',
                 UPC: '7-2527833070-6',
-                cantidad: '50kg',
                 consumido: true,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '92%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '92%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -317,18 +371,22 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-098-328',
                 UPC: '7-2527833070-6',
-                cantidad: '50kg',
                 consumido: true,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -348,18 +406,22 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-321-789',
                 UPC: '7-2527249070-6',
-                cantidad: '50kg',
                 consumido: true,
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
-                'indice de fluides': '96%',
-                nombre: 'Homopolimero',
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
                     lon: 20.27,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '96%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -386,18 +448,22 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
-                cantidad: '50kg',
                 consumido: true,
-                dueñoActual: 'Transportador',
-                dueños: ['Transportador', 'Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
+                dueñoActual: 'Cartoflex',
+                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 consumidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -417,17 +483,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-987-622',
                 UPC: '7-2527833070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Transportador',
                 dueños: ['Transportador', 'Propilco'],
-                'indice de fluides': '92%',
-                nombre: 'Homopolimero',
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '92%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -447,17 +517,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-098-328',
                 UPC: '7-2527833070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Transportador',
                 dueños: ['Transportador', 'Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -477,17 +551,21 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-321-789',
                 UPC: '7-2527249070-6',
-                cantidad: '50kg',
                 consumido: false,
                 dueñoActual: 'Transportador',
                 dueños: ['Transportador', 'Propilco'],
-                'indice de fluides': '96%',
-                nombre: 'Homopolimero',
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '96%',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -552,12 +630,9 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
-                cantidad: '45kg',
                 consumido: true,
                 dueñoActual: 'Cartoflex',
                 dueños: ['Cartoflex', 'Transportador', 'Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
                 producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
                 consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
@@ -565,14 +640,17 @@ module.exports.actividades = [
                     lat: -74.1041472,
                     lon: 4.6193288,
                 },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '45kg',
+                    'indice de fluides': '98%',
+                    imagenes: [],
+                    videos: [],
+                },
                 transacciones: [],
             },
             {
                 SKU: '20200007',
-                cantidadLaminas: 5,
-                cantidad: '5kg',
-                maquina: 'Maquina 1',
-                estruzor: 'Juan Perez',
                 consumido: false,
                 dueñoActual: 'Cartoflex',
                 dueños: ['Cartoflex'],
@@ -581,6 +659,14 @@ module.exports.actividades = [
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    cantidad: '5kg',
+                    cantidadLaminas: 5,
+                    maquina: 'Maquina 1',
+                    estruzor: 'Juan Perez',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [],
             },
@@ -592,10 +678,6 @@ module.exports.actividades = [
         consume: [
             {
                 SKU: '20200007',
-                cantidadLaminas: 5,
-                cantidad: '5kg',
-                maquina: 'Maquina 1',
-                estruzor: 'Juan Perez',
                 consumido: true,
                 consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 dueñoActual: 'Cartoflex',
@@ -605,6 +687,14 @@ module.exports.actividades = [
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    cantidad: '5kg',
+                    cantidadLaminas: 5,
+                    maquina: 'Maquina 1',
+                    estruzor: 'Juan Perez',
+                    imagenes: [],
+                    videos: [],
                 },
                 transacciones: [],
             },
@@ -628,11 +718,15 @@ module.exports.actividades = [
                     lat: -74.1041472,
                     lon: 4.6193288,
                 },
-                cantidad: '3kg',
-                cliente: 'MABE',
-                producto: 'PANEL ANDROMEDA 300 L VENTANA',
-                REFERENCIA: '294D1747P003',
-                dimension: '558*1454',
+                caracteristicas: {
+                    cantidad: '3kg',
+                    cliente: 'MABE',
+                    producto: 'PANEL ANDROMEDA 300 L VENTANA',
+                    REFERENCIA: '294D1747P003',
+                    dimension: '558*1454',
+                    imagenes: [],
+                    videos: [],
+                },
                 transacciones: [
                     {
                         destino: 'Transportador',
@@ -659,11 +753,13 @@ module.exports.actividades = [
                     lat: -74.1041472,
                     lon: 4.6193288,
                 },
-                cantidad: '2kg',
-                cliente: 'MABE',
-                producto: 'PANEL ANDROMEDA 300 L VENTANA',
-                REFERENCIA: '294D1747P003',
-                dimension: '558*1454',
+                caracteristicas: {
+                    cantidad: '2kg',
+                    cliente: 'MABE',
+                    producto: 'PANEL ANDROMEDA 300 L VENTANA',
+                    REFERENCIA: '294D1747P003',
+                    dimension: '558*1454',
+                },
                 transacciones: [
                     {
                         destino: 'Transportador',
@@ -696,11 +792,13 @@ module.exports.actividades = [
                     lat: -74.1041472,
                     lon: 4.6193288,
                 },
-                cantidad: '3kg',
-                cliente: 'MABE',
-                producto: 'PANEL ANDROMEDA 300 L VENTANA',
-                REFERENCIA: '294D1747P003',
-                dimension: '558*1454',
+                caracteristicas: {
+                    cantidad: '3kg',
+                    cliente: 'MABE',
+                    producto: 'PANEL ANDROMEDA 300 L VENTANA',
+                    REFERENCIA: '294D1747P003',
+                    dimension: '558*1454',
+                },
                 transacciones: [
                     {
                         destino: 'Transportador',
@@ -764,11 +862,13 @@ module.exports.actividades = [
                     lat: -74.1215223,
                     lon: 4.6152927,
                 },
-                cantidad: '3kg',
-                cliente: 'MABE',
-                producto: 'PANEL ANDROMEDA 300 L VENTANA',
-                REFERENCIA: '294D1747P003',
-                dimension: '558*1454',
+                caracteristicas: {
+                    cantidad: '3kg',
+                    cliente: 'MABE',
+                    producto: 'PANEL ANDROMEDA 300 L VENTANA',
+                    REFERENCIA: '294D1747P003',
+                    dimension: '558*1454',
+                },
                 transacciones: [
                     {
                         destino: 'Canvan',
@@ -794,11 +894,13 @@ module.exports.actividades = [
                     lat: -74.1215223,
                     lon: 4.6152927,
                 },
-                cantidad: '2kg',
-                cliente: 'MABE',
-                producto: 'PANEL ANDROMEDA 300 L VENTANA',
-                REFERENCIA: '294D1747P003',
-                dimension: '558*1454',
+                caracteristicas: {
+                    cantidad: '2kg',
+                    cliente: 'MABE',
+                    producto: 'PANEL ANDROMEDA 300 L VENTANA',
+                    REFERENCIA: '294D1747P003',
+                    dimension: '558*1454',
+                },
                 transacciones: [
                     {
                         destino: 'Canvan',
