@@ -108,7 +108,9 @@ function OrginGraphViz(props) {
                     >
                         {actividades[0]?.tipo}
                     </div>
-                    <svg className='lineas'>{lines}</svg>
+                    {actividades.length > 1 && (
+                        <svg className='lineas'>{lines}</svg>
+                    )}
                     <div className='contenedorGrupos'>
                         <div className='contenedorPrimerGrupo'>
                             {grupos.map((grupo) => (
@@ -178,7 +180,14 @@ function OrginGraphViz(props) {
                     )}
                 </div>
             )}
-            {!existe && <div>No existe</div>}
+            {!existe && (
+                <div className='contenedorInstrucciones'>
+                    <h2>No se encontro el activo</h2>
+                    <h3>
+                        Porfavor revise el identificador y vuelva a intentar
+                    </h3>
+                </div>
+            )}
         </React.Fragment>
     );
 }

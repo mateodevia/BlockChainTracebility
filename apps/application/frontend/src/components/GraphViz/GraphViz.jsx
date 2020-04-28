@@ -161,7 +161,14 @@ function GraphViz(props) {
                     </div>
                 </div>
             )}
-            {!existe && <div>No existe</div>}
+            {!existe && (
+                <div className='contenedorInstrucciones'>
+                    <h2>No se encontro el activo</h2>
+                    <h3>
+                        Porfavor revise el identificador y vuelva a intentar
+                    </h3>
+                </div>
+            )}
         </React.Fragment>
     );
 }
