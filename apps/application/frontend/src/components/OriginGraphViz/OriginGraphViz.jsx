@@ -115,6 +115,7 @@ function OrginGraphViz(props) {
                         <div className='contenedorPrimerGrupo'>
                             {grupos.map((grupo) => (
                                 <OriginGrupo
+                                    buscado={buscado}
                                     grupo={grupo}
                                     actualizar={actualizar}
                                     handleactualizar={handleactualizar}
@@ -135,9 +136,8 @@ function OrginGraphViz(props) {
                             style={{
                                 stroke:
                                     colores[
-                                        buscado?.dueños[
-                                            buscado?.dueños.length - 1
-                                        ]
+                                        buscado?.transacciones[0]?.fuente ||
+                                            buscado?.dueñoActual
                                     ],
                             }}
                         />
@@ -148,11 +148,13 @@ function OrginGraphViz(props) {
                         style={{
                             backgroundColor:
                                 coloresClaros[
-                                    buscado?.dueños[buscado?.dueños.length - 1]
+                                    buscado?.transacciones[0]?.fuente ||
+                                        buscado?.dueñoActual
                                 ],
                             borderColor:
                                 colores[
-                                    buscado?.dueños[buscado?.dueños.length - 1]
+                                    buscado?.transacciones[0]?.fuente ||
+                                        buscado?.dueñoActual
                                 ],
                         }}
                     ></div>
@@ -168,9 +170,8 @@ function OrginGraphViz(props) {
                                     style={{
                                         stroke:
                                             colores[
-                                                buscado?.dueños[
-                                                    buscado?.dueños.length - 1
-                                                ]
+                                                buscado?.transacciones[0]
+                                                    ?.fuente
                                             ],
                                     }}
                                 />

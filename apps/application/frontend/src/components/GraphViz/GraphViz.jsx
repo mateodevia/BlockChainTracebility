@@ -88,7 +88,6 @@ function GraphViz(props) {
             });
         });
     }, [props.buscado]);
-
     return (
         <React.Fragment>
             {existe && (
@@ -98,8 +97,15 @@ function GraphViz(props) {
                             className='buscado'
                             style={{
                                 backgroundColor:
-                                    coloresClaros[buscado?.dueñoActual],
-                                borderColor: colores[buscado?.dueñoActual],
+                                    coloresClaros[
+                                        buscado?.transacciones[0]?.fuente ||
+                                            buscado?.dueñoActual
+                                    ],
+                                borderColor:
+                                    colores[
+                                        buscado?.transacciones[0]?.fuente ||
+                                            buscado?.dueñoActual
+                                    ],
                             }}
                         ></div>
                     </div>
@@ -111,39 +117,47 @@ function GraphViz(props) {
                             x2='50%'
                             y2='50'
                             style={{
-                                stroke: colores[buscado?.dueñoActual],
+                                stroke:
+                                    colores[
+                                        buscado?.transacciones[0]?.fuente ||
+                                            buscado?.dueñoActual
+                                    ],
                             }}
                         />
                     </svg>
                     {buscado?.transacciones.map((trans, i) => (
                         <React.Fragment>
                             <div className='transaccionBase'></div>
-                            <svg className='lineasCortas'>
-                                <line
-                                    key={i}
-                                    className='linea'
-                                    x1='50%'
-                                    y1='0'
-                                    x2='50%'
-                                    y2='50'
-                                    style={{
-                                        stroke: colores[trans.destino],
-                                    }}
-                                />
-                            </svg>
+                            {actividades.length > 0 && (
+                                <svg className='lineasCortas'>
+                                    <line
+                                        key={i}
+                                        className='linea'
+                                        x1='50%'
+                                        y1='0'
+                                        x2='50%'
+                                        y2='50'
+                                        style={{
+                                            stroke: colores[trans.destino],
+                                        }}
+                                    />
+                                </svg>
+                            )}
                         </React.Fragment>
                     ))}
-                    <div
-                        className='firstActivity'
-                        id={actividades[0]?.id}
-                        style={{
-                            backgroundColor:
-                                coloresClaros[actividades[0]?.actor],
-                            borderColor: colores[actividades[0]?.actor],
-                        }}
-                    >
-                        {actividades[0]?.tipo}
-                    </div>
+                    {actividades.length > 0 && (
+                        <div
+                            className='firstActivity'
+                            id={actividades[0]?.id}
+                            style={{
+                                backgroundColor:
+                                    coloresClaros[actividades[0]?.actor],
+                                borderColor: colores[actividades[0]?.actor],
+                            }}
+                        >
+                            {actividades[0]?.tipo}
+                        </div>
+                    )}
                     <svg className='lineas'>{lines}</svg>
                     <div className='contenedorGrupos'>
                         <div className='contenedorPrimerGrupo'>
