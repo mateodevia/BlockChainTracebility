@@ -1220,6 +1220,7 @@ module.exports.trus = [
         dueñoActual: 'Cartoflex',
         dueños: ['Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
+        consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
             lat: -74.1041472,
@@ -1250,6 +1251,7 @@ module.exports.trus = [
         dueñoActual: 'Cartoflex',
         dueños: ['Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
+        consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
             lat: -74.1041472,
