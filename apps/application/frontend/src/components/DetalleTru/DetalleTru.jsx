@@ -1,7 +1,9 @@
 import React from 'react';
-import './DetalleTru.css';
+import GoogleMap from '../GoogleMap/GoogleMap';
 
 function DetalleTru(props) {
+    console.log(props.tru);
+
     return (
         <div className='contenedorDetalle'>
             <h3 className='tituloDetalle'>Activo:</h3>
@@ -22,16 +24,46 @@ function DetalleTru(props) {
             <p className='valorDetalle'>{props.tru.consumido ? 'Sí' : 'No'}</p>
             {props.tru.consumido && (
                 <React.Fragment>
-                    <h5 className='atributoDetalle'>Ultimo dueño:</h5>
+                    <h5 className='atributoDetalle'>último dueño:</h5>
                     <p className='valorDetalle'>{props.tru.dueñoActual}</p>
                 </React.Fragment>
             )}
             {!props.tru.consumido && (
                 <React.Fragment>
-                    <h5 className='atributoDetalle'>Dueño Actual:</h5>
-                    <p className='valorDetalle'>{props.tru.dueñoActual}</p>
+                    <h5 className='atributoDetalle'>dueño Actual:</h5>
+                    <p className='valorDetalle'>{props.tru?.dueñoActual}</p>
                 </React.Fragment>
             )}
+            {Object.keys(props.tru.caracteristicas)
+                .filter(
+                    (caracteristica) =>
+                        caracteristica !== 'imagenes' &&
+                        caracteristica !== 'videos'
+                )
+                .map((caracteristica) => (
+                    <React.Fragment>
+                        <h5 className='atributoDetalle'>{caracteristica}:</h5>
+                        <p className='valorDetalle'>
+                            {props.tru.caracteristicas[caracteristica]}
+                        </p>
+                    </React.Fragment>
+                ))}
+            {props.tru.caracteristicas.imagenes.map((imagen) => (
+                <React.Fragment>
+                    <h5 className='atributoDetalle'>{imagen[0]}:</h5>
+                    <img className='imagenDetalle' src={imagen[1]} />
+                </React.Fragment>
+            ))}
+            {props.tru.caracteristicas.videos.map((video) => (
+                <React.Fragment>
+                    <h5 className='atributoDetalle'>{video[0]}:</h5>
+                    <iframe className='videoDetalle' src={video[1]} />
+                </React.Fragment>
+            ))}
+            <div className='mapDetalle'>
+                <h5 className='atributoDetalle'>Ubicación:</h5>
+                <GoogleMap ubicacion={props.tru.ubicacion} />
+            </div>
         </div>
     );
 }

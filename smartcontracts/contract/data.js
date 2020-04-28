@@ -1417,6 +1417,8 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
+            imagenes: [],
+            videos: [],
         },
         transacciones: [
             {
@@ -1449,6 +1451,8 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
+            imagenes: [],
+            videos: [],
         },
         transacciones: [
             {
@@ -1481,6 +1485,8 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
+            imagenes: [],
+            videos: [],
         },
         transacciones: [
             {

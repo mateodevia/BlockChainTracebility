@@ -70,6 +70,10 @@ module.exports.getActividadesDestino = async (stub, tru) => {
             }
             actividades = Object.values(integracion);
         }
+        for (let i in actividadSiguiente.consume) {
+            let truActual = actividadSiguiente.consume[i];
+            truActual.id = truActual.producidoPor + '-' + i;
+        }
         actividades.push(actividadSiguiente);
     }
     return actividades;
