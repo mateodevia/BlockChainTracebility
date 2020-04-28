@@ -1,0 +1,60 @@
+.header {
+    background-color: black;
+    color: white;
+}
+
+.labelHeader {
+    margin: 10px;
+    height: 25px;
+}
+
+.selectIdentificador {
+    font-size: 13px;
+    margin: 10px 5px;
+    padding: 0 5px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.selectActor {
+    font-size: 13px;
+    margin: 10px 5px;
+    padding: 0 5px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.selectActor:disabled {
+    background-color: rgb(73, 73, 73);
+    color: rgb(73, 73, 73);
+}
+
+.inputBuscar {
+    font-size: 13px;
+    margin: 10px;
+    padding: 0 10px;
+    height: 25px;
+    width: calc(100% - 660px);
+    min-width: 160px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contenedorBotones {
+    display: inline-block;
+    width: fit-content;
+    min-width: 300px;
+}
+
+.botonHeader {
+    padding: 8px;
+    margin: 10px 5px;
+    background-color: rgb(100, 100, 200);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
