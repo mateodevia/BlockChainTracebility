@@ -11,10 +11,10 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
                 consumido: true,
-                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
@@ -24,7 +24,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -46,10 +51,10 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-987-622',
                 UPC: '7-2527833070-6',
                 consumido: true,
-                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
@@ -59,7 +64,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '92%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -81,10 +91,10 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-098-328',
                 UPC: '7-2527833070-6',
                 consumido: true,
-                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
@@ -94,7 +104,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -116,10 +131,10 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-321-789',
                 UPC: '7-2527249070-6',
                 consumido: true,
-                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -75.5024821,
@@ -129,7 +144,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -163,7 +183,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '90%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -197,7 +222,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '96%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [],
@@ -221,7 +251,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [],
@@ -242,7 +277,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '95%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [],
@@ -266,7 +306,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [],
@@ -287,7 +332,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [],
@@ -319,7 +369,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -354,7 +409,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '92%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -389,7 +449,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -424,7 +489,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '96%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -466,7 +536,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -488,8 +563,8 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-987-622',
                 UPC: '7-2527833070-6',
                 consumido: false,
-                dueñoActual: 'Transportador',
-                dueños: ['Transportador', 'Propilco'],
+                dueñoActual: 'Cartoflex',
+                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
@@ -500,7 +575,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '92%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -522,8 +602,8 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-098-328',
                 UPC: '7-2527833070-6',
                 consumido: false,
-                dueñoActual: 'Transportador',
-                dueños: ['Transportador', 'Propilco'],
+                dueñoActual: 'Cartoflex',
+                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
@@ -534,7 +614,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -556,8 +641,8 @@ module.exports.actividades = [
                 SKU: 'PRO-HOM-321-789',
                 UPC: '7-2527249070-6',
                 consumido: false,
-                dueñoActual: 'Transportador',
-                dueños: ['Transportador', 'Propilco'],
+                dueñoActual: 'Cartoflex',
+                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
@@ -568,7 +653,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '50kg',
                     'indice de fluides': '96%',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -595,19 +685,27 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
-                cantidad: '50kg',
                 consumido: true,
-                consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
-                dueñoActual: 'Propilco',
-                dueños: ['Propilco'],
-                'indice de fluides': '98%',
-                nombre: 'Homopolimero',
+                dueñoActual: 'Cartoflex',
+                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
                 producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 consumidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
                 ubicacion: {
                     lat: -74.1041472,
                     lon: 4.6193288,
+                },
+                caracteristicas: {
+                    nombre: 'Homopolimero',
+                    cantidad: '50kg',
+                    'indice de fluides': '98%',
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                        ],
+                    ],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -632,6 +730,29 @@ module.exports.actividades = [
         fecha: '2020-04-01T14:08:36.883Z',
         produce: [
             {
+                SKU: '20200007',
+                consumido: true,
+                dueñoActual: 'Cartoflex',
+                dueños: ['Cartoflex'],
+                producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
+                tipo: 'TRU',
+                ubicacion: {
+                    lat: -74.1041472,
+                    lon: 4.6193288,
+                },
+                caracteristicas: {
+                    cantidadLaminas: 5,
+                    cantidad: '5kg',
+                    maquina: 'Maquina 1',
+                    estruzor: 'Juan Perez',
+                    imagenes: [],
+                    videos: [
+                        ['Video', 'https://www.youtube.com/embed/iJ6lufC9PrI'],
+                    ],
+                },
+                transacciones: [],
+            },
+            {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
                 consumido: true,
@@ -648,28 +769,12 @@ module.exports.actividades = [
                     nombre: 'Homopolimero',
                     cantidad: '45kg',
                     'indice de fluides': '98%',
-                    imagenes: [],
-                    videos: [],
-                },
-                transacciones: [],
-            },
-            {
-                SKU: '20200007',
-                consumido: false,
-                dueñoActual: 'Cartoflex',
-                dueños: ['Cartoflex'],
-                producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
-                tipo: 'TRU',
-                ubicacion: {
-                    lat: -74.1041472,
-                    lon: 4.6193288,
-                },
-                caracteristicas: {
-                    cantidad: '5kg',
-                    cantidadLaminas: 5,
-                    maquina: 'Maquina 1',
-                    estruzor: 'Juan Perez',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [],
@@ -683,7 +788,6 @@ module.exports.actividades = [
             {
                 SKU: '20200007',
                 consumido: true,
-                consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 dueñoActual: 'Cartoflex',
                 dueños: ['Cartoflex'],
                 producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
@@ -693,12 +797,14 @@ module.exports.actividades = [
                     lon: 4.6193288,
                 },
                 caracteristicas: {
-                    cantidad: '5kg',
                     cantidadLaminas: 5,
+                    cantidad: '5kg',
                     maquina: 'Maquina 1',
                     estruzor: 'Juan Perez',
                     imagenes: [],
-                    videos: [],
+                    videos: [
+                        ['Video', 'https://www.youtube.com/embed/iJ6lufC9PrI'],
+                    ],
                 },
                 transacciones: [],
             },
@@ -713,8 +819,13 @@ module.exports.actividades = [
                 SKU: 'PTL1GR032-29',
                 UPC: '7-2527783070-6',
                 consumido: true,
-                dueñoActual: 'Cartoflex',
-                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+                dueñoActual: 'Transportador',
+                dueños: [
+                    'Transportador',
+                    'Cartoflex',
+                    'Transportador',
+                    'Propilco',
+                ],
                 producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
@@ -728,7 +839,12 @@ module.exports.actividades = [
                     producto: 'PANEL ANDROMEDA 300 L VENTANA',
                     REFERENCIA: '294D1747P003',
                     dimension: '558*1454',
-                    imagenes: [],
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110913/Tesis/dbkhtsi2kjq9s8iw59e1.jpg',
+                        ],
+                    ],
                     videos: [],
                 },
                 transacciones: [
@@ -748,8 +864,13 @@ module.exports.actividades = [
                 SKU: 'PTL2GR032-29',
                 UPC: '7-2527781950-6',
                 consumido: true,
-                dueñoActual: 'Cartoflex',
-                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+                dueñoActual: 'Transportador',
+                dueños: [
+                    'Transportador',
+                    'Cartoflex',
+                    'Transportador',
+                    'Propilco',
+                ],
                 producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
@@ -763,6 +884,13 @@ module.exports.actividades = [
                     producto: 'PANEL ANDROMEDA 300 L VENTANA',
                     REFERENCIA: '294D1747P003',
                     dimension: '558*1454',
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110913/Tesis/dbkhtsi2kjq9s8iw59e1.jpg',
+                        ],
+                    ],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -787,8 +915,13 @@ module.exports.actividades = [
                 SKU: 'PTL1GR032-29',
                 UPC: '7-2527783070-6',
                 consumido: true,
-                dueñoActual: 'Cartoflex',
-                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+                dueñoActual: 'Transportador',
+                dueños: [
+                    'Transportador',
+                    'Cartoflex',
+                    'Transportador',
+                    'Propilco',
+                ],
                 producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
@@ -802,6 +935,13 @@ module.exports.actividades = [
                     producto: 'PANEL ANDROMEDA 300 L VENTANA',
                     REFERENCIA: '294D1747P003',
                     dimension: '558*1454',
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110913/Tesis/dbkhtsi2kjq9s8iw59e1.jpg',
+                        ],
+                    ],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -820,8 +960,13 @@ module.exports.actividades = [
                 SKU: 'PTL2GR032-29',
                 UPC: '7-2527781950-6',
                 consumido: true,
-                dueñoActual: 'Cartoflex',
-                dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+                dueñoActual: 'Transportador',
+                dueños: [
+                    'Transportador',
+                    'Cartoflex',
+                    'Transportador',
+                    'Propilco',
+                ],
                 producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
                 consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
                 tipo: 'TRU',
@@ -829,11 +974,20 @@ module.exports.actividades = [
                     lat: -74.1041472,
                     lon: 4.6193288,
                 },
-                cantidad: '2kg',
-                cliente: 'MABE',
-                producto: 'PANEL ANDROMEDA 300 L VENTANA',
-                REFERENCIA: '294D1747P003',
-                dimension: '558*1454',
+                caracteristicas: {
+                    cantidad: '2kg',
+                    cliente: 'MABE',
+                    producto: 'PANEL ANDROMEDA 300 L VENTANA',
+                    REFERENCIA: '294D1747P003',
+                    dimension: '558*1454',
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110913/Tesis/dbkhtsi2kjq9s8iw59e1.jpg',
+                        ],
+                    ],
+                    videos: [],
+                },
                 transacciones: [
                     {
                         destino: 'Transportador',
@@ -872,6 +1026,13 @@ module.exports.actividades = [
                     producto: 'PANEL ANDROMEDA 300 L VENTANA',
                     REFERENCIA: '294D1747P003',
                     dimension: '558*1454',
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112317/Tesis/mwmprqwu2i0wgqihb3ce.jpg',
+                        ],
+                    ],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -904,6 +1065,13 @@ module.exports.actividades = [
                     producto: 'PANEL ANDROMEDA 300 L VENTANA',
                     REFERENCIA: '294D1747P003',
                     dimension: '558*1454',
+                    imagenes: [
+                        [
+                            'Foto',
+                            'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112317/Tesis/mwmprqwu2i0wgqihb3ce.jpg',
+                        ],
+                    ],
+                    videos: [],
                 },
                 transacciones: [
                     {
@@ -941,7 +1109,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -976,7 +1149,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '92%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1011,7 +1189,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1046,7 +1229,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '96%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1080,7 +1268,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '90%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1114,7 +1307,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '96%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [],
@@ -1138,7 +1336,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [],
@@ -1159,7 +1362,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '95%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [],
@@ -1183,7 +1391,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [],
@@ -1204,7 +1417,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [],
@@ -1226,7 +1444,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1248,8 +1471,8 @@ module.exports.trus = [
         SKU: 'PRO-HOM-987-622',
         UPC: '7-2527833070-6',
         consumido: false,
-        dueñoActual: 'Transportador',
-        dueños: ['Transportador', 'Propilco'],
+        dueñoActual: 'Cartoflex',
+        dueños: ['Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
@@ -1260,7 +1483,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '92%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1282,8 +1510,8 @@ module.exports.trus = [
         SKU: 'PRO-HOM-098-328',
         UPC: '7-2527833070-6',
         consumido: false,
-        dueñoActual: 'Transportador',
-        dueños: ['Transportador', 'Propilco'],
+        dueñoActual: 'Cartoflex',
+        dueños: ['Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
@@ -1294,7 +1522,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '98%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1316,8 +1549,8 @@ module.exports.trus = [
         SKU: 'PRO-HOM-321-789',
         UPC: '7-2527249070-6',
         consumido: false,
-        dueñoActual: 'Transportador',
-        dueños: ['Transportador', 'Propilco'],
+        dueñoActual: 'Cartoflex',
+        dueños: ['Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
@@ -1328,7 +1561,12 @@ module.exports.trus = [
             nombre: 'Homopolimero',
             cantidad: '50kg',
             'indice de fluides': '96%',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1348,10 +1586,6 @@ module.exports.trus = [
     },
     {
         SKU: '20200007',
-        cantidadLaminas: 5,
-        cantidad: '5kg',
-        maquina: 'Maquina 1',
-        estruzor: 'Juan Perez',
         consumido: true,
         dueñoActual: 'Cartoflex',
         dueños: ['Cartoflex'],
@@ -1361,14 +1595,49 @@ module.exports.trus = [
             lat: -74.1041472,
             lon: 4.6193288,
         },
+        caracteristicas: {
+            cantidadLaminas: 5,
+            cantidad: '5kg',
+            maquina: 'Maquina 1',
+            estruzor: 'Juan Perez',
+            imagenes: [],
+            videos: [['Video', 'https://www.youtube.com/embed/iJ6lufC9PrI']],
+        },
+        transacciones: [],
+    },
+    {
+        SKU: 'PRO-HOM-876-293',
+        UPC: '7-2527273070-6',
+        consumido: true,
+        dueñoActual: 'Cartoflex',
+        dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+        producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
+        consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
+        tipo: 'TRU',
+        ubicacion: {
+            lat: -74.1041472,
+            lon: 4.6193288,
+        },
+        caracteristicas: {
+            nombre: 'Homopolimero',
+            cantidad: '45kg',
+            'indice de fluides': '98%',
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110912/Tesis/ox4tm1yosr6xcel2udek.jpg',
+                ],
+            ],
+            videos: [],
+        },
         transacciones: [],
     },
     {
         SKU: 'PTL1GR032-29',
         UPC: '7-2527783070-6',
         consumido: true,
-        dueñoActual: 'Cartoflex',
-        dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+        dueñoActual: 'Transportador',
+        dueños: ['Transportador', 'Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
         consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
@@ -1382,7 +1651,12 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110913/Tesis/dbkhtsi2kjq9s8iw59e1.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1402,8 +1676,8 @@ module.exports.trus = [
         SKU: 'PTL2GR032-29',
         UPC: '7-2527781950-6',
         consumido: true,
-        dueñoActual: 'Cartoflex',
-        dueños: ['Cartoflex', 'Transportador', 'Propilco'],
+        dueñoActual: 'Transportador',
+        dueños: ['Transportador', 'Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
         consumidoPor: '3668dc40-7457-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
@@ -1417,7 +1691,12 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588110913/Tesis/dbkhtsi2kjq9s8iw59e1.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1451,7 +1730,12 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112317/Tesis/mwmprqwu2i0wgqihb3ce.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
@@ -1485,7 +1769,12 @@ module.exports.trus = [
             producto: 'PANEL ANDROMEDA 300 L VENTANA',
             REFERENCIA: '294D1747P003',
             dimension: '558*1454',
-            imagenes: [],
+            imagenes: [
+                [
+                    'Foto',
+                    'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112317/Tesis/mwmprqwu2i0wgqihb3ce.jpg',
+                ],
+            ],
             videos: [],
         },
         transacciones: [
