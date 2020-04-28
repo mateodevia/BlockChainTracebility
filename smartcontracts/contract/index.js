@@ -553,7 +553,7 @@ var ABstore = class {
       tru = JSON.parse(tru.toString());
       tru.id = args[0];
       actividades = await utils.getActividadesOrigen(stub, tru);
-      return Buffer.from(JSON.stringify({actividades: actividades}));
+      return Buffer.from(JSON.stringify({tru: tru, actividades: actividades}));
     }
     else {
       throw `El TRU ${args[0]} no existe`;
@@ -567,7 +567,7 @@ var ABstore = class {
       tru = JSON.parse(tru.toString());
       tru.id = args[0];
       actividades = await utils.getActividadesDestino(stub, tru);
-      return Buffer.from(JSON.stringify({actividades: actividades}));
+      return Buffer.from(JSON.stringify({tru: tru, actividades: actividades}));
     }
     else {
       throw `El TRU ${args[0]} no existe`;
