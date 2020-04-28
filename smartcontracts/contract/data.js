@@ -10,7 +10,8 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-876-293',
                 UPC: '7-2527273070-6',
-                consumido: false,
+                consumido: true,
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
@@ -44,7 +45,8 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-987-622',
                 UPC: '7-2527833070-6',
-                consumido: false,
+                consumido: true,
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
@@ -78,7 +80,8 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-098-328',
                 UPC: '7-2527833070-6',
-                consumido: false,
+                consumido: true,
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
@@ -112,7 +115,8 @@ module.exports.actividades = [
             {
                 SKU: 'PRO-HOM-321-789',
                 UPC: '7-2527249070-6',
-                consumido: false,
+                consumido: true,
+                consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 dueñoActual: 'Propilco',
                 dueños: ['Propilco'],
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
@@ -923,10 +927,11 @@ module.exports.trus = [
     {
         SKU: 'PRO-HOM-876-293',
         UPC: '7-2527273070-6',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Propilco',
         dueños: ['Propilco'],
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+        consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
             lat: -75.5024821,
@@ -957,10 +962,11 @@ module.exports.trus = [
     {
         SKU: 'PRO-HOM-987-622',
         UPC: '7-2527833070-6',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Propilco',
         dueños: ['Propilco'],
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+        consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
             lat: -75.5024821,
@@ -991,10 +997,11 @@ module.exports.trus = [
     {
         SKU: 'PRO-HOM-098-328',
         UPC: '7-2527833070-6',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Propilco',
         dueños: ['Propilco'],
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+        consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
             lat: -75.5024821,
@@ -1025,10 +1032,11 @@ module.exports.trus = [
     {
         SKU: 'PRO-HOM-321-789',
         UPC: '7-2527249070-6',
-        consumido: false,
+        consumido: true,
         dueñoActual: 'Propilco',
         dueños: ['Propilco'],
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
+        consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
             lat: -75.5024821,
@@ -1037,7 +1045,7 @@ module.exports.trus = [
         caracteristicas: {
             nombre: 'Homopolimero',
             cantidad: '50kg',
-            'indice de fluides': '98%',
+            'indice de fluides': '96%',
             imagenes: [],
             videos: [],
         },
