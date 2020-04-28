@@ -1590,6 +1590,7 @@ module.exports.trus = [
         dueñoActual: 'Cartoflex',
         dueños: ['Cartoflex'],
         producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
+        consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
             lat: -74.1041472,
@@ -1608,11 +1609,10 @@ module.exports.trus = [
     {
         SKU: 'PRO-HOM-876-293',
         UPC: '7-2527273070-6',
-        consumido: true,
+        consumido: false,
         dueñoActual: 'Cartoflex',
         dueños: ['Cartoflex', 'Transportador', 'Propilco'],
         producidoPor: 'd3da62f0-744d-11ea-abce-1b474a67a6e2',
-        consumidoPor: '76033ce0-7454-11ea-abce-1b474a67a6e2',
         tipo: 'TRU',
         ubicacion: {
             lat: -74.1041472,
