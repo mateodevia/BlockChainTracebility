@@ -676,8 +676,8 @@ var ABstore = class {
         let iterator = await stub.getQueryResult(JSON.stringify(query));
         let results = [];
         let next = await iterator.next();
-        let newItem = JSON.parse(next.value.value.toString());
         if (!next.done) {
+            let newItem = JSON.parse(next.value.value.toString());
             newItem.id = next.value.key;
             results.push(newItem);
             while (!next.done) {
@@ -714,8 +714,8 @@ var ABstore = class {
         let iterator = await stub.getQueryResult(JSON.stringify(query));
         let results = [];
         let next = await iterator.next();
-        let newItem = JSON.parse(next.value.value.toString());
         if (!next.done) {
+            let newItem = JSON.parse(next.value.value.toString());
             newItem.id = next.value.key;
             results.push(newItem);
             while (!next.done) {
@@ -752,8 +752,8 @@ var ABstore = class {
         let iterator = await stub.getQueryResult(JSON.stringify(query));
         let results = [];
         let next = await iterator.next();
-        let newItem = JSON.parse(next.value.value.toString());
         if (!next.done) {
+            let newItem = JSON.parse(next.value.value.toString());
             newItem.id = next.value.key;
             results.push(newItem);
             while (!next.done) {
@@ -783,8 +783,8 @@ var ABstore = class {
         let iterator = await stub.getQueryResult(JSON.stringify(query));
         let results = [];
         let next = await iterator.next();
-        let newItem = JSON.parse(next.value.value.toString());
         if (!next.done) {
+            let newItem = JSON.parse(next.value.value.toString());
             newItem.id = next.value.key;
             results.push(newItem);
             while (!next.done) {
