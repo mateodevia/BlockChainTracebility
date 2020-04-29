@@ -742,6 +742,68 @@ var ABstore = class {
             throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
         }
     }
+
+    async origenByUpc(stub, args) {
+        let query = {
+            selector: {
+                UPC: { $eq: args[0] },
+            },
+        };
+        let iterator = await stub.getQueryResult(JSON.stringify(query));
+        let results = [];
+        let next = await iterator.next();
+        let newItem = JSON.parse(next.value.value.toString());
+        if (!next.done) {
+            newItem.id = next.value.key;
+            results.push(newItem);
+            while (!next.done) {
+                next = await iterator.next();
+                if (next.value) {
+                    newItem = JSON.parse(next.value.value.toString());
+                    newItem.id = next.value.key;
+                    results.push(newItem);
+                }
+            }
+            let tru = results[0];
+            let actividades = await utils.getActividadesOrigen(stub, tru);
+            return Buffer.from(
+                JSON.stringify({ tru: tru, actividades: actividades })
+            );
+        } else {
+            throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
+        }
+    }
+
+    async destinoByUpc(stub, args) {
+        let query = {
+            selector: {
+                UPC: { $eq: args[0] },
+            },
+        };
+        let iterator = await stub.getQueryResult(JSON.stringify(query));
+        let results = [];
+        let next = await iterator.next();
+        let newItem = JSON.parse(next.value.value.toString());
+        if (!next.done) {
+            newItem.id = next.value.key;
+            results.push(newItem);
+            while (!next.done) {
+                next = await iterator.next();
+                if (next.value) {
+                    newItem = JSON.parse(next.value.value.toString());
+                    newItem.id = next.value.key;
+                    results.push(newItem);
+                }
+            }
+            let tru = results[results.length - 1];
+            let actividades = await utils.getActividadesOrigen(stub, tru);
+            return Buffer.from(
+                JSON.stringify({ tru: tru, actividades: actividades })
+            );
+        } else {
+            throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
+        }
+    }
 };
 
 console.log('>>>>>>>>start');

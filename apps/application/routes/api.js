@@ -24,5 +24,7 @@ router.get('/trus/id/:id/origen', apiController.origen);
 router.get('/trus/id/:id/destino', apiController.destino);
 router.get('/actores/:actor/trus/:sku/origen', apiController.origenSku);
 router.get('/actores/:actor/trus/:sku/destino', apiController.destinoSku);
+router.get('/trus/upc/:upc/origen', apiController.origenUpc);
+router.get('/trus/upc/:upc/destino', apiController.destinoUpc);
 
 module.exports = router;
