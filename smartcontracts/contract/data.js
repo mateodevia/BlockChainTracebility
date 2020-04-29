@@ -514,8 +514,8 @@ module.exports.actividades = [
             },
         ],
         destino: {
-            lat: -74.1041472,
-            lon: 4.6193288,
+            lat: 4.6193288,
+            lon: -74.1215223,
         },
         fecha: '2020-04-01T14:08:36.883Z',
         produce: [
@@ -724,8 +724,8 @@ module.exports.actividades = [
             },
         ],
         destino: {
-            lat: -74.1041472,
-            lon: 4.6193288,
+            lat: 4.6193288,
+            lon: -74.1215223,
         },
         fecha: '2020-04-01T14:08:36.883Z',
         produce: [
@@ -812,8 +812,8 @@ module.exports.actividades = [
             },
         ],
         destino: {
-            lat: -74.1041472,
-            lon: 4.6193288,
+            lat: 4.6193288,
+            lon: -74.1215223,
         },
         fecha: '2020-04-01T14:08:36.883Z',
         produce: [
@@ -1005,8 +1005,8 @@ module.exports.actividades = [
             },
         ],
         destino: {
-            lat: -74.1041472,
-            lon: 4.6193288,
+            lat: 4.6193288,
+            lon: -74.1215223,
         },
         fecha: '2020-04-01T14:08:36.883Z',
         produce: [
