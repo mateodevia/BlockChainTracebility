@@ -12,7 +12,16 @@ function Detalle(props) {
                     Seleccione un nodo para ver más información
                 </div>
             )}
-            {props.tru && <DetalleTru tru={props.tru} />}
+            {props.tru && (
+                <DetalleTru
+                    tru={props.tru}
+                    setBuscado={props.setBuscado}
+                    setConsulta={props.setConsulta}
+                    updateInput={props.updateInput}
+                    machete={props.machete}
+                    setMachete={props.setMachete}
+                />
+            )}
             {props.actividad && (
                 <DetalleActividad actividad={props.actividad} />
             )}

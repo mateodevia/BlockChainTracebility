@@ -11,6 +11,7 @@ function GraphViz(props) {
     let [grupos, setGrupos] = useState([]);
     let [lines, setLines] = useState(<div></div>);
     let [actualizar, setActualizar] = useState(false);
+
     let colores = {
         Propilco: 'rgb(12, 124, 186)',
         Cartoflex: 'rgb(122, 182, 72)',
@@ -57,6 +58,7 @@ function GraphViz(props) {
 
     let handleactualizar = () => {
         renderLines();
+        setActualizar(!actualizar);
     };
 
     useEffect(() => {
@@ -88,6 +90,7 @@ function GraphViz(props) {
             });
         });
     }, [props.buscado]);
+
     return (
         <React.Fragment>
             {existe && (

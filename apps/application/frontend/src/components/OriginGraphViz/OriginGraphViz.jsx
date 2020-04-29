@@ -85,13 +85,16 @@ function OrginGraphViz(props) {
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
+    });
+
+    useEffect(() => {
         let contenedor = document.getElementById('contenedorViz');
         contenedor.scrollTo({
             top: document.body.scrollHeight,
             left: 0,
             behavior: 'smooth',
         });
-    });
+    }, [lines]);
 
     return (
         <React.Fragment>
@@ -105,6 +108,7 @@ function OrginGraphViz(props) {
                                 coloresClaros[actividades[0]?.actor],
                             borderColor: colores[actividades[0]?.actor],
                         }}
+                        onClick={() => props.selectActividad(actividades[0])}
                     >
                         {actividades[0]?.tipo}
                     </div>
@@ -122,6 +126,9 @@ function OrginGraphViz(props) {
                                     actividades={actividades}
                                     colores={colores}
                                     coloresClaros={coloresClaros}
+                                    selectTru={props.selectTru}
+                                    selectActividad={props.selectActividad}
+                                    selectTransaccion={props.selectTransaccion}
                                 />
                             ))}
                         </div>
@@ -157,6 +164,7 @@ function OrginGraphViz(props) {
                                         buscado?.dueñoActual
                                 ],
                         }}
+                        onClick={() => props.selectTru(buscado)}
                     ></div>
                     {buscado?.transacciones.length > 0 && (
                         <React.Fragment>
@@ -176,7 +184,14 @@ function OrginGraphViz(props) {
                                     }}
                                 />
                             </svg>
-                            <div className='transaccion'></div>
+                            <div
+                                className='transaccion'
+                                onClick={() =>
+                                    props.selectTransaccion(
+                                        buscado?.transacciones[0]
+                                    )
+                                }
+                            ></div>
                         </React.Fragment>
                     )}
                 </div>

@@ -31,3 +31,13 @@ h1 {
     height: calc(100vh - 56px);
     overflow-y: scroll;
 }
+
+.boton {
+    padding: 8px;
+    margin: 10px 10px 10px 0;
+    background-color: #44dbb8;
+    color: rgb(22, 22, 22);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}

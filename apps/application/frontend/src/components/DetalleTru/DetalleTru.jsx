@@ -2,12 +2,29 @@ import React from 'react';
 import GoogleMap from '../GoogleMap/GoogleMap';
 
 function DetalleTru(props) {
-    console.log(props.tru);
+    let handleProcedencia = () => {
+        props.setBuscado(props.tru.id);
+        props.setConsulta('origen');
+        props.updateInput(props.tru.id);
+        props.setMachete(!props.machete);
+    };
 
+    let handleRastrear = () => {
+        props.setBuscado(props.tru.id);
+        props.setConsulta('destino');
+        props.updateInput(props.tru.id);
+        props.setMachete(!props.machete);
+    };
     return (
         <div className='contenedorDetalle'>
             <h3 className='tituloDetalle'>Activo:</h3>
-            <h4 className='idDetalle'>{props.tru.id}</h4>
+            <h4 className='idDetalleTru'>{props.tru.id}</h4>
+            <button className='boton' onClick={handleProcedencia}>
+                Consultar Procedencia
+            </button>
+            <button className='boton' onClick={handleRastrear}>
+                Rastrear Activo
+            </button>
             {props.tru.SKU && (
                 <React.Fragment>
                     <h5 className='atributoDetalle'>SKU:</h5>

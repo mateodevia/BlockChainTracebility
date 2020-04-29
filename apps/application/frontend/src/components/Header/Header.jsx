@@ -7,7 +7,6 @@ function Header(props) {
     let [actorActivo, setActorActivo] = useState(true);
     let idRef = useRef();
     let actorRef = useRef();
-    let inputRef = useRef();
 
     let handleChange = () => {
         if (idRef.current.value === 'SKU') {
@@ -18,9 +17,10 @@ function Header(props) {
     };
 
     let handleRastrear = () => {
-        if (inputRef.current.value !== '') {
-            props.setBuscado(inputRef.current.value);
+        if (props.inputRef.current.value !== '') {
+            props.setBuscado(props.inputRef.current.value);
             props.setConsulta('destino');
+            props.setMachete(!props.machete);
         } else {
             props.setBuscado(undefined);
             props.setConsulta('');
@@ -28,9 +28,10 @@ function Header(props) {
     };
 
     let handleProcedencia = () => {
-        if (inputRef.current.value !== '') {
-            props.setBuscado(inputRef.current.value);
+        if (props.inputRef.current.value !== '') {
+            props.setBuscado(props.inputRef.current.value);
             props.setConsulta('origen');
+            props.setMachete(!props.machete);
         } else {
             props.setBuscado(undefined);
             props.setConsulta('');
@@ -61,16 +62,15 @@ function Header(props) {
             </select>
             <input
                 type='text'
-                value='efa91e20-7413-11ea-9fdf-2174e1b0eb66-0'
                 placeholder='Identificador del activo'
                 className='inputBuscar'
-                ref={inputRef}
+                ref={props.inputRef}
             />
             <div className='contenedorBotones'>
-                <button className='botonHeader' onClick={handleProcedencia}>
+                <button className='boton' onClick={handleProcedencia}>
                     Consultar Procedencia
                 </button>
-                <button className='botonHeader' onClick={handleRastrear}>
+                <button className='boton' onClick={handleRastrear}>
                     Rastrear Activo
                 </button>
             </div>

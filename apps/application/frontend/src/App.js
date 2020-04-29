@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Instrucciones from './components/Instrucciones/Instrucciones';
@@ -13,6 +13,8 @@ function App() {
     let [tru, setTru] = useState(undefined);
     let [actividad, setActividad] = useState(undefined);
     let [transaccion, setTransaccion] = useState(undefined);
+    let [machete, setMachete] = useState(false);
+    let inputRef = useRef();
 
     let selectTru = (tru) => {
         setTru(tru);
@@ -31,9 +33,19 @@ function App() {
         setActividad(undefined);
         setTransaccion(transaccion);
     };
+
+    let updateInput = (text) => {
+        inputRef.current.value = text;
+    };
     return (
         <React.Fragment>
-            <Header setBuscado={setBuscado} setConsulta={setConsulta} />
+            <Header
+                setBuscado={setBuscado}
+                setConsulta={setConsulta}
+                inputRef={inputRef}
+                machete={machete}
+                setMachete={setMachete}
+            />
             <div className='contenedor'>
                 <div id='contenedorViz' className='contenedorViz'>
                     <div className='subContenedorViz'>
@@ -47,6 +59,7 @@ function App() {
                                     selectTru={selectTru}
                                     selectActividad={selectActividad}
                                     selectTransaccion={selectTransaccion}
+                                    machete={machete}
                                 />
                             </React.Fragment>
                         )}
@@ -58,6 +71,11 @@ function App() {
                         tru={tru}
                         actividad={actividad}
                         transaccion={transaccion}
+                        setBuscado={setBuscado}
+                        setConsulta={setConsulta}
+                        updateInput={updateInput}
+                        machete={machete}
+                        setMachete={setMachete}
                     />
                 </div>
             </div>

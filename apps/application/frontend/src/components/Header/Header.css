@@ -47,13 +47,3 @@
     width: fit-content;
     min-width: 300px;
 }
-
-.botonHeader {
-    padding: 8px;
-    margin: 10px 5px;
-    background-color: #44dbb8;
-    color: rgb(22, 22, 22);
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-}
