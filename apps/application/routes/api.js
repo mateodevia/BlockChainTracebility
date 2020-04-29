@@ -22,6 +22,6 @@ router.post('/actividad/invalidar', regulador.invalidar);
 router.post('/actividad/transformar', transformador.transformar);
 router.get('/trus/id/:id/origen', apiController.origen);
 router.get('/trus/id/:id/destino', apiController.destino);
-
+router.get('/actores/:actor/trus/:sku/origen', apiController.origenSku);
 
 module.exports = router;
