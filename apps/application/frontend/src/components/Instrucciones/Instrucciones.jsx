@@ -8,8 +8,8 @@ function Instrucciones() {
             <br />
             <div className='contenedorPasos'>
                 <h3>
-                    Para consultar un activo en de la cadena de suministro siga
-                    los siguientes pasos:
+                    Para consultar un activo de la cadena de suministro siga los
+                    siguientes pasos:
                 </h3>
                 <ul>
                     <li>

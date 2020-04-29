@@ -4,6 +4,20 @@ import GraphViz from '../GraphViz/GraphViz';
 import OriginGraphViz from '../OriginGraphViz/OriginGraphViz';
 
 function Consulta(props) {
+    let consulta = '';
+    if (props.tipo === 'id' && props.consulta === 'origen') {
+        consulta = `/v1/api/trus/id/${props.buscado}/origen`;
+    } else if (props.tipo === 'id' && props.consulta === 'destino') {
+        consulta = `/v1/api/trus/id/${props.buscado}/destino`;
+    } else if (props.tipo === 'sku' && props.consulta === 'origen') {
+        consulta = `/v1/api/actores/${props.actor}/trus/${props.buscado}/origen`;
+    } else if (props.tipo === 'sku' && props.consulta === 'destino') {
+        consulta = `/v1/api/actores/${props.actor}/trus/${props.buscado}/destino`;
+    } else if (props.tipo === 'upc' && props.consulta === 'origen') {
+        consulta = `/v1/api/trus/upc/${props.buscado}/origen`;
+    } else if (props.tipo === 'upc' && props.consulta === 'destino') {
+        consulta = `/v1/api/trus/upc/${props.buscado}/destino`;
+    }
     return (
         <React.Fragment>
             {props.machete && props.consulta === 'destino' && (
@@ -20,6 +34,7 @@ function Consulta(props) {
                         selectTru={props.selectTru}
                         selectActividad={props.selectActividad}
                         selectTransaccion={props.selectTransaccion}
+                        consulta={consulta}
                     />
                 </React.Fragment>
             )}
@@ -37,6 +52,7 @@ function Consulta(props) {
                         selectTru={props.selectTru}
                         selectActividad={props.selectActividad}
                         selectTransaccion={props.selectTransaccion}
+                        consulta={consulta}
                     />
                 </React.Fragment>
             )}
@@ -54,6 +70,7 @@ function Consulta(props) {
                         selectTru={props.selectTru}
                         selectActividad={props.selectActividad}
                         selectTransaccion={props.selectTransaccion}
+                        consulta={consulta}
                     />
                 </React.Fragment>
             )}
@@ -71,6 +88,7 @@ function Consulta(props) {
                         selectTru={props.selectTru}
                         selectActividad={props.selectActividad}
                         selectTransaccion={props.selectTransaccion}
+                        consulta={consulta}
                     />
                 </React.Fragment>
             )}

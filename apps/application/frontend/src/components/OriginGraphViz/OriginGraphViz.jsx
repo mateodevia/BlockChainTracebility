@@ -11,14 +11,14 @@ function OrginGraphViz(props) {
     let [actualizar, setActualizar] = useState(false);
 
     let colores = {
-        Propilco: 'rgb(12, 124, 186)',
+        Propilco: 'rgb(255, 136, 1)',
         Cartoflex: 'rgb(122, 182, 72)',
         Transportador: 'rgb(128, 0, 255)',
         Canvan: 'rgb(255, 128, 0)',
     };
 
     let coloresClaros = {
-        Propilco: 'rgb(12, 124, 186, 0.2)',
+        Propilco: 'rgb(255, 136, 1, 0.2)',
         Cartoflex: 'rgb(122, 182, 72, 0.2)',
         Transportador: 'rgb(128, 0, 255, 0.2)',
         Canvan: 'rgb(255, 128, 0, 0.2)',
@@ -59,7 +59,7 @@ function OrginGraphViz(props) {
     };
 
     useEffect(() => {
-        fetch(`/v1/api/trus/id/${props.buscado}/origen`).then((response) => {
+        fetch(props.consulta).then((response) => {
             response.json().then((data) => {
                 if (!data.error) {
                     setExiste(true);

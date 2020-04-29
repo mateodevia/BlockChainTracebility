@@ -9,6 +9,8 @@ import Flecha from './components/Flecha/Flecha';
 
 function App() {
     let [buscado, setBuscado] = useState(undefined);
+    let [tipo, setTipo] = useState('id');
+    let [actor, setActor] = useState('');
     let [consulta, setConsulta] = useState('');
     let [tru, setTru] = useState(undefined);
     let [actividad, setActividad] = useState(undefined);
@@ -45,6 +47,8 @@ function App() {
                 inputRef={inputRef}
                 machete={machete}
                 setMachete={setMachete}
+                setTipo={setTipo}
+                setActor={setActor}
             />
             <div className='contenedor'>
                 <div id='contenedorViz' className='contenedorViz'>
@@ -60,6 +64,8 @@ function App() {
                                     selectActividad={selectActividad}
                                     selectTransaccion={selectTransaccion}
                                     machete={machete}
+                                    tipo={tipo}
+                                    actor={actor}
                                 />
                             </React.Fragment>
                         )}

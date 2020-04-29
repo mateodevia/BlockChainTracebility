@@ -10,8 +10,13 @@ function Header(props) {
 
     let handleChange = () => {
         if (idRef.current.value === 'SKU') {
+            props.setTipo('sku');
             setActorActivo(false);
+        } else if (idRef.current.value === 'UPC') {
+            props.setTipo('upc');
+            setActorActivo(true);
         } else {
+            props.setTipo('id');
             setActorActivo(true);
         }
     };
@@ -19,6 +24,7 @@ function Header(props) {
     let handleRastrear = () => {
         if (props.inputRef.current.value !== '') {
             props.setBuscado(props.inputRef.current.value);
+            props.setActor(actorRef.current.value);
             props.setConsulta('destino');
             props.setMachete(!props.machete);
         } else {
@@ -30,6 +36,7 @@ function Header(props) {
     let handleProcedencia = () => {
         if (props.inputRef.current.value !== '') {
             props.setBuscado(props.inputRef.current.value);
+            props.setActor(actorRef.current.value);
             props.setConsulta('origen');
             props.setMachete(!props.machete);
         } else {
@@ -46,7 +53,9 @@ function Header(props) {
                 ref={idRef}
                 onChange={handleChange}
             >
-                <option value='ID TRU'>ID TRU</option>
+                <option className='optionBusqueda' value='ID TRU'>
+                    ID TRU
+                </option>
                 <option value='SKU'>SKU</option>
                 <option value='UPC'>UPC</option>
             </select>

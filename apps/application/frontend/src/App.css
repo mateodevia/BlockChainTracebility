@@ -1,10 +1,9 @@
 h1,
 h2 {
-    color: #ff5924;
+    color: #4a56ca;
 }
 
-h1 {
-    font-weight: normal;
+h3 {
 }
 
 .contenedor {
@@ -35,8 +34,8 @@ h1 {
 .boton {
     padding: 8px;
     margin: 10px 10px 10px 0;
-    background-color: #44dbb8;
-    color: rgb(22, 22, 22);
+    background-color: #4a56ca;
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 14px;
