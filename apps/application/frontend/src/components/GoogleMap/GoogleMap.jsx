@@ -12,7 +12,7 @@ function MapContainer(props) {
         <div className='mapDetalle'>
             <Map
                 google={props.google}
-                zoom={8}
+                zoom={18}
                 containerStyle={containerStyle}
                 initialCenter={{
                     lat: props.ubicacion.lat,

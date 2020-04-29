@@ -17,8 +17,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -57,8 +57,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -97,8 +97,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -137,8 +137,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -176,8 +176,8 @@ module.exports.actividades = [
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -215,8 +215,8 @@ module.exports.actividades = [
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -244,8 +244,8 @@ module.exports.actividades = [
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -270,8 +270,8 @@ module.exports.actividades = [
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -299,8 +299,8 @@ module.exports.actividades = [
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -325,8 +325,8 @@ module.exports.actividades = [
                 producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -345,8 +345,8 @@ module.exports.actividades = [
         ],
         tipo: 'PRODUCIR',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
     },
     {
@@ -362,8 +362,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -402,8 +402,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -442,8 +442,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -482,8 +482,8 @@ module.exports.actividades = [
                 consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
                 tipo: 'TRU',
                 ubicacion: {
-                    lat: 20.27,
-                    lon: -75.5024821,
+                    lat: 10.3280074,
+                    lon: -75.5010829,
                 },
                 caracteristicas: {
                     nombre: 'Homopolimero',
@@ -1104,8 +1104,8 @@ module.exports.trus = [
         consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1144,8 +1144,8 @@ module.exports.trus = [
         consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1184,8 +1184,8 @@ module.exports.trus = [
         consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1224,8 +1224,8 @@ module.exports.trus = [
         consumidoPor: '47b2c630-7422-11ea-9dba-a31d6f3c8f24',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1263,8 +1263,8 @@ module.exports.trus = [
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1302,8 +1302,8 @@ module.exports.trus = [
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1331,8 +1331,8 @@ module.exports.trus = [
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1357,8 +1357,8 @@ module.exports.trus = [
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1386,8 +1386,8 @@ module.exports.trus = [
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
@@ -1412,8 +1412,8 @@ module.exports.trus = [
         producidoPor: 'efa91e20-7413-11ea-9fdf-2174e1b0eb66',
         tipo: 'TRU',
         ubicacion: {
-            lat: 20.27,
-            lon: -75.5024821,
+            lat: 10.3280074,
+            lon: -75.5010829,
         },
         caracteristicas: {
             nombre: 'Homopolimero',
