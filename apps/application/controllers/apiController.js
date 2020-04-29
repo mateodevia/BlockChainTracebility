@@ -35,6 +35,7 @@ module.exports.getTruBySku = (req, res) => {
     console.log(req.params.sku);
     try {
       let response = await contract.evaluateTransaction('getTruBySku', req.params.sku.toString(), req.params.actor.toString());
+      console.log(JSON.parse(response.toString()));
       res.status(200).json(JSON.parse(response.toString()));
     }
     catch (err) {

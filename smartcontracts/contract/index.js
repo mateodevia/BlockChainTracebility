@@ -186,14 +186,15 @@ var ABstore = class {
     let query = {
       selector: {
         SKU: { $eq: args[0] },
-        dueñoActual: { $eq: args[1] }
       }
     }
     let iterator = await stub.getQueryResult(JSON.stringify(query));
     let tru = await iterator.next();
     if (!tru.done) {
-      console.log(tru);
-      return tru.value.value;
+      let response = JSON.parse(tru.value.value.toString());
+      response.id = tru.value.key;
+      console.log(response);
+      return Buffer.from(JSON.stringify(response))
     }
     else {
       throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;

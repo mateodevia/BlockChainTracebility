@@ -41,6 +41,7 @@ module.exports.getActividadesOrigen = async (stub, tru) => {
 module.exports.getActividadesDestino = async (stub, tru) => {
     let actividades = [];
     if (tru.consumido) {
+	console.log(tru.id, tru.consumidoPor);
         let actividadSiguiente = await stub.getState(tru.consumidoPor);
         actividadSiguiente = JSON.parse(actividadSiguiente.toString());
         actividadSiguiente.id = tru.consumidoPor;
