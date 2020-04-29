@@ -23,5 +23,6 @@ router.post('/actividad/transformar', transformador.transformar);
 router.get('/trus/id/:id/origen', apiController.origen);
 router.get('/trus/id/:id/destino', apiController.destino);
 router.get('/actores/:actor/trus/:sku/origen', apiController.origenSku);
+router.get('/actores/:actor/trus/:sku/destino', apiController.destinoSku);
 
 module.exports = router;

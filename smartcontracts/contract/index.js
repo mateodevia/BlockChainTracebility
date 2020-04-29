@@ -677,8 +677,8 @@ var ABstore = class {
         let results = [];
         let next = await iterator.next();
         let newItem = JSON.parse(next.value.value.toString());
-        if(!next.done) {
-	    newItem.id = next.value.key;
+        if (!next.done) {
+            newItem.id = next.value.key;
             results.push(newItem);
             while (!next.done) {
                 next = await iterator.next();
@@ -688,9 +688,53 @@ var ABstore = class {
                     results.push(newItem);
                 }
             }
-            results = results.filter(item => (item.transacciones.length > 0 && item.transacciones[0].fuente===args[1]) || item.transacciones.length===0 && item.dueñoActual===args[1] )
+            results = results.filter(
+                (item) =>
+                    (item.transacciones.length > 0 &&
+                        item.transacciones[0].fuente === args[1]) ||
+                    (item.transacciones.length === 0 &&
+                        item.dueñoActual === args[1])
+            );
             let tru = results[0];
             let actividades = await utils.getActividadesOrigen(stub, tru);
+            return Buffer.from(
+                JSON.stringify({ tru: tru, actividades: actividades })
+            );
+        } else {
+            throw `El TRU con identificado con el SKU: ${args[0]} por el actor ${args[1]} no existe`;
+        }
+    }
+
+    async origenBySku(stub, args) {
+        let query = {
+            selector: {
+                SKU: { $eq: args[0] },
+            },
+        };
+        let iterator = await stub.getQueryResult(JSON.stringify(query));
+        let results = [];
+        let next = await iterator.next();
+        let newItem = JSON.parse(next.value.value.toString());
+        if (!next.done) {
+            newItem.id = next.value.key;
+            results.push(newItem);
+            while (!next.done) {
+                next = await iterator.next();
+                if (next.value) {
+                    newItem = JSON.parse(next.value.value.toString());
+                    newItem.id = next.value.key;
+                    results.push(newItem);
+                }
+            }
+            results = results.filter(
+                (item) =>
+                    (item.transacciones.length > 0 &&
+                        item.transacciones[0].fuente === args[1]) ||
+                    (item.transacciones.length === 0 &&
+                        item.dueñoActual === args[1])
+            );
+            let tru = results[results.length - 1];
+            let actividades = await utils.getActividadesDestino(stub, tru);
             return Buffer.from(
                 JSON.stringify({ tru: tru, actividades: actividades })
             );

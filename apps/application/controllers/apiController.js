@@ -124,7 +124,24 @@ module.exports.origenSku = (req, res) => {
         try {
             let response = await contract.evaluateTransaction(
                 'origenBySku',
-                req.params.sku.toString(), req.params.actor.toString()
+                req.params.sku.toString(),
+                req.params.actor.toString()
+            );
+            res.status(200).json(JSON.parse(response.toString()));
+        } catch (err) {
+            res.status(404).json({ error: err.message });
+        }
+    });
+};
+
+module.exports.destinoSku = (req, res) => {
+    return getGateway.then(async ({ gateway, network }) => {
+        const contract = network.getContract('fabcar');
+        try {
+            let response = await contract.evaluateTransaction(
+                'destinoBySku',
+                req.params.sku.toString(),
+                req.params.actor.toString()
             );
             res.status(200).json(JSON.parse(response.toString()));
         } catch (err) {
