@@ -796,7 +796,7 @@ var ABstore = class {
                 }
             }
             let tru = results[results.length - 1];
-            let actividades = await utils.getActividadesOrigen(stub, tru);
+            let actividades = await utils.getActividadesDestino(stub, tru);
             return Buffer.from(
                 JSON.stringify({ tru: tru, actividades: actividades })
             );
