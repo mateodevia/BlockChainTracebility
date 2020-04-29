@@ -1,0 +1,74 @@
+.contenedorConvensiones {
+    position: absolute;
+    height: min-content;
+    width: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    right: calc(30% + 25px);
+    -webkit-box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+.convencion {
+    height: 20px;
+    margin: 10px 20px 10px 0px;
+}
+
+.contenedorFigura {
+    display: inline-block;
+    width: 50px;
+}
+
+.tituloConvension {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.circulo {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid;
+    margin: 0 auto;
+}
+
+.rectangulo {
+    height: 20px;
+    width: 30px;
+    border: 1px solid;
+    margin: 0 auto;
+}
+
+.rombo {
+    height: 15px;
+    width: 15px;
+    border: 1px solid;
+    margin: 0 auto;
+    transform: rotate(45deg);
+}
+
+.propilco {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: rgb(12, 124, 186);
+    margin: 0 auto;
+}
+
+.cartoflex {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: rgb(122, 182, 72);
+    margin: 0 auto;
+}
+
+.transportador {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: rgb(128, 0, 255);
+    margin: 0 auto;
+}

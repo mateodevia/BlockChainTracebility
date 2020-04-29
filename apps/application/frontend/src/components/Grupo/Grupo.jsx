@@ -32,7 +32,11 @@ function Grupo(props) {
                     x2={calculateXCoordinate(tru)}
                     y2='50'
                     style={{
-                        stroke: props.colores[tru?.dueñoActual],
+                        stroke:
+                            props.colores[
+                                tru?.transacciones[0]?.fuente ||
+                                    tru?.dueñoActual
+                            ],
                     }}
                 />
             );

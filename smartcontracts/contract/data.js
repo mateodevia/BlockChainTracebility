@@ -538,7 +538,7 @@ module.exports.actividades = [
                     'indice de fluides': '98%',
                     imagenes: [
                         [
-                            'Foto',
+                            'Certificado',
                             'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                         ],
                     ],
@@ -577,7 +577,7 @@ module.exports.actividades = [
                     'indice de fluides': '92%',
                     imagenes: [
                         [
-                            'Foto',
+                            'Certificado',
                             'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                         ],
                     ],
@@ -616,7 +616,7 @@ module.exports.actividades = [
                     'indice de fluides': '98%',
                     imagenes: [
                         [
-                            'Foto',
+                            'Certificado',
                             'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                         ],
                     ],
@@ -655,7 +655,7 @@ module.exports.actividades = [
                     'indice de fluides': '96%',
                     imagenes: [
                         [
-                            'Foto',
+                            'Certificado',
                             'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                         ],
                     ],
@@ -701,7 +701,7 @@ module.exports.actividades = [
                     'indice de fluides': '98%',
                     imagenes: [
                         [
-                            'Foto',
+                            'Certificado',
                             'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                         ],
                     ],
@@ -1448,7 +1448,7 @@ module.exports.trus = [
             'indice de fluides': '98%',
             imagenes: [
                 [
-                    'Foto',
+                    'Certificado',
                     'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                 ],
             ],
@@ -1487,7 +1487,7 @@ module.exports.trus = [
             'indice de fluides': '92%',
             imagenes: [
                 [
-                    'Foto',
+                    'Certificado',
                     'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                 ],
             ],
@@ -1526,7 +1526,7 @@ module.exports.trus = [
             'indice de fluides': '98%',
             imagenes: [
                 [
-                    'Foto',
+                    'Certificado',
                     'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                 ],
             ],
@@ -1565,7 +1565,7 @@ module.exports.trus = [
             'indice de fluides': '96%',
             imagenes: [
                 [
-                    'Foto',
+                    'Certificado',
                     'https://res.cloudinary.com/drfggfn8f/image/upload/v1588112753/Tesis/amoiurdvgjvlnvcpv2pd.png',
                 ],
             ],

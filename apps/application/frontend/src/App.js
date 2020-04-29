@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Instrucciones from './components/Instrucciones/Instrucciones';
 import Consulta from './components/Consulta/Consulta';
 import Detalle from './components/Detalle/Detalle';
+import Convenciones from './components/Convenciones/Convensiones';
 
 function App() {
     let [buscado, setBuscado] = useState(undefined);
@@ -36,13 +37,16 @@ function App() {
                 <div id='contenedorViz' className='contenedorViz'>
                     <div className='subContenedorViz'>
                         {buscado && (
-                            <Consulta
-                                buscado={buscado}
-                                consulta={consulta}
-                                selectTru={selectTru}
-                                selectActividad={selectActividad}
-                                selectTransaccion={selectTransaccion}
-                            />
+                            <React.Fragment>
+                                <Convenciones />
+                                <Consulta
+                                    buscado={buscado}
+                                    consulta={consulta}
+                                    selectTru={selectTru}
+                                    selectActividad={selectActividad}
+                                    selectTransaccion={selectTransaccion}
+                                />
+                            </React.Fragment>
                         )}
                         {!buscado && <Instrucciones />}
                     </div>

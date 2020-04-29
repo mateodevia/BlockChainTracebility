@@ -1,0 +1,9 @@
+.tituloViz {
+    font-size: 20px;
+    margin: -10px;
+    position: absolute;
+    padding: 10px;
+    background-color: white;
+    width: calc(70% - 40px);
+    z-index: 8;
+}
