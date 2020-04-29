@@ -705,7 +705,7 @@ var ABstore = class {
         }
     }
 
-    async origenBySku(stub, args) {
+    async destinoBySku(stub, args) {
         let query = {
             selector: {
                 SKU: { $eq: args[0] },
