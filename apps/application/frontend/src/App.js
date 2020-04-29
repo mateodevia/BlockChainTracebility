@@ -5,6 +5,7 @@ import Instrucciones from './components/Instrucciones/Instrucciones';
 import Consulta from './components/Consulta/Consulta';
 import Detalle from './components/Detalle/Detalle';
 import Convenciones from './components/Convenciones/Convensiones';
+import Flecha from './components/Flecha/Flecha';
 
 function App() {
     let [buscado, setBuscado] = useState(undefined);
@@ -38,6 +39,7 @@ function App() {
                     <div className='subContenedorViz'>
                         {buscado && (
                             <React.Fragment>
+                                <Flecha />
                                 <Convenciones />
                                 <Consulta
                                     buscado={buscado}
