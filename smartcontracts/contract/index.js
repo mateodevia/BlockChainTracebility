@@ -676,9 +676,10 @@ var ABstore = class {
         let iterator = await stub.getQueryResult(JSON.stringify(query));
         let next = await iterator.next();
         if (!next.done) {
-            let tru = JSON.parse(tru.value.value.toString());
-            tru.id = tru.value.key;
-            actividades = await utils.getActividadesOrigen(stub, tru);
+            let tru = JSON.parse(next.value.value.toString());
+            console.log(tru);
+	    tru.id = next.value.key;
+            let actividades = await utils.getActividadesOrigen(stub, tru);
             return Buffer.from(
                 JSON.stringify({ tru: tru, actividades: actividades })
             );
