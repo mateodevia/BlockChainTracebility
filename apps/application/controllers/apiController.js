@@ -124,7 +124,7 @@ module.exports.origenSku = (req, res) => {
         try {
             let response = await contract.evaluateTransaction(
                 'origenBySku',
-                req.params.sku.toString()
+                req.params.sku.toString(), req.params.actor.toString()
             );
             res.status(200).json(JSON.parse(response.toString()));
         } catch (err) {

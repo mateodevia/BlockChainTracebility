@@ -676,23 +676,20 @@ var ABstore = class {
         let iterator = await stub.getQueryResult(JSON.stringify(query));
         let results = [];
         let next = await iterator.next();
-        let tru = JSON.parse(next.value.value.toString());
-        tru.id = next.value.key;
-        results.push(tru);
-        while (next.done) {
-            const res = await iterator.next();
-            if (res.value) {
-                tru = JSON.parse(res.value.value.toString());
-                tru.id = next.value.key;
-                results.push(tru);
+        let newItem = JSON.parse(next.value.value.toString());
+        if(!next.done) {
+	    newItem.id = next.value.key;
+            results.push(newItem);
+            while (!next.done) {
+                next = await iterator.next();
+                if (next.value) {
+                    newItem = JSON.parse(next.value.value.toString());
+                    newItem.id = next.value.key;
+                    results.push(newItem);
+                }
             }
-        }
-        console.log(results);
-
-        if (!next.done) {
-            let tru = JSON.parse(next.value.value.toString());
-            console.log(tru);
-            tru.id = next.value.key;
+            results = results.filter(item => (item.transacciones.length > 0 && item.transacciones[0].fuente===args[1]) || item.transacciones.length===0 && item.dueñoActual===args[1] )
+            let tru = results[0];
             let actividades = await utils.getActividadesOrigen(stub, tru);
             return Buffer.from(
                 JSON.stringify({ tru: tru, actividades: actividades })
