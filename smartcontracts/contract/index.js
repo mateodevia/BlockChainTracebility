@@ -638,6 +638,9 @@ var ABstore = class {
                 trus_a_producir[i].ubicacion = ubicacion;
                 trus_a_producir[i].producidoPor = id_actividad;
                 trus_a_producir[i].transacciones = [];
+                trus_a_producir[i].tipo = 'TRU';
+                trus_a_producir[i].dueñoActual = actor;
+                trus_a_producir[i].dueños = [actor];
                 stub.putState(
                     id_actividad + '-' + i,
                     JSON.stringify(trus_a_producir[i])
