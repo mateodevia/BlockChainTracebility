@@ -343,13 +343,18 @@ var ABstore = class {
             delete trus_revisados[i].id;
             let actividad = await stub.getState(trus_revisados[i].producidoPor);
             actividad = JSON.parse(actividad.toString());
-	    let encontrado = actividad.produce[parseInt(key.slice(-1))];
+            let encontrado = actividad.produce[parseInt(key.slice(-1))];
             encontrado.transacciones.push(transaccion);
+            encontrado.dueñoActual = destino;
+            encontrado.dueños.push(destino);
             trus_revisados[i].dueñoActual = destino;
             trus_revisados[i].dueños.push(destino);
-	    trus_revisados[i].transacciones.push(transaccion);
+            trus_revisados[i].transacciones.push(transaccion);
             await stub.putState(key, JSON.stringify(trus_revisados[i]));
-            await stub.putState(trus_revisados[i].producidoPor, JSON.stringify(actividad));
+            await stub.putState(
+                trus_revisados[i].producidoPor,
+                JSON.stringify(actividad)
+            );
         }
         await stub.putState(argsJson[0], JSON.stringify(transaccion));
         return 'OK';
