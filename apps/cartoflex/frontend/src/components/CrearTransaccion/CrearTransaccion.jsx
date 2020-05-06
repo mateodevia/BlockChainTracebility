@@ -8,7 +8,7 @@ function CrearTransaccion() {
 
     let crearTransaccion = () => {
         let request = {
-            fuente: 'Propilco',
+            fuente: 'Cartoflex',
             destino: document.getElementById('inputActor').value,
             fecha: new Date().toISOString(),
             trus: [],
@@ -56,11 +56,11 @@ function CrearTransaccion() {
                 Agregue el nombre del actor con el cual va a registrar la
                 transaccion y los TRUs involucrados en la transacción.
             </h3>
-            <div className='izquierdaPropilco'>
+            <div className='izquierdaCartoflex'>
                 <label>Destinatario: </label>
                 <select id='inputActor' name='Actor'>
-                    <option value='Cartoflex'>Cartoflex</option>
                     <option value='Transportador'>Transportador</option>
+                    <option value='Canvan'>Canvan</option>
                 </select>
                 <br />
                 <br />
@@ -70,11 +70,11 @@ function CrearTransaccion() {
                     <input
                         id={'TRU-' + i}
                         type='text'
-                        className='propilcoInput'
+                        className='cartoflexInput'
                     />
                 ))}
                 <button
-                    className='agregarPropilco'
+                    className='botonCartoflex'
                     onClick={() => setTrus([...trus, {}])}
                     disabled={esperando}
                 >
@@ -83,7 +83,7 @@ function CrearTransaccion() {
                 <br />
                 <br />
                 <button
-                    className='crearActividad'
+                    className='botonCartoflexLargo'
                     onClick={crearTransaccion}
                     disabled={esperando}
                 >
