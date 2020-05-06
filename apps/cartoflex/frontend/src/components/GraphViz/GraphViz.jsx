@@ -113,22 +113,25 @@ function GraphViz(props) {
                             onClick={() => props.selectTru(buscado)}
                         ></div>
                     </div>
-                    <svg className='lineas'>
-                        <line
-                            className='linea'
-                            x1='50%'
-                            y1='0'
-                            x2='50%'
-                            y2='50'
-                            style={{
-                                stroke:
-                                    colores[
-                                        buscado?.transacciones[0]?.fuente ||
-                                            buscado?.dueñoActual
-                                    ],
-                            }}
-                        />
-                    </svg>
+                    {(buscado?.transacciones.length > 0 ||
+                        actividades?.length > 0) && (
+                        <svg className='lineas'>
+                            <line
+                                className='linea'
+                                x1='50%'
+                                y1='0'
+                                x2='50%'
+                                y2='50'
+                                style={{
+                                    stroke:
+                                        colores[
+                                            buscado?.transacciones[0]?.fuente ||
+                                                buscado?.dueñoActual
+                                        ],
+                                }}
+                            />
+                        </svg>
+                    )}
                     {buscado?.transacciones.map((trans, i) => (
                         <React.Fragment>
                             <div

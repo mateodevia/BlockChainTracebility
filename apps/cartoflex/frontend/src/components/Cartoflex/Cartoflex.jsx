@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './Cartoflex.css';
 import CrearTransaccion from '../CrearTransaccion/CrearTransaccion';
 
+import CrearTransformacion from '../CrearTransformacion/CrearTransformacion';
 function Cartoflex() {
     let [opcion, setOpcion] = useState('');
     let irAViz = () => {
@@ -15,7 +16,7 @@ function Cartoflex() {
                 className='botonGris'
                 onClick={() => setOpcion('transformacion')}
             >
-                Crear Transaformación
+                Crear Transformación
             </button>
             <button
                 className='botonGris'
@@ -26,7 +27,7 @@ function Cartoflex() {
             <button className='botonGris' onClick={irAViz}>
                 Visualizar Cadena
             </button>
-            {opcion === 'transformacion' && <div>Transformacion</div>}
+            {opcion === 'transformacion' && <CrearTransformacion />}
             {opcion === 'transaccion' && <CrearTransaccion />}
         </div>
     );

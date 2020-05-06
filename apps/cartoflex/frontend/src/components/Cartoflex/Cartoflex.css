@@ -45,3 +45,9 @@
     padding: 10px;
     margin: 5px 0;
 }
+
+.lineaCartoflex {
+    width: 100%;
+    background-color: rgb(122, 182, 72);
+    height: 3px;
+}

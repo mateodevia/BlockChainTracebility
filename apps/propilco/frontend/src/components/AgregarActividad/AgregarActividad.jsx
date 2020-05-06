@@ -25,9 +25,8 @@ function AgregarActividad() {
                 caracteristicas.nombre = document.getElementById(
                     'nombre-' + i
                 ).value;
-                caracteristicas.cantidad = document.getElementById(
-                    'cantidad-' + i
-                ).value;
+                caracteristicas.cantidad =
+                    document.getElementById('cantidad-' + i).value + 'kg';
                 caracteristicas.indice = document.getElementById(
                     'indice-' + i
                 ).value;
@@ -56,8 +55,9 @@ function AgregarActividad() {
                         },
                     }).then((response) => {
                         response.json().then((data) => {
-                            let mensaje = `Los IDs de los TRUs producidos son:
-${data.trus_producidos.map((tru) => tru + '\n')}`;
+                            let mensaje = `Los IDs de los TRUs producidos son:${data.trus_producidos.map(
+                                (tru) => ' ' + tru
+                            )}`;
                             console.log(mensaje);
                             alert(mensaje);
                             setTrus([]);

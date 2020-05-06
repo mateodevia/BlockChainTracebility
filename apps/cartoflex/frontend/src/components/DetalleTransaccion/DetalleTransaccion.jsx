@@ -11,7 +11,7 @@ function DetalleTransaccion(props) {
             <p className='valorDetalle'>{props.transaccion.destino}</p>
             <h5 className='atributoDetalle'>Se transfirieron los activos:</h5>
             {props.transaccion.trus.map((tru) => (
-                <p className='idTrus'>- {tru.id}</p>
+                <p className='idTrus'>- {tru}</p>
             ))}
         </div>
     );

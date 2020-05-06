@@ -65,13 +65,13 @@ function DetalleTru(props) {
                         </p>
                     </React.Fragment>
                 ))}
-            {props.tru.caracteristicas.imagenes.map((imagen) => (
+            {props.tru.caracteristicas.imagenes?.map((imagen) => (
                 <React.Fragment>
                     <h5 className='atributoDetalle'>{imagen[0]}:</h5>
                     <img className='imagenDetalle' src={imagen[1]} />
                 </React.Fragment>
             ))}
-            {props.tru.caracteristicas.videos.map((video) => (
+            {props.tru.caracteristicas.videos?.map((video) => (
                 <React.Fragment>
                     <h5 className='atributoDetalle'>{video[0]}:</h5>
                     <iframe className='videoDetalle' src={video[1]} />
