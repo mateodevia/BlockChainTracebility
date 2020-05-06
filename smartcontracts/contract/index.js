@@ -330,15 +330,6 @@ var ABstore = class {
             tru.id = trus[i];
             trus_revisados.push(tru);
         }
-        //actualiza el dueño de los TRUs
-        for (let i in trus_revisados) {
-            let key = trus_revisados[i].id;
-            delete trus_revisados[i].id;
-            trus_revisados[i].dueñoActual = destino;
-            trus_revisados[i].dueños.push(destino);
-            await stub.putState(key, JSON.stringify(trus_revisados[i]));
-        }
-
         let transaccion = {
             trus: trus,
             fuente: argsJson[2],
@@ -346,6 +337,25 @@ var ABstore = class {
             fecha: argsJson[4],
             tipo: 'TRANSACCION',
         };
+        //actualiza el dueño de los TRUs
+        for (let i in trus_revisados) {
+            let key = trus_revisados[i].id;
+            delete trus_revisados[i].id;
+            trus_revisados[i].dueñoActual = destino;
+            trus_revisados[i].dueños.push(destino);
+            stub.putState(key, JSON.stringify(trus_revisados[i]));
+            let actividad = await stub.getState(trus_revisados[i].producidoPor);
+            let truBuscado = { ...trus_revisados[i] };
+            delete truBuscado.id;
+            console.log('TRU buscado', truBuscado);
+            let encontrado = actividad.produce.find(
+                (tru) => tru === truBuscado
+            );
+            console.log('TRU encontrado', encontrado);
+            encontrado.transacciones.push(transaccion);
+            console.log('ACTIVIDAD actualizada', actividad);
+            stub.setState(trus_revisados[i].producidoPor, actividad);
+        }
         await stub.putState(argsJson[0], JSON.stringify(transaccion));
         return 'OK';
     }
