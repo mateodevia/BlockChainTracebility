@@ -618,6 +618,12 @@ var ABstore = class {
             domain.transformar(trus_listos_para_consumir, trus_a_producir);
             //Consume los TRUs en a BD
             for (let i in trus_listos_para_consumir) {
+                let actividadProductora = stub.getState(
+                    trus_listos_para_consumir[i][1].producidoPor
+                );
+                actividadProductora.produce[
+                    parseInt(trus_listos_para_consumir[i][0].slice(-1))
+                ].consumido = true;
                 stub.putState(
                     trus_listos_para_consumir[i][0],
                     JSON.stringify(trus_listos_para_consumir[i][1])
@@ -628,6 +634,7 @@ var ABstore = class {
                 trus_a_producir[i].consumido = false;
                 trus_a_producir[i].ubicacion = ubicacion;
                 trus_a_producir[i].producidoPor = id_actividad;
+                trus_a_producir[i].transacciones = [];
                 stub.putState(
                     id_actividad + '-' + i,
                     JSON.stringify(trus_a_producir[i])
