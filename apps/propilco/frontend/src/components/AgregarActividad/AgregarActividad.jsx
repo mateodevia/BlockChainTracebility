@@ -80,15 +80,6 @@ ${data.trus_producidos.map((tru) => tru + '\n')}`;
                 quiere reportar
             </h3>
             <div className='izquierdaPropilco'>
-                <button
-                    className='agregarPropilco'
-                    onClick={agregar}
-                    disabled={esperando}
-                >
-                    Agregar TRU
-                </button>
-                <br />
-                <br />
                 {trus.map((tru, i) => (
                     <React.Fragment>
                         <div className='lineaPropilco'></div>
@@ -121,6 +112,15 @@ ${data.trus_producidos.map((tru) => tru + '\n')}`;
                         <br />
                     </React.Fragment>
                 ))}
+                <button
+                    className='agregarPropilco'
+                    onClick={agregar}
+                    disabled={esperando}
+                >
+                    Agregar TRU
+                </button>
+                <br />
+                <br />
                 <button
                     className='crearActividad'
                     onClick={crearActvidad}

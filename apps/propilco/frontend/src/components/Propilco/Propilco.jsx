@@ -2,6 +2,7 @@ import React from 'react';
 import './Propilco.css';
 import { useState } from 'react';
 import AgregarActividad from '../AgregarActividad/AgregarActividad';
+import CrearTransaccion from '../CrearTransaccion/CrearTransaccion';
 
 function Propilco() {
     let [opcion, setOpcion] = useState('');
@@ -27,7 +28,7 @@ function Propilco() {
                 Visualizar Cadena
             </button>
             {opcion === 'actividad' && <AgregarActividad />}
-            {opcion === 'transaccion' && <div>Transaccion</div>}
+            {opcion === 'transaccion' && <CrearTransaccion />}
         </div>
     );
 }
