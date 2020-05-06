@@ -1,0 +1,63 @@
+.detalleNada {
+    text-align: center;
+    color: white;
+    margin: 20px 10px;
+}
+
+.contenedorDetalle {
+    margin: 10px;
+}
+
+.tituloDetalle {
+    color: white;
+    margin: 0;
+}
+
+.idDetalle {
+    color: white;
+    margin: 0 0 24px 0;
+    font-weight: normal;
+    font-size: 1.3vw;
+}
+
+.idDetalleTru {
+    color: white;
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.3vw;
+}
+
+.atributoDetalle {
+    color: white;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+}
+
+.valorDetalle {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+.imagenDetalle {
+    width: 100%;
+    margin: 5px 0 10px 0;
+}
+
+.videoDetalle {
+    width: 100%;
+    margin: 5px 0 10px 0;
+}
+
+.mapDetalle {
+    width: 100%;
+    height: 200px;
+    margin: 5px 0 10px 0;
+}
+
+.idTrus {
+    color: white;
+    margin: 2px 0;
+    font-weight: normal;
+    font-size: 12px;
+}

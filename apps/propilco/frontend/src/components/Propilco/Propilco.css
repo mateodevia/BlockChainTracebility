@@ -1,0 +1,10 @@
+.contenedorPropilco {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contenedorPropilco h1 {
+    color: rgb(255, 136, 1);
+    margin: 20px 0 0 0;
+}

@@ -1,0 +1,42 @@
+h1,
+h2 {
+    color: #4a56ca;
+}
+
+h3 {
+}
+
+.contenedor {
+    width: 100%;
+}
+
+.contenedorViz {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.subContenedorViz {
+    margin: 10px;
+}
+
+.contenedorMenu {
+    display: inline-block;
+    width: 30%;
+    background-color: #323433;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+}
+
+.boton {
+    padding: 8px;
+    margin: 10px 10px 10px 0;
+    background-color: #4a56ca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}

@@ -1,0 +1,21 @@
+.transaccion {
+  text-align: center;
+  width: 6px;
+  height: 10px;
+  padding: 1px 5px 5px 5px;
+  margin: 3px auto -3px auto;
+  transform: rotate(45deg);
+  border: solid 2px;
+  border-color: black;
+  transform: skewX(45deg) scaleY(cos(45deg));
+  position: relative;
+  transition: all 0.5s;
+}
+
+.transaccion:hover {
+  width: 10px;
+  height: 13px;
+  margin: 0px auto;
+  background-color: white;
+  transform: rotate(45deg);
+}

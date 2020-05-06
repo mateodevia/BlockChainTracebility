@@ -1,0 +1,40 @@
+.buscado {
+  height: 40px;
+  width: 40px;
+  border: solid 5px;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: all 0.5s;
+}
+
+.buscado:hover {
+  height: 45px;
+  width: 45px;
+}
+
+.contenedorPrimerGrupo {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.transaccionBase {
+  text-align: center;
+  width: 6px;
+  height: 10px;
+  padding: 1px 5px 5px 5px;
+  margin: 3px auto;
+  transform: rotate(45deg);
+  border: solid 2px;
+  border-color: black;
+  transform: skewX(45deg) scaleY(cos(45deg));
+  position: relative;
+  transition: all 0.5s;
+}
+
+.transaccionBase:hover {
+  width: 12px;
+  height: 15px;
+  padding: 1px 5px 5px 5px;
+  margin: 3px auto;
+  transform: rotate(45deg);
+}

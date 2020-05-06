@@ -1,0 +1,12 @@
+h1 {
+    color: #4a56ca;
+}
+
+.botonGris {
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    border: none;
+    color: white;
+    background-color: grey;
+}

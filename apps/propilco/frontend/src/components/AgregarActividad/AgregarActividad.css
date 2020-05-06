@@ -1,0 +1,37 @@
+.agregarPropilco {
+    background-color: rgb(255, 136, 1);
+    padding: 10px;
+    border: none;
+    color: white;
+}
+
+button:disabled {
+    background-color: lightgray;
+}
+
+.izquierdaPropilco {
+    text-align: left;
+}
+
+.propilcoInput {
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    border: none;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.crearActividad {
+    background-color: rgb(255, 136, 1);
+    padding: 10px;
+    border: none;
+    color: white;
+    width: 100%;
+}
+
+.lineaPropilco {
+    width: 100%;
+    background-color: rgb(255, 136, 1);
+    height: 3px;
+}
