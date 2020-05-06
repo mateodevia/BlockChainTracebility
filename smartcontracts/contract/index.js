@@ -618,7 +618,7 @@ var ABstore = class {
             domain.transformar(trus_listos_para_consumir, trus_a_producir);
             //Consume los TRUs en a BD
             for (let i in trus_listos_para_consumir) {
-                let actividadProductora = stub.getState(
+                let actividadProductora = await stub.getState(
                     trus_listos_para_consumir[i][1].producidoPor
                 );
                 actividadProductora = JSON.parse(
@@ -641,6 +641,7 @@ var ABstore = class {
                 trus_a_producir[i].tipo = 'TRU';
                 trus_a_producir[i].dueñoActual = actor;
                 trus_a_producir[i].dueños = [actor];
+                trus_a_producir[i].ubicacion = trus_consumidos[0].ubicacion;
                 stub.putState(
                     id_actividad + '-' + i,
                     JSON.stringify(trus_a_producir[i])
