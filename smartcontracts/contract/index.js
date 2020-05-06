@@ -621,6 +621,9 @@ var ABstore = class {
                 let actividadProductora = stub.getState(
                     trus_listos_para_consumir[i][1].producidoPor
                 );
+                actividadProductora = JSON.parse(
+                    actividadProductora.toString()
+                );
                 actividadProductora.produce[
                     parseInt(trus_listos_para_consumir[i][0].slice(-1))
                 ].consumido = true;
