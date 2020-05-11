@@ -659,7 +659,7 @@ var ABstore = class {
             produce: trus_a_producir,
         };
         await stub.putState(argsJson[0], JSON.stringify(actividad));
-        return 'OK';
+        return Buffer.from(JSON.stringify(actividad));
     }
 
     async origenById(stub, args) {
