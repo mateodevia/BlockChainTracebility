@@ -629,6 +629,9 @@ var ABstore = class {
                 actividadProductora.produce[
                     parseInt(trus_listos_para_consumir[i][0].slice(-1))
                 ].consumido = true;
+                actividadProductora.produce[
+                    parseInt(trus_listos_para_consumir[i][0].slice(-1))
+                ].consumidoPor = trus_listos_para_consumir[i][1].producidoPor;
                 stub.putState(
                     trus_listos_para_consumir[i][0],
                     JSON.stringify(trus_listos_para_consumir[i][1])
