@@ -355,6 +355,7 @@ var ABstore = class {
                 trus_revisados[i].producidoPor,
                 JSON.stringify(actividad)
             );
+	    console.log('se actualizo el dueño '+i);
         }
         await stub.putState(argsJson[0], JSON.stringify(transaccion));
         return 'OK';
@@ -605,7 +606,8 @@ var ABstore = class {
                         throw `El TRU ${trus_a_consumir[i].id} ya fue consumido`;
                     }
                 } else {
-                    throw `El TRU ${trus_a_consumir[i].id} no esta bajo su custodia`;
+		   console.log(tru, trus_a_consumir[i]);
+                   throw `El TRU ${trus_a_consumir[i].id} no esta bajo su custodia`;
                 }
             } else {
                 throw `El TRU ${trus_a_consumir[i].id} no existe`;

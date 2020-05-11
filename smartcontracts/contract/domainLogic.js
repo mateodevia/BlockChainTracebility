@@ -26,9 +26,8 @@ module.exports.transformar = (trus_consumidos, trus_producidos) => {
         );
         suma_producidos += cantidad;
     }
-
+    console.log(suma_consumidos, suma_producidos);
     let rendimiento = (suma_producidos * 100) / suma_consumidos;
-
     if (rendimiento < 99) {
         throw 'No puede haber tanto desperdicio en una transformacion de plastico';
     }
