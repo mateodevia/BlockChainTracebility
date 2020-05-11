@@ -355,7 +355,7 @@ var ABstore = class {
                 trus_revisados[i].producidoPor,
                 JSON.stringify(actividad)
             );
-	    console.log('se actualizo el dueño '+i);
+            console.log('se actualizo el dueño ' + i);
         }
         await stub.putState(argsJson[0], JSON.stringify(transaccion));
         return 'OK';
@@ -606,8 +606,8 @@ var ABstore = class {
                         throw `El TRU ${trus_a_consumir[i].id} ya fue consumido`;
                     }
                 } else {
-		   console.log(tru, trus_a_consumir[i]);
-                   throw `El TRU ${trus_a_consumir[i].id} no esta bajo su custodia`;
+                    console.log(tru, trus_a_consumir[i]);
+                    throw `El TRU ${trus_a_consumir[i].id} no esta bajo su custodia`;
                 }
             } else {
                 throw `El TRU ${trus_a_consumir[i].id} no existe`;
@@ -632,6 +632,10 @@ var ABstore = class {
                 stub.putState(
                     trus_listos_para_consumir[i][0],
                     JSON.stringify(trus_listos_para_consumir[i][1])
+                );
+                stub.putState(
+                    trus_listos_para_consumir[i][1].producidoPor,
+                    JSON.stringify(actividadProductora)
                 );
             }
             //Produce los TRUs en la BD
