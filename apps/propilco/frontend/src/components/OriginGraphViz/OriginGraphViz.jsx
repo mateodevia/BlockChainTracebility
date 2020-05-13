@@ -99,7 +99,7 @@ function OrginGraphViz(props) {
     return (
         <React.Fragment>
             {existe && (
-                <div>
+                <div className='contenedorMaximoViz'>
                     <div
                         className='firstActivity'
                         id={actividades[0]?.id}

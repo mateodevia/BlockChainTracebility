@@ -94,7 +94,7 @@ function GraphViz(props) {
     return (
         <React.Fragment>
             {existe && (
-                <div>
+                <div className='contenedorMaximoViz'>
                     <div className='contenedorBuscado'>
                         <div
                             className='buscado'
